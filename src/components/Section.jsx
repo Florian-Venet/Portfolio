@@ -1,0 +1,59 @@
+export default function Section({ id, label, image, title, cta }) {
+  return (
+    <section
+      id={id}
+      className="relative w-full h-screen flex flex-col"
+      style={{
+        backgroundImage: `url(${image})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
+      <div className="absolute inset-0 bg-black/19" />
+
+      <div className="relative z-10 flex flex-col items-center" style={{ paddingTop: '1cm' }}>
+        
+        {/* Trait */}
+        <div className="w-4/5 border-t border-white/50" />
+
+        {/* Ligne + label + */}
+        <div className="flex justify-between items-center w-4/5 mt-2">
+          <span className="text-white text-base">+</span>
+
+          <span
+            className="text-white text-xs tracking-[0.4em]"
+            style={{ fontFamily: 'Montserrat, sans-serif' }}
+          >
+            {label}
+          </span>
+
+          <span className="text-white text-base">+</span>
+        </div>
+
+      </div>
+
+      <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-4">
+        <h2
+          className="text-white uppercase mb-10"
+          style={{
+            fontFamily: 'Bebas Neue, sans-serif',
+            fontSize: '3.1rem',
+            letterSpacing: '0.02em',
+            lineHeight: 1,
+            marginBottom: '1.5rem',
+          }}
+        >
+          {title}
+        </h2>
+
+        <a
+          href={`#${id}`}
+          className="text-white text-sm tracking-widest transition-colors duration-200 hover:text-orange-400"
+          style={{ fontFamily: 'Montserrat, sans-serif' }}
+        >
+          [ {cta} ]
+        </a>
+      </div>
+    </section>
+  )
+}
