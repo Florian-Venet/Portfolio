@@ -1,10 +1,15 @@
 import { useParams, useNavigate } from 'react-router-dom'
 import { PROJETS } from '../data/projets'
+import { useEffect } from 'react'
+
 
 export default function Projet() {
   const { id } = useParams()
   const navigate = useNavigate()
   const projet = PROJETS[id]
+  useEffect(() => {
+  window.scrollTo(0, 0)
+}, [id])
 
   if (!projet) {
     return (
@@ -16,7 +21,16 @@ export default function Projet() {
 
   return (
     <div style={{ backgroundColor: '#141414', minHeight: '100vh' }}>
-
+      {/* Bouton retour */}
+      <div style={{ position: 'fixed', top: '7rem', left: '5%', zIndex: 10 }}>
+        <button
+          onClick={() => navigate('/portfolio')}
+          className="text-white hover:text-orange-400 transition-colors duration-200 tracking-widest"
+          style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.75rem', background: 'none', border: 'none', cursor: 'pointer' }}
+        >
+          ←   RETOUR 
+        </button>
+      </div>
       {/* Section principale : vidéo + texte */}
       <section
         style={{

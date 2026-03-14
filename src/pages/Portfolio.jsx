@@ -202,12 +202,12 @@ export default function Portfolio() {
             className="text-white uppercase"
             style={{
               fontFamily: 'Bebas Neue, sans-serif',
-              fontSize: '3.1rem',
+              fontSize: '4.2rem',
               letterSpacing: '0.02em',
               lineHeight: 1.1,
             }}
           >
-            DÉCOUVREZ NOTRE UNIVERS.
+            DÉCOUVREZ<br />NOTRE UNIVERS.
           </h1>
         </div>
 
@@ -216,11 +216,11 @@ export default function Portfolio() {
             <a
               key={num}
               href={`#${anchor}`}
-              className="flex items-center gap-6 text-white hover:text-orange-400 transition-colors duration-200"
-              style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '1rem', letterSpacing: '0.2em' }}
+              className="flex items-center text-white hover:text-orange-400 transition-colors duration-200"
+              style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '1rem', letterSpacing: '0.2em', gap: '4rem' }}
             >
-              <span className="text-white/50">{num}</span>
-              <span>{label}</span>
+              <span style={{ color: 'rgba(255,255,255,0.5)', minWidth: '2rem', textAlign: 'right' }}>{num}</span>
+              <span style={{ minWidth: '260px', textAlign: 'right' }}>{label}</span>
             </a>
           ))}
         </div>
