@@ -6,6 +6,8 @@ import Home from './pages/Home'
 import Portfolio from './pages/Portfolio'
 import Projet from './pages/Projet'
 import Contact from './pages/Contact'
+import Services from './pages/Services'
+
 
 
 export default function App() {
@@ -18,6 +20,7 @@ export default function App() {
         <Route path="/projet/:id" element={<Projet />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/apropos" element={<About />} />
+        <Route path="/services" element={<Services />} />
       </Routes>
       <Footer />
     </div>

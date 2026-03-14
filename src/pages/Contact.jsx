@@ -81,13 +81,13 @@ export default function Contact() {
           className="text-white text-center"
           style={{
             fontFamily: 'Montserrat, sans-serif',
-            fontSize: '0.85rem',
+            fontSize: '0.rem',
             letterSpacing: '0.05em',
             marginBottom: '3rem',
             lineHeight: 1.7,
           }}
         >
-          Chaque projet est unique. Contactez-nous et imaginons<br />des images à la hauteur de votre vision.
+          Chaque projet est unique. Contactez-nous et imaginons des images à la hauteur de votre vision.
         </p>
 
         {submitted ? (
