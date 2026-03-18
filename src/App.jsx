@@ -7,12 +7,12 @@ import Portfolio from './pages/Portfolio'
 import Projet from './pages/Projet'
 import Contact from './pages/Contact'
 import Services from './pages/Services'
-
-
+import ScrollToTop from './components/ScrollToTop'
 
 export default function App() {
   return (
     <div>
+      <ScrollToTop />
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />

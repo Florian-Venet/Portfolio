@@ -7,9 +7,6 @@ export default function Projet() {
   const { id } = useParams()
   const navigate = useNavigate()
   const projet = PROJETS[id]
-  useEffect(() => {
-  window.scrollTo(0, 0)
-}, [id])
 
   if (!projet) {
     return (
