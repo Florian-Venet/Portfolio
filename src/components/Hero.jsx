@@ -1,10 +1,23 @@
+import { useState, useEffect } from 'react'
+
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
+  useEffect(() => {
+    const handler = () => setIsMobile(window.innerWidth < 768)
+    window.addEventListener('resize', handler)
+    return () => window.removeEventListener('resize', handler)
+  }, [])
+  return isMobile
+}
+
 export default function Hero() {
+  const isMobile = useIsMobile()
+
   return (
     <section
       id="accueil"
       className="relative w-full h-screen flex flex-col overflow-hidden"
     >
-      {/* Vidéo en arrière-plan */}
       <video
         autoPlay
         loop
@@ -15,18 +28,18 @@ export default function Hero() {
         <source src="/videoprez.mov" type="video/mp4" />
       </video>
 
-      {/* Overlay sombre 19% */}
-      <div className="absolute inset-0 bg-black/19" />
+      <div className="absolute inset-0 bg-black/30" />
 
-      {/* Contenu */}
-      <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-4">
+      <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center"
+        style={{ padding: isMobile ? '0 5%' : '0 15%' }}
+      >
         <h1
           className="text-white uppercase"
           style={{
             fontFamily: 'Bebas Neue, sans-serif',
-            fontSize: '3.1rem',
+            fontSize: isMobile ? '2rem' : '3.1rem',
             letterSpacing: '0.02em',
-            lineHeight: 1,
+            lineHeight: 1.3,
             marginBottom: '1.5rem',
           }}
         >

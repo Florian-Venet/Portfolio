@@ -1,50 +1,116 @@
-import { useLocation } from 'react-router-dom'
-import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { useLocation, Link } from 'react-router-dom'
 
 const NAV_LINKS = [
-  { label: 'ACCUEIL', href: '/', path: '/' },
-  { label: 'PORTFOLIO', href: '/portfolio', path: '/portfolio' },
-  { label: 'SERVICES', href: '/services', path: '/services' },
-  { label: 'A PROPOS', href: '/apropos', path: '/apropos' },
-  { label: 'CONTACT', href: '/contact', path: '/contact' },
+  { label: 'ACCUEIL', href: '/' },
+  { label: 'PORTFOLIO', href: '/portfolio' },
+  { label: 'SERVICES', href: '/services' },
+  { label: 'A PROPOS', href: '/apropos' },
+  { label: 'CONTACT', href: '/contact' },
 ]
 
 export default function Header() {
   const location = useLocation()
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
+
+  useEffect(() => {
+    const handler = () => setIsMobile(window.innerWidth < 768)
+    window.addEventListener('resize', handler)
+    return () => window.removeEventListener('resize', handler)
+  }, [])
 
   return (
     <header className="fixed top-0 left-0 w-full h-32 z-50">
 
+      {/* Logo centré */}
       <div className="absolute left-1/2 top-6 -translate-x-1/2">
         <Link
           to="/"
           className="text-white"
-          style={{
-            fontFamily: 'Playfair Display, serif',
-            fontSize: '2.4rem',
-            letterSpacing: '0.1em',
-          }}
+          style={{ fontFamily: 'Playfair Display, serif', fontSize: '2.4rem', letterSpacing: '0.1em' }}
         >
           SHØT
         </Link>
       </div>
 
-      <nav className="absolute right-15 top-10 flex flex-col items-end gap-4">
-        {NAV_LINKS.map(({ label, href, path }) => (
-          <Link
-            key={href}
-            to={href}
-            className="text-white text-sm tracking-widest transition-colors duration-200 hover:text-orange-400"
-            style={{
-              fontFamily: 'Montserrat, sans-serif',
-              borderBottom: location.pathname === path ? '1px solid white' : 'none',
-              paddingBottom: '2px',
-            }}
-          >
-            {label}
-          </Link>
-        ))}
-      </nav>
+      {/* Desktop : nav verticale droite — toujours visible */}
+      {!isMobile && (
+        <nav className="absolute right-15 top-10 flex flex-col items-end gap-4">
+          {NAV_LINKS.map(({ label, href }) => (
+            <Link
+              key={href}
+              to={href}
+              className="text-white text-sm tracking-widest transition-colors duration-200 hover:text-orange-400"
+              style={{
+                fontFamily: 'Montserrat, sans-serif',
+                borderBottom: location.pathname === href ? '1px solid white' : 'none',
+                paddingBottom: '2px',
+              }}
+            >
+              {label}
+            </Link>
+          ))}
+        </nav>
+      )}
+
+      {/* Mobile : hamburger */}
+      {isMobile && (
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          style={{
+            position: 'absolute',
+            top: '2rem',
+            right: '1.5rem',
+            background: 'none',
+            border: 'none',
+            cursor: 'pointer',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '5px',
+            padding: '0.5rem',
+            zIndex: 60,
+          }}
+        >
+          <span style={{ display: 'block', width: '22px', height: '1.5px', backgroundColor: 'white' }} />
+          <span style={{ display: 'block', width: '22px', height: '1.5px', backgroundColor: 'white' }} />
+          <span style={{ display: 'block', width: '22px', height: '1.5px', backgroundColor: 'white' }} />
+        </button>
+      )}
+
+      {/* Mobile : nav qui apparaît */}
+      {isMobile && menuOpen && (
+        <nav
+          style={{
+            position: 'absolute',
+            top: '5rem',
+            right: '1.5rem',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'flex-end',
+            gap: '1.2rem',
+            backgroundColor: 'rgba(20,20,20,0.40)',
+            padding: '1.5rem',
+            zIndex: 50,
+          }}
+        >
+          {NAV_LINKS.map(({ label, href }) => (
+            <Link
+              key={href}
+              to={href}
+              onClick={() => setMenuOpen(false)}
+              className="text-white text-sm tracking-widest transition-colors duration-200 hover:text-orange-400"
+              style={{
+                fontFamily: 'Montserrat, sans-serif',
+                borderBottom: location.pathname === href ? '1px solid white' : 'none',
+                paddingBottom: '2px',
+              }}
+            >
+              {label}
+            </Link>
+          ))}
+        </nav>
+      )}
 
     </header>
   )
