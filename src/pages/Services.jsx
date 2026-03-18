@@ -98,6 +98,7 @@ export default function Services() {
               justifyContent: 'center',
               paddingLeft: '15%',
               paddingRight: '15%',
+              marginBottom: '4rem'
             }}
           >
             {/* Trait + + */}
