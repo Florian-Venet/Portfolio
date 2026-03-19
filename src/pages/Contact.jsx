@@ -1,6 +1,17 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
+  useEffect(() => {
+    const handler = () => setIsMobile(window.innerWidth < 768)
+    window.addEventListener('resize', handler)
+    return () => window.removeEventListener('resize', handler)
+  }, [])
+  return isMobile
+}
 
 export default function Contact() {
+  const isMobile = useIsMobile()
   const [formData, setFormData] = useState({ prenom: '', nom: '', email: '', message: '' })
   const [errors, setErrors] = useState({})
   const [submitted, setSubmitted] = useState(false)
@@ -46,18 +57,17 @@ export default function Contact() {
     <div
       style={{
         minHeight: '100vh',
-        backgroundImage: "url('contact.jpg')",
+        backgroundImage: "url('/contact.jpg')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundAttachment: 'fixed',
+        backgroundAttachment: isMobile ? 'scroll' : 'fixed',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '8rem 15% 4rem',
+        padding: isMobile ? '6rem 6% 3rem' : '8rem 15% 4rem',
       }}
     >
-      {/* Overlay */}
       <div style={{ position: 'fixed', inset: 0, backgroundColor: 'rgba(0,0,0,0.10)', zIndex: 0 }} />
 
       <div style={{ position: 'relative', zIndex: 1, width: '100%', maxWidth: '580px' }}>
@@ -67,10 +77,10 @@ export default function Contact() {
           className="text-white uppercase text-center"
           style={{
             fontFamily: 'Bebas Neue, sans-serif',
-            fontSize: '3.1rem',
+            fontSize: isMobile ? '2.5rem' : '3.1rem',
             letterSpacing: '0.02em',
             lineHeight: 1,
-            marginBottom: '1rem',
+            marginBottom: '0.6rem',
           }}
         >
           DISCUTONS.
@@ -81,9 +91,9 @@ export default function Contact() {
           className="text-white text-center"
           style={{
             fontFamily: 'Montserrat, sans-serif',
-            fontSize: '0.rem',
+            fontSize: isMobile ? '0.75rem' : '0.85rem',
             letterSpacing: '0.05em',
-            marginBottom: '3rem',
+            marginBottom: isMobile ? '3rem' : '3rem',
             lineHeight: 1.7,
           }}
         >
@@ -97,21 +107,20 @@ export default function Contact() {
               fontFamily: 'Montserrat, sans-serif',
               fontSize: '0.9rem',
               padding: '3rem',
-              border: '1px solid rgba(255,255,255,0.2)',
               letterSpacing: '0.05em',
             }}
           >
             Message envoyé. Nous vous répondrons rapidement.
           </div>
         ) : (
-          <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
+          <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: isMobile ? '0.8rem' : '1.2rem' }}>
 
-            {/* Prénom + Nom côte à côte */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+            {/* Prénom + Nom */}
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.8rem' }}>
               <div>
                 <label
                   className="text-white/90"
-                  style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.7rem', letterSpacing: '0.15em', display: 'block', marginBottom: '0.5rem' }}
+                  style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.65rem', letterSpacing: '0.15em', display: 'block', marginBottom: '0.3rem' }}
                 >
                   PRÉNOM *
                 </label>
@@ -123,8 +132,8 @@ export default function Contact() {
                   style={{
                     width: '100%',
                     backgroundColor: 'rgba(255,255,255,0.1)',
-                    border: errors.prenom ? '1px solid #e07050' : '1px solid rgba(255,255,255,0.15)',
-                    padding: '0.75rem 1rem',
+                    border: errors.prenom ? '1px solid #df3f34' : '1px solid rgba(255,255,255,0.15)',
+                    padding: isMobile ? '0.5rem 0.75rem' : '0.75rem 1rem',
                     color: 'white',
                     fontFamily: 'Montserrat, sans-serif',
                     fontSize: '0.85rem',
@@ -133,7 +142,7 @@ export default function Contact() {
                   placeholder="Votre prénom"
                 />
                 {errors.prenom && (
-                  <span style={{ color: '#e07050', fontFamily: 'Montserrat, sans-serif', fontSize: '0.7rem', marginTop: '0.3rem', display: 'block' }}>
+                  <span style={{ color: '#df3f34', fontFamily: 'Montserrat, sans-serif', fontSize: '0.65rem', marginTop: '0.2rem', display: 'block' }}>
                     {errors.prenom}
                   </span>
                 )}
@@ -142,7 +151,7 @@ export default function Contact() {
               <div>
                 <label
                   className="text-white/90"
-                  style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.7rem', letterSpacing: '0.15em', display: 'block', marginBottom: '0.5rem' }}
+                  style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.65rem', letterSpacing: '0.15em', display: 'block', marginBottom: '0.3rem' }}
                 >
                   NOM *
                 </label>
@@ -154,8 +163,8 @@ export default function Contact() {
                   style={{
                     width: '100%',
                     backgroundColor: 'rgba(255,255,255,0.1)',
-                    border: errors.nom ? '1px solid #e07050' : '1px solid rgba(255,255,255,0.15)',
-                    padding: '0.75rem 1rem',
+                    border: errors.nom ? '1px solid #df3f34' : '1px solid rgba(255,255,255,0.15)',
+                    padding: isMobile ? '0.5rem 0.75rem' : '0.75rem 1rem',
                     color: 'white',
                     fontFamily: 'Montserrat, sans-serif',
                     fontSize: '0.85rem',
@@ -164,7 +173,7 @@ export default function Contact() {
                   placeholder="Votre nom"
                 />
                 {errors.nom && (
-                  <span style={{ color: '#e07050', fontFamily: 'Montserrat, sans-serif', fontSize: '0.7rem', marginTop: '0.3rem', display: 'block' }}>
+                  <span style={{ color: '#df3f34', fontFamily: 'Montserrat, sans-serif', fontSize: '0.65rem', marginTop: '0.2rem', display: 'block' }}>
                     {errors.nom}
                   </span>
                 )}
@@ -175,7 +184,7 @@ export default function Contact() {
             <div>
               <label
                 className="text-white/90"
-                style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.7rem', letterSpacing: '0.15em', display: 'block', marginBottom: '0.5rem' }}
+                style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.65rem', letterSpacing: '0.15em', display: 'block', marginBottom: '0.3rem' }}
               >
                 EMAIL *
               </label>
@@ -187,8 +196,8 @@ export default function Contact() {
                 style={{
                   width: '100%',
                   backgroundColor: 'rgba(255,255,255,0.1)',
-                  border: errors.email ? '1px solid #e07050' : '1px solid rgba(255,255,255,0.15)',
-                  padding: '0.75rem 1rem',
+                  border: errors.email ? '1px solid #df3f34' : '1px solid rgba(255,255,255,0.15)',
+                  padding: isMobile ? '0.5rem 0.75rem' : '0.75rem 1rem',
                   color: 'white',
                   fontFamily: 'Montserrat, sans-serif',
                   fontSize: '0.85rem',
@@ -197,7 +206,7 @@ export default function Contact() {
                 placeholder="votre@email.com"
               />
               {errors.email && (
-                <span style={{ color: '#e07050', fontFamily: 'Montserrat, sans-serif', fontSize: '0.7rem', marginTop: '0.3rem', display: 'block' }}>
+                <span style={{ color: '#df3f34', fontFamily: 'Montserrat, sans-serif', fontSize: '0.65rem', marginTop: '0.2rem', display: 'block' }}>
                   {errors.email}
                 </span>
               )}
@@ -207,7 +216,7 @@ export default function Contact() {
             <div>
               <label
                 className="text-white/90"
-                style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.7rem', letterSpacing: '0.15em', display: 'block', marginBottom: '0.5rem' }}
+                style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.65rem', letterSpacing: '0.15em', display: 'block', marginBottom: '0.3rem' }}
               >
                 MESSAGE *
               </label>
@@ -215,12 +224,12 @@ export default function Contact() {
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                rows={5}
+                rows={isMobile ? 4 : 5}
                 style={{
                   width: '100%',
                   backgroundColor: 'rgba(255,255,255,0.1)',
-                  border: errors.message ? '1px solid #e07050' : '1px solid rgba(255,255,255,0.15)',
-                  padding: '0.75rem 1rem',
+                  border: errors.message ? '1px solid #df3f34' : '1px solid rgba(255,255,255,0.15)',
+                  padding: isMobile ? '0.5rem 0.75rem' : '0.75rem 1rem',
                   color: 'white',
                   fontFamily: 'Montserrat, sans-serif',
                   fontSize: '0.85rem',
@@ -230,7 +239,7 @@ export default function Contact() {
                 placeholder="Décrivez votre projet..."
               />
               {errors.message && (
-                <span style={{ color: '#e07050', fontFamily: 'Montserrat, sans-serif', fontSize: '0.7rem', marginTop: '0.3rem', display: 'block' }}>
+                <span style={{ color: '#df3f34', fontFamily: 'Montserrat, sans-serif', fontSize: '0.65rem', marginTop: '0.2rem', display: 'block' }}>
                   {errors.message}
                 </span>
               )}
@@ -245,9 +254,10 @@ export default function Contact() {
                 fontFamily: 'Montserrat, sans-serif',
                 fontSize: '0.8rem',
                 background: 'none',
-                padding: '1rem',
+                border: 'none',
+                padding: isMobile ? '0.5rem' : '1rem',
                 cursor: 'pointer',
-                marginTop: '0.5rem',
+                marginTop: '0.3rem',
                 letterSpacing: '0.25em',
               }}
             >
