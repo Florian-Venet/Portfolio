@@ -34,7 +34,7 @@ const GALERIE_MEDIA = [
   { id: 'g2',  type: 'image', src: '/atacama.jpg',  alt: 'Photo 2' },
   
   { id: 'g3',  type: 'image', src: '/finca.jpg',   alt: 'Photo 3' },
-  { id: 'g1',  type: 'image', src: '/portfolio.jpg',   alt: 'Photo 1' },
+  { id: 'g1',  type: 'image', cloudinaryId: 'compressed_portfolio_n6vmgu' ,   alt: 'Photo 1' },
   { id: 'g4',  type: 'video', src: '/colibri.mp4', label: 'Vidéo 1' },
   
   { id: 'g6',  type: 'image', src: '/jaja.jpg',  alt: 'Photo 5' },
