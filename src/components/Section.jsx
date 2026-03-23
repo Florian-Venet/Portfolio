@@ -1,14 +1,19 @@
-export default function Section({ id, label, image, title, cta }) {
+export default function Section({ id, label, cloudinaryId, image, title, cta }) {
+  const bgImage = cloudinaryId
+    ? `https://res.cloudinary.com/di0mcchgn/image/upload/f_auto,q_auto/${cloudinaryId}`
+    : image
+
   return (
     <section
       id={id}
       className="relative w-full h-screen flex flex-col"
       style={{
-        backgroundImage: `url(${image})`,
+        backgroundImage: `url(${bgImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
     >
+      {/* reste du composant inchangé */}
       <div className="absolute inset-0 bg-black/19" />
 
       <div className="relative z-10 flex flex-col items-center" style={{ paddingTop: '1cm' }}>

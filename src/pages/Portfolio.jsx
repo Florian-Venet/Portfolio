@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import Gallery from '../components/Gallery' 
+
 
 function useIsMobile() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
@@ -12,36 +14,50 @@ function useIsMobile() {
 }
 
 const COLLABORATIONS = [
-  { id: 'arewa', title: 'AREWA BIOHABITAT', location: 'Colombie, 2026', image: '/services.png' },
-  { id: 'finca', title: 'FINCA CARPE DIEM', location: 'Colombie, 2026', image: '/finca.jpg' },
-  { id: 'jaja', title: 'JAJA TOUR', location: 'Bolivie, 2025', image: '/jaja.jpg' },
+  { id: 'arewa', title: 'AREWA BIOHABITAT', location: 'Colombie, 2026', cloudinaryId: 'compressed_DJI_0001_ajt5wy' },
+  { id: 'finca', title: 'FINCA CARPE DIEM', location: 'Colombie, 2026', cloudinaryId: 'DSC08492_web_tdkjh6' },
+  { id: 'jaja',  title: 'JAJA TOUR',        location: 'Bolivie, 2025',  cloudinaryId: 'DSC08566_web_oba8s6' },
 ]
 
 const HISTOIRES = [
-  { id: 'cordillere', title: 'CORDILLÈRE ROYALE', location: 'Bolivie, 2025', image: '/cordillere.jpg' },
-  { id: 'desert', title: "DÉSERT D'ATACAMA", location: 'Chili, 2025', image: '/atacama.jpg' },
-  { id: 'amerique', title: 'AMÉRIQUE DU SUD', location: 'Amérique du sud, 2025', image: '/amerique.jpg' },
+  { id: 'cordillere', title: 'CORDILLÈRE ROYALE', location: 'Bolivie, 2025',        image: '/cordillere.jpg' },
+  { id: 'desert',     title: "DÉSERT D'ATACAMA",  location: 'Chili, 2025',           image: '/atacama.jpg' },
+  { id: 'amerique',   title: 'AMÉRIQUE DU SUD',   location: 'Amérique du sud, 2025', image: '/amerique.jpg' },
 ]
 
-const GALERIE = [
-  { id: 'g1', title: '', location: '', image: '/portfolio.jpg' },
-  { id: 'g2', title: '', location: '', image: '/services.png' },
-  { id: 'g3', title: '', location: '', image: '/portfolio.jpg' },
-  { id: 'g4', title: '', location: '', image: '/services.png' },
-  { id: 'g5', title: '', location: '', image: '/portfolio.jpg' },
-  { id: 'g6', title: '', location: '', image: '/services.png' },
+// ── Médias de la galerie ──────────────────────────────────────────────────────
+// Remplacez ces entrées par vos vraies images / vidéos.
+// Chaque item requiert : type, src, aspect (largeur/hauteur), alt ou label.
+const GALERIE_MEDIA = [
+  
+
+  { id: 'g2',  type: 'image', src: '/atacama.jpg',  alt: 'Photo 2' },
+  
+  { id: 'g3',  type: 'image', src: '/finca.jpg',   alt: 'Photo 3' },
+  { id: 'g1',  type: 'image', src: '/portfolio.jpg',   alt: 'Photo 1' },
+  { id: 'g4',  type: 'video', src: '/colibri.mp4', label: 'Vidéo 1' },
+  
+  { id: 'g6',  type: 'image', src: '/jaja.jpg',  alt: 'Photo 5' },
+
+      { id: 'g7',  type: 'image', src: '/vic.jpg',  label: 'Vidéo 2', size:'medium' },
+
+  { id: 'g8',  type: 'video', src: '/jaja_toucan.mp4',  label: 'Vidéo 3' },
+   { id: 'g9',  type: 'image', cloudinaryId: 'P1120445_bysdt5', alt: 'Photo 6' },
 ]
 
 const CATEGORIES = [
-  { num: '01', label: 'COLLABORATIONS', anchor: 'collaborations' },
+  { num: '01', label: 'COLLABORATIONS',     anchor: 'collaborations' },
   { num: '02', label: "HISTOIRES D'AILLEURS", anchor: 'histoires' },
-  { num: '03', label: 'GALERIE', anchor: 'galerie' },
+  { num: '03', label: 'GALERIE',            anchor: 'galerie' },
 ]
 
-const ProjectCard = ({ id, title, location, image, isMobile }) => {
+// ─── Carte projet ─────────────────────────────────────────────────────────────
+
+const ProjectCard = ({ id, title, location, image,cloudinaryId, isMobile }) => {
   const [hovered, setHovered] = useState(false)
   const navigate = useNavigate()
   const handleClick = () => navigate(`/projet/${id}`)
+  
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -54,23 +70,19 @@ const ProjectCard = ({ id, title, location, image, isMobile }) => {
       >
         <div
           style={{
-            position: 'absolute',
-            inset: 0,
-            backgroundImage: `url(${image})`,
+            position: 'absolute', inset: 0,
+            backgroundImage: `url(${image || `https://res.cloudinary.com/di0mcchgn/image/upload/f_auto,q_auto/${cloudinaryId}`})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
         />
         <div
           style={{
-            position: 'absolute',
-            inset: 0,
+            position: 'absolute', inset: 0,
             backgroundColor: 'rgba(0,0,0,0.5)',
             opacity: hovered ? 1 : 0,
             transition: 'opacity 0.3s ease',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
           }}
         >
           <span
@@ -112,16 +124,16 @@ const ProjectCard = ({ id, title, location, image, isMobile }) => {
   )
 }
 
-const SectionGrid = ({ id, num, title, description, items, paddingTop = '4rem', isMobile }) => (
-  <section id={id} style={{ paddingTop, backgroundColor: '#141414' }}>
+// ─── En-tête de section (séparateur + titre + description) ────────────────────
 
+const SectionHeader = ({ num, title, description, isMobile }) => (
+  <>
+    {/* Séparateur */}
     <div
       style={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
+        display: 'flex', flexDirection: 'column', alignItems: 'center',
         marginBottom: '2rem',
-        paddingLeft: isMobile ? '6%' : '15%',
+        paddingLeft:  isMobile ? '6%' : '15%',
         paddingRight: isMobile ? '6%' : '15%',
       }}
     >
@@ -132,13 +144,14 @@ const SectionGrid = ({ id, num, title, description, items, paddingTop = '4rem', 
       </div>
     </div>
 
+    {/* Titre + description */}
     <div
       style={{
         display: 'flex',
         flexDirection: isMobile ? 'column' : 'row',
         alignItems: isMobile ? 'flex-start' : 'center',
         justifyContent: 'space-between',
-        paddingLeft: isMobile ? '6%' : '15%',
+        paddingLeft:  isMobile ? '6%' : '15%',
         paddingRight: isMobile ? '6%' : '15%',
         marginBottom: '2rem',
         gap: isMobile ? '0.5rem' : '0',
@@ -155,13 +168,20 @@ const SectionGrid = ({ id, num, title, description, items, paddingTop = '4rem', 
         {description}
       </p>
     </div>
+  </>
+)
 
+// ─── Sections 01 & 02 (grille de ProjectCard) ────────────────────────────────
+
+const SectionGrid = ({ id, num, title, description, items, paddingTop = '4rem', isMobile }) => (
+  <section id={id} style={{ paddingTop, backgroundColor: '#141414' }}>
+    <SectionHeader num={num} title={title} description={description} isMobile={isMobile} />
     <div
       style={{
         display: 'grid',
         gridTemplateColumns: isMobile ? '1fr' : 'repeat(2, 1fr)',
         gap: '1.5rem',
-        paddingLeft: isMobile ? '6%' : '15%',
+        paddingLeft:  isMobile ? '6%' : '15%',
         paddingRight: isMobile ? '6%' : '15%',
         paddingBottom: '4rem',
       }}
@@ -170,9 +190,37 @@ const SectionGrid = ({ id, num, title, description, items, paddingTop = '4rem', 
         <ProjectCard key={item.id} {...item} isMobile={isMobile} />
       ))}
     </div>
-
   </section>
 )
+
+// ─── Section 03 — Galerie (MasonryGallery) ────────────────────────────────────
+// MasonryGallery gère son propre fond (#0e0e0e) et son padding interne.
+// On surcharge ici uniquement le fond pour rester cohérent avec le reste de la page.
+
+const SectionGalerie = ({ isMobile }) => (
+  <section id="galerie" style={{ paddingTop: '0', backgroundColor: '#141414' }}>
+    <div style={{ paddingTop: '0' }}>
+      <SectionHeader
+        num="03"
+        title="GALERIE"
+        description="Un condensé de nos plus belles photos."
+        isMobile={isMobile}
+      />
+    </div>
+
+    <div
+      style={{
+        paddingLeft:  isMobile ? '6%' : '15%',
+        paddingRight: isMobile ? '6%' : '15%',
+        paddingBottom: '4rem',
+      }}
+    >
+      <Gallery items={GALERIE_MEDIA} />
+    </div>
+  </section>
+)
+
+// ─── Page Portfolio ───────────────────────────────────────────────────────────
 
 export default function Portfolio() {
   const isMobile = useIsMobile()
@@ -194,7 +242,7 @@ export default function Portfolio() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: "url('/portfolio.jpg')",
+            backgroundImage: "url('https://res.cloudinary.com/di0mcchgn/image/upload/f_auto,q_auto/compressed_portfolio_n6vmgu')",
             backgroundSize: 'cover',
             backgroundPosition: 'center 80%',
             backgroundAttachment: isMobile ? 'scroll' : 'fixed',
@@ -202,72 +250,47 @@ export default function Portfolio() {
         />
         <div className="absolute inset-0 bg-black/40" />
 
-        {/* Titre */}
-        <div
-          className="relative z-10"
-          style={{
-            paddingLeft: isMobile ? '6%' : '15%',
-            paddingTop: isMobile ? '5rem' : '0',
-          }}
-        >
-          {!isMobile && (
+        {/* Titre desktop */}
+        {!isMobile && (
+          <div
+            className="relative z-10"
+            style={{ paddingLeft: '15%' }}
+          >
             <div style={{ display: 'flex', alignItems: 'center', height: '75vh' }}>
               <h1
                 className="text-white uppercase"
-                style={{
-                  fontFamily: 'Bebas Neue, sans-serif',
-                  fontSize: '4.2rem',
-                  letterSpacing: '0.02em',
-                  lineHeight: 1.1,
-                }}
+                style={{ fontFamily: 'Bebas Neue, sans-serif', fontSize: '4.2rem', letterSpacing: '0.02em', lineHeight: 1.1 }}
               >
                 DÉCOUVREZ<br />NOTRE UNIVERS.
               </h1>
             </div>
-          )}
-          {isMobile && (
+          </div>
+        )}
+
+        {/* Titre mobile */}
+        {isMobile && (
+          <div className="relative z-10" style={{ paddingLeft: '6%' }}>
             <h1
               className="text-white uppercase"
-              style={{
-                fontFamily: 'Bebas Neue, sans-serif',
-                fontSize: '3rem',
-                letterSpacing: '0.02em',
-                lineHeight: 1.1,
-                marginTop: '11.5rem',
-
-              }}
+              style={{ fontFamily: 'Bebas Neue, sans-serif', fontSize: '3rem', letterSpacing: '0.02em', lineHeight: 1.1, marginTop: '11.5rem' }}
             >
               DÉCOUVREZ<br />NOTRE UNIVERS.
             </h1>
-          )}
-        </div>
+          </div>
+        )}
 
-        {/* Sommaire mobile en bas */}
+        {/* Sommaire mobile */}
         {isMobile && (
           <div
             className="relative z-10"
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'flex-start',
-              gap: '0.8rem',
-              paddingLeft: '6%',
-              paddingBottom: '2.5rem',
-              marginTop: '3rem',
-
-            }}
+            style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '0.8rem', paddingLeft: '6%', paddingBottom: '2.5rem', marginTop: '3rem' }}
           >
             {CATEGORIES.map(({ num, label, anchor }) => (
               <a
                 key={num}
                 href={`#${anchor}`}
                 className="flex items-center text-white hover:text-orange-400 transition-colors duration-200"
-                style={{
-                  fontFamily: 'Montserrat, sans-serif',
-                  fontSize: '0.8rem',
-                  letterSpacing: '0.2em',
-                  gap: '1.5rem',
-                }}
+                style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.8rem', letterSpacing: '0.2em', gap: '1.5rem' }}
               >
                 <span style={{ color: 'rgba(255,255,255,0.5)', minWidth: '1.5rem' }}>{num}</span>
                 <span>{label}</span>
@@ -276,7 +299,7 @@ export default function Portfolio() {
           </div>
         )}
 
-        {/* Sommaire desktop à droite */}
+        {/* Sommaire desktop */}
         {!isMobile && (
           <div
             className="absolute right-0 top-0 h-full z-10 flex flex-col justify-center items-end"
@@ -287,13 +310,7 @@ export default function Portfolio() {
                 key={num}
                 href={`#${anchor}`}
                 className="flex items-center text-white hover:text-orange-400 transition-colors duration-200"
-                style={{
-                  fontFamily: 'Montserrat, sans-serif',
-                  fontSize: '1rem',
-                  letterSpacing: '0.2em',
-                  gap: '4rem',
-                  marginBottom: '1.5rem',
-                }}
+                style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '1rem', letterSpacing: '0.2em', gap: '4rem', marginBottom: '1.5rem' }}
               >
                 <span style={{ color: 'rgba(255,255,255,0.5)', minWidth: '2rem', textAlign: 'right' }}>{num}</span>
                 <span style={{ minWidth: '260px', textAlign: 'right' }}>{label}</span>
@@ -303,6 +320,7 @@ export default function Portfolio() {
         )}
       </section>
 
+      {/* 01 — Collaborations */}
       <SectionGrid
         id="collaborations"
         num="01"
@@ -313,6 +331,7 @@ export default function Portfolio() {
         isMobile={isMobile}
       />
 
+      {/* 02 — Histoires d'ailleurs */}
       <SectionGrid
         id="histoires"
         num="02"
@@ -323,15 +342,8 @@ export default function Portfolio() {
         isMobile={isMobile}
       />
 
-      <SectionGrid
-        id="galerie"
-        num="03"
-        title="GALERIE"
-        description="Un condensé de nos plus belles photos."
-        items={GALERIE}
-        paddingTop="0rem"
-        isMobile={isMobile}
-      />
+      {/* 03 — Galerie (MasonryGallery) */}
+      <SectionGalerie isMobile={isMobile} />
 
     </div>
   )

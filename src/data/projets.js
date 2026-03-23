@@ -8,15 +8,20 @@ export const PROJETS = {
 Notre mission a consisté à retranscrire l'essence du lieu à travers une production visuelle complète : photographie d'intérieur HDR et extérieure, captations drone et caméra, ainsi que storytelling vidéo.
 
 Les contenus réalisés accompagnent aujourd'hui le développement digital du projet, en alimentant ses plateformes de réservation, ses réseaux sociaux et ses supports de communication.`,
-    videoYoutube: 'REMPLACE_PAR_TON_ID_YOUTUBE',
+    videoYoutube: '8v99zbPl2N4',
     galerie: [
-      { type: 'photo', src: '/services.png' },
-      { type: 'photo', src: '/portfolio.jpg' },
-      { type: 'photo', src: '/services.png' },
-      { type: 'photo', src: '/portfolio.jpg' },
-      { type: 'photo', src: '/services.png' },
-      { type: 'photo', src: '/portfolio.jpg' },
-    ],
+  { id: 'a1',  type: 'image', cloudinaryId: 'compressed_DSC03361_kylakl', alt: 'Arewa 1' },
+  { id: 'a3',  type: 'image', cloudinaryId: 'compressed_DSC03092_zjxoxk', alt: 'Arewa 3' },
+  { id: 'a4',  type: 'image', cloudinaryId: 'compressed_DSC03080_hjhd4j', alt: 'Arewa 4' },
+  { id: 'a6',  type: 'video', src: '/colibri.mp4', label: 'Vidéo 2' },
+  { id: 'a5',  type: 'image', cloudinaryId: 'compressed_DSC03054_inlfe8', alt: 'Arewa 5' },
+  
+  { id: 'a7',  type: 'image', cloudinaryId: 'compressed_DSC03049_mxcuwv', alt: 'Arewa 7' },
+  { id: 'a8',  type: 'image', cloudinaryId: 'compressed_DSC02972_asfaaf', alt: 'Arewa 8' },
+  { id: 'a9',  type: 'image', cloudinaryId: 'compressed_DSC02949_gv0lrd', alt: 'Arewa 9' },
+  { id: 'a10', type: 'image', cloudinaryId: 'compressed_DSC02923_fok7kf', alt: 'Arewa 10' },
+  { id: 'a11',  type: 'video', src: '/arewa_pool.mp4', label: 'Vidéo 1' },
+],
   },
 
   finca: {
@@ -30,12 +35,12 @@ Nous avons capturé l'ensemble du lieu à travers une production visuelle compl�
 Le pack photo et vidéo, ainsi que les deux vidéos de présentation permettent aux visiteurs de découvrir Finca Carpe Diem avant leur séjour et de vivre l'essence du lieu à distance.`,
     videoYoutube: 'REMPLACE_PAR_TON_ID_YOUTUBE',
     galerie: [
-      { type: 'photo', src: '/finca.jpg' },
-      { type: 'photo', src: '/portfolio.jpg' },
-      { type: 'photo', src: '/finca.jpg' },
-      { type: 'photo', src: '/portfolio.jpg' },
-      { type: 'photo', src: '/finca.jpg' },
-      { type: 'photo', src: '/portfolio.jpg' },
+      { id: 'f1', type: 'image', src: '/finca.jpg',  alt: 'Finca 1' },
+      { id: 'f2', type: 'image', src: '/portfolio.jpg',  alt: 'Finca 2' },
+      { id: 'f3', type: 'image', src: '/finca.jpg',    alt: 'Finca 3' },
+      { id: 'f4', type: 'image', src: '/portfolio.jpg', alt: 'Finca 4' },
+      { id: 'f5', type: 'image', src: '/finca.jpg',  alt: 'Finca 5' },
+      { id: 'f6', type: 'image', src: '/portfolio.jpg',  alt: 'Finca 6' },
     ],
   },
 
@@ -48,14 +53,14 @@ Le pack photo et vidéo, ainsi que les deux vidéos de présentation permettent 
 Nous avons réalisé une production complète alliant photographie de voyage, captation drone en haute altitude et storytelling vidéo. Chaque contenu a été pensé pour transmettre l'émotion et l'authenticité des aventures proposées par Jaja Tour.
 
 Les visuels produits sont aujourd'hui utilisés sur l'ensemble des supports de communication de l'agence, renforçant son identité visuelle et son rayonnement sur les marchés internationaux.`,
-    videoYoutube: 'REMPLACE_PAR_TON_ID_YOUTUBE',
+    videoYoutube: 'wMx1RjKXiIM',
     galerie: [
-      { type: 'photo', src: '/jaja.jpg' },
-      { type: 'photo', src: '/portfolio.jpg' },
-      { type: 'photo', src: '/jaja.jpg' },
-      { type: 'photo', src: '/portfolio.jpg' },
-      { type: 'photo', src: '/jaja.jpg' },
-      { type: 'photo', src: '/portfolio.jpg' },
+      { id: 'j1', type: 'image', cloudinaryId: 'DSC08492_web_tdkjh6',  alt: 'Jaja 1' },
+      { id: 'j2', type: 'image', cloudinaryId: 'DSC08513_web_o6owz7',  alt: 'Jaja 2' },
+      { id: 'j3', type: 'image', cloudinaryId: 'DSC08508_web_hcn4mr',    alt: 'Jaja 3' },
+      { id: 'j4', type: 'video', src: '/jaja_bateau.mp4', label: 'Bateau' },
+            { id: 'j5', type: 'image', cloudinaryId: 'DSC08568-2_web_fknxfd', alt: 'Jaja 4' },
+
     ],
   },
 
@@ -70,12 +75,12 @@ Les visuels produits sont aujourd'hui utilisés sur l'ensemble des supports de c
 Ces expéditions ont donné naissance à une série de contenus visuels époustouflants, témoignant de la beauté sauvage et de la grandeur des sommets andins boliviens.`,
     videoYoutube: 'REMPLACE_PAR_TON_ID_YOUTUBE',
     galerie: [
-      { type: 'photo', src: '/cordillere.jpg' },
-      { type: 'photo', src: '/portfolio.jpg' },
-      { type: 'photo', src: '/cordillere.jpg' },
-      { type: 'photo', src: '/portfolio.jpg' },
-      { type: 'photo', src: '/cordillere.jpg' },
-      { type: 'photo', src: '/portfolio.jpg' },
+      { id: 'c1', type: 'image', src: '/cordillere.jpg', alt: 'Cordillère 1' },
+      { id: 'c2', type: 'image', src: '/portfolio.jpg',  alt: 'Cordillère 2' },
+      { id: 'c3', type: 'image', src: '/cordillere.jpg',  alt: 'Cordillère 3' },
+      { id: 'c4', type: 'image', src: '/portfolio.jpg',    alt: 'Cordillère 4' },
+      { id: 'c5', type: 'image', src: '/cordillere.jpg', alt: 'Cordillère 5' },
+      { id: 'c6', type: 'image', src: '/portfolio.jpg',  alt: 'Cordillère 6' },
     ],
   },
 
@@ -90,12 +95,12 @@ Nous avons parcouru les paysages lunaires de l'Atacama armés de drones et de ca
 Ce projet personnel témoigne de notre passion pour la photographie de paysage et notre capacité à travailler dans des conditions extrêmes pour ramener des images uniques.`,
     videoYoutube: 'REMPLACE_PAR_TON_ID_YOUTUBE',
     galerie: [
-      { type: 'photo', src: '/atacama.jpg' },
-      { type: 'photo', src: '/portfolio.jpg' },
-      { type: 'photo', src: '/atacama.jpg' },
-      { type: 'photo', src: '/portfolio.jpg' },
-      { type: 'photo', src: '/atacama.jpg' },
-      { type: 'photo', src: '/portfolio.jpg' },
+      { id: 'd1', type: 'image', src: '/atacama.jpg', alt: 'Atacama 1' },
+      { id: 'd2', type: 'image', src: '/portfolio.jpg',  alt: 'Atacama 2' },
+      { id: 'd3', type: 'image', src: '/atacama.jpg',  alt: 'Atacama 3' },
+      { id: 'd4', type: 'image', src: '/portfolio.jpg',    alt: 'Atacama 4' },
+      { id: 'd5', type: 'image', src: '/atacama.jpg', alt: 'Atacama 5' },
+      { id: 'd6', type: 'image', src: '/portfolio.jpg',  alt: 'Atacama 6' },
     ],
   },
 
@@ -110,12 +115,12 @@ Pendant plus d'un an, nous avons documenté des paysages extraordinaires, des cu
 Ce portfolio de voyage illustre toute l'étendue de notre savoir-faire : photographie documentaire, paysage, portrait, drone et vidéo — le tout tissé dans une narration visuelle cohérente et immersive.`,
     videoYoutube: 'REMPLACE_PAR_TON_ID_YOUTUBE',
     galerie: [
-      { type: 'photo', src: '/amerique.jpg' },
-      { type: 'photo', src: '/portfolio.jpg' },
-      { type: 'photo', src: '/amerique.jpg' },
-      { type: 'photo', src: '/portfolio.jpg' },
-      { type: 'photo', src: '/amerique.jpg' },
-      { type: 'photo', src: '/portfolio.jpg' },
+      { id: 'm1', type: 'image', src: '/amerique.jpg', alt: 'Amérique 1' },
+      { id: 'm2', type: 'image', src: '/portfolio.jpg',  alt: 'Amérique 2' },
+      { id: 'm3', type: 'image', src: '/amerique.jpg',  alt: 'Amérique 3' },
+      { id: 'm4', type: 'image', src: '/portfolio.jpg',    alt: 'Amérique 4' },
+      { id: 'm5', type: 'image', src: '/amerique.jpg', alt: 'Amérique 5' },
+      { id: 'm6', type: 'image', src: '/portfolio.jpg',  alt: 'Amérique 6' },
     ],
   },
 }

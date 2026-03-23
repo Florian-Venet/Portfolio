@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom'
 import { PROJETS } from '../data/projets'
 import { useState, useEffect } from 'react'
+import Gallery from '../components/Gallery' 
 
 function useIsMobile() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
@@ -30,7 +31,7 @@ export default function Projet() {
     <div style={{ backgroundColor: '#141414', minHeight: '100vh' }}>
 
       {/* Bouton retour */}
-      <div style={{ position: 'fixed', top: '5rem', left: '5%', zIndex: 10 }}>
+      <div style={{ position: 'fixed', top: '5rem', left: '5%', zIndex: 100 }}>
         <button
           onClick={() => navigate('/portfolio')}
           className="text-white hover:text-orange-400 transition-colors duration-200 tracking-widest"
@@ -95,40 +96,15 @@ export default function Projet() {
         </div>
       </section>
 
-      {/* Galerie */}
+      {/* Galerie — même padding que les autres sections */}
       <section
         style={{
-          paddingLeft: isMobile ? '6%' : '15%',
+          paddingLeft:  isMobile ? '6%' : '15%',
           paddingRight: isMobile ? '6%' : '15%',
           paddingBottom: '3rem',
         }}
       >
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)',
-            gap: '0.5rem',
-          }}
-        >
-          {projet.galerie.map((item, i) => (
-            <div
-              key={i}
-              style={{
-                height: isMobile ? '220px' : '280px',
-                backgroundImage: item.type === 'photo' ? `url(${item.src})` : undefined,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundColor: item.type === 'video' ? '#000' : undefined,
-              }}
-            >
-              {item.type === 'video' && (
-                <video autoPlay loop muted playsInline style={{ width: '100%', height: '100%', objectFit: 'cover' }}>
-                  <source src={item.src} type="video/mp4" />
-                </video>
-              )}
-            </div>
-          ))}
-        </div>
+        <Gallery items={projet.galerie} />
       </section>
 
       {/* Bouton retour portfolio */}
