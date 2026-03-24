@@ -10,17 +10,29 @@ Notre mission a consisté à retranscrire l'essence du lieu à travers une produ
 Les contenus réalisés accompagnent aujourd'hui le développement digital du projet, en alimentant ses plateformes de réservation, ses réseaux sociaux et ses supports de communication.`,
     videoYoutube: '8v99zbPl2N4',
     galerie: [
-  { id: 'a1',  type: 'image', cloudinaryId: 'compressed_DSC03361_kylakl', alt: 'Arewa 1' },
-  { id: 'a3',  type: 'image', cloudinaryId: 'compressed_DSC03092_zjxoxk', alt: 'Arewa 3' },
-  { id: 'a4',  type: 'image', cloudinaryId: 'compressed_DSC03080_hjhd4j', alt: 'Arewa 4' },
-  { id: 'a6',  type: 'video', src: '/colibri.mp4', label: 'Vidéo 2' },
-  { id: 'a5',  type: 'image', cloudinaryId: 'compressed_DSC03054_inlfe8', alt: 'Arewa 5' },
+            { id: 'a12',  type: 'image', cloudinaryId: 'compressed_DSC02856_a3alsk', alt: 'Arewa 8', ratio:'3/2' },
+  { id: 'a13',  type: 'image', cloudinaryId: 'compressed_DJI_0995_t8vlal', alt: 'Arewa 8', ratio:'2/3' },
+
   
-  { id: 'a7',  type: 'image', cloudinaryId: 'compressed_DSC03049_mxcuwv', alt: 'Arewa 7' },
-  { id: 'a8',  type: 'image', cloudinaryId: 'compressed_DSC02972_asfaaf', alt: 'Arewa 8' },
-  { id: 'a9',  type: 'image', cloudinaryId: 'compressed_DSC02949_gv0lrd', alt: 'Arewa 9' },
-  { id: 'a10', type: 'image', cloudinaryId: 'compressed_DSC02923_fok7kf', alt: 'Arewa 10' },
-  { id: 'a11',  type: 'video', src: '/arewa_pool.mp4', label: 'Vidéo 1' },
+  { id: 'a2',  type: 'image', cloudinaryId: 'compressed_DSC03092_zjxoxk', alt: 'Arewa 3', ratio:'2/3' },
+  { id: 'a3',  type: 'image', cloudinaryId: 'compressed_DSC03080_hjhd4j', alt: 'Arewa 4', ratio:'3/2' },
+  { id: 'a4',  type: 'video', src: '/colibri.mp4', label: 'Vidéo 2', ratio:'16/9' },
+  { id: 'a5',  type: 'image', cloudinaryId: 'compressed_DSC03054_inlfe8', alt: 'Arewa 5', ratio:'2/3' },
+  
+    { id: 'a18',  type: 'image', cloudinaryId: 'compressed_DJI_0001_ajt5wy', alt: 'Arewa 8', ratio:'3/2' },
+
+  { id: 'a11',  type: 'video', src: '/arewa_pool.mp4', label: 'Vidéo 1' , ratio:'2/3'},
+    { id: 'a10', type: 'image', cloudinaryId: 'compressed_DSC02923_fok7kf', alt: 'Arewa 10', ratio:'3/2' },
+
+  { id: 'a17',  type: 'image', cloudinaryId: 'compressed_DJI_0987_sr0ih6', alt: 'Arewa 8', ratio:'3/2' },
+  { id: 'a15',  type: 'image', cloudinaryId: 'compressed_DSC02845_gz76oq', alt: 'Arewa 8', ratio:'3/2' },
+  { id: 'a1',  type: 'image', cloudinaryId: 'compressed_DSC03361_kylakl', alt: 'Arewa 1', ratio:'2/3' },
+
+  { id: 'a14',  type: 'image', cloudinaryId: 'compressed_DSC02831_lmo0nc', alt: 'Arewa 8', ratio:'2/3' },
+  { id: 'a16',  type: 'image', cloudinaryId: 'compressed_DSC02755_crnz09', alt: 'Arewa 8', ratio:'2/3' },
+  { id: 'a7',  type: 'image', cloudinaryId: 'compressed_DSC02972_asfaaf', alt: 'Arewa 8', ratio:'3/2' },
+
+
 ],
   },
 
@@ -55,11 +67,12 @@ Nous avons réalisé une production complète alliant photographie de voyage, ca
 Les visuels produits sont aujourd'hui utilisés sur l'ensemble des supports de communication de l'agence, renforçant son identité visuelle et son rayonnement sur les marchés internationaux.`,
     videoYoutube: 'wMx1RjKXiIM',
     galerie: [
-      { id: 'j1', type: 'image', cloudinaryId: 'DSC08492_web_tdkjh6',  alt: 'Jaja 1' },
-      { id: 'j2', type: 'image', cloudinaryId: 'DSC08513_web_o6owz7',  alt: 'Jaja 2' },
-      { id: 'j3', type: 'image', cloudinaryId: 'DSC08508_web_hcn4mr',    alt: 'Jaja 3' },
-      { id: 'j4', type: 'video', src: '/jaja_bateau.mp4', label: 'Bateau' },
-            { id: 'j5', type: 'image', cloudinaryId: 'DSC08568-2_web_fknxfd', alt: 'Jaja 4' },
+      { id: 'j1', type: 'image', cloudinaryId: 'DSC08492_web_tdkjh6',  alt: 'Jaja 1', ratio:'3/2' },
+      { id: 'j2', type: 'image', cloudinaryId: 'DSC08513_web_o6owz7',  alt: 'Jaja 2', ratio:'2/3' },
+      { id: 'j3', type: 'image', cloudinaryId: 'DSC08568-2_web_fknxfd', alt: 'Jaja 4', ratio:'2/3' },
+      { id: 'j4', type: 'image', cloudinaryId: 'DSC08508_web_hcn4mr',    alt: 'Jaja 3', ratio:'3/2' },
+      { id: 'j5', type: 'video', src: '/jaja_bateau.mp4', label: 'Bateau' , ratio:'16/9'},
+            
 
     ],
   },

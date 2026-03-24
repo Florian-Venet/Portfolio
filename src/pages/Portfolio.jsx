@@ -29,20 +29,14 @@ const HISTOIRES = [
 // Remplacez ces entrées par vos vraies images / vidéos.
 // Chaque item requiert : type, src, aspect (largeur/hauteur), alt ou label.
 const GALERIE_MEDIA = [
-  
-
-  { id: 'g2',  type: 'image', src: '/atacama.jpg',  alt: 'Photo 2' },
-  
-  { id: 'g3',  type: 'image', src: '/finca.jpg',   alt: 'Photo 3' },
-  { id: 'g1',  type: 'image', cloudinaryId: 'compressed_portfolio_n6vmgu' ,   alt: 'Photo 1' },
-  { id: 'g4',  type: 'video', src: '/colibri.mp4', label: 'Vidéo 1' },
-  
-  { id: 'g6',  type: 'image', src: '/jaja.jpg',  alt: 'Photo 5' },
-
-      { id: 'g7',  type: 'image', src: '/vic.jpg',  label: 'Vidéo 2', size:'medium' },
-
-  { id: 'g8',  type: 'video', src: '/jaja_toucan.mp4',  label: 'Vidéo 3' },
-   { id: 'g9',  type: 'image', cloudinaryId: 'P1120445_bysdt5', alt: 'Photo 6' },
+  { id: 'g2', type: 'image', src: '/atacama.jpg',                          alt: 'Photo 2', ratio: '3/2' },
+  { id: 'g3', type: 'image', src: '/finca.jpg',                            alt: 'Photo 3', ratio: '16/9' },
+  { id: 'g1', type: 'image', cloudinaryId: 'compressed_portfolio_n6vmgu',  alt: 'Photo 1', ratio: '3/2' },
+  { id: 'g4', type: 'video', src: '/colibri.mp4',                          label: 'Vidéo 1', ratio: '3/2' },
+  { id: 'g6', type: 'image', src: '/jaja.jpg',                             alt: 'Photo 5', ratio: '3/2' },
+  { id: 'g7', type: 'image', src: '/vic.jpg',                              label: 'Photo 7', ratio: '2/3' },
+  { id: 'g8', type: 'video', src: '/jaja_toucan.mp4',                      label: 'Vidéo 3', ratio: '16/9' },
+  { id: 'g9', type: 'image', cloudinaryId: 'P1120445_bysdt5',              alt: 'Photo 6', ratio: '3/2' },
 ]
 
 const CATEGORIES = [

@@ -1,4 +1,7 @@
+import { useNavigate } from 'react-router-dom'
+
 export default function Section({ id, label, cloudinaryId, image, title, cta }) {
+  const navigate = useNavigate()
   const bgImage = cloudinaryId
     ? `https://res.cloudinary.com/di0mcchgn/image/upload/f_auto,q_auto/${cloudinaryId}`
     : image
@@ -51,13 +54,15 @@ export default function Section({ id, label, cloudinaryId, image, title, cta }) 
           {title}
         </h2>
 
-        <a
-          href={`#${id}`}
+        
+
+        <button
+          onClick={() => navigate(`/${id}`)}
           className="text-white text-sm tracking-widest transition-colors duration-200 hover:text-orange-400"
           style={{ fontFamily: 'Montserrat, sans-serif' }}
         >
           [ {cta} ]
-        </a>
+        </button>
       </div>
     </section>
   )
