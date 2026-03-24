@@ -57,7 +57,7 @@ const ProjectCard = ({ id, title, location, image,cloudinaryId, isMobile }) => {
     <div style={{ display: 'flex', flexDirection: 'column' }}>
       <div
         className="w-full relative cursor-pointer"
-        style={{ height: isMobile ? '280px' : '450px' }}
+        style={{ aspectRatio: '5/4' }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         onClick={handleClick}
