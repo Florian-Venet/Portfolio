@@ -9,9 +9,7 @@ export default function Footer() {
         paddingRight: '15%',
       }}
     >
-      {/* Trait */}
-      <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', marginBottom: '2.5rem' }} />
-
+      
       {/* Contenu principal */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '2.5rem' }}>
 
