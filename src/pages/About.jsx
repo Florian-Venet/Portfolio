@@ -214,66 +214,6 @@ export default function About() {
         </div>
       </div>
 
-      {/* Section contact */}
-      <div
-        style={{
-          position: 'sticky',
-          top: 0,
-          zIndex: 10,
-          backgroundImage: "url('/contact.jpg')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center 65%',
-          backgroundAttachment: isMobile ? 'scroll' : 'fixed',
-          minHeight: '60vh',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          textAlign: 'center',
-          padding: isMobile ? '4rem 6%' : '4rem 15%',
-        }}
-      >
-        <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(0,0,0,0.2)' }} />
-        <div style={{ position: 'relative', zIndex: 1 }}>
-          <h2
-            className="text-white uppercase"
-            style={{
-              fontFamily: 'Bebas Neue, sans-serif',
-              fontSize: isMobile ? '2.5rem' : '3.5rem',
-              letterSpacing: '0.02em',
-              marginBottom: '1rem',
-            }}
-          >
-            DISCUTONS.
-          </h2>
-          <p
-            className="text-white"
-            style={{
-              fontFamily: 'Montserrat, sans-serif',
-              fontSize: isMobile ? '0.85rem' : '1rem',
-              lineHeight: 1.8,
-              marginBottom: '2.5rem',
-            }}
-          >
-            Chaque projet est unique. Contactez-nous et imaginons des images à la hauteur de votre vision.
-          </p>
-          <button
-            onClick={() => navigate('/contact')}
-            className="text-white hover:text-orange-400 transition-colors duration-200 tracking-widest"
-            style={{
-              fontFamily: 'Montserrat, sans-serif',
-              fontSize: '0.8rem',
-              background: 'none',
-              border: 'none',
-              cursor: 'pointer',
-              letterSpacing: '0.25em',
-            }}
-          >
-            [ NOUS CONTACTER ]
-          </button>
-        </div>
-      </div>
-
     </div>
   )
 }
