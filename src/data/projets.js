@@ -3,7 +3,7 @@ export const PROJETS = {
     id: 'arewa',
     titre: 'Arewá Biohabitat',
     sousTitre: 'Pijao · Colombie · Janvier 2026',
-    description: `Niché au cœur de la région colombienne du café, Arewá Biohabitat est un éco-lodge d'exception alliant architecture moderne et immersion totale dans une nature luxuriante.\n\nPour cet établissement, nous avons réalisé une vidéo cinématique capturant l'essence unique du lieu, ainsi qu'une production visuelle complète, livrant un pack de contenus retouchés et prêts à l'emploi.\n\nCes visuels accompagnent aujourd'hui le développement digital d'Arewá : site de réservation, réseaux sociaux et supports de communication.`,
+    description: `Niché au cœur de la région colombienne du café, Arewá Biohabitat est un éco-lodge d'exception alliant architecture moderne et immersion totale dans une nature luxuriante.\n\nNous avons réalisé une vidéo cinématique capturant l'essence unique du lieu, ainsi qu'une production visuelle complète, livrant un pack de contenus retouchés et prêts à l'emploi.\n\nCes visuels accompagnent aujourd'hui le développement digital d'Arewá : site de réservation, réseaux sociaux et supports de communication.`,
     videoYoutube: '8v99zbPl2N4',
     galerie: [
   { id: 'a1',  type: 'image', cloudinaryId: 'compressed_DSC02856_a3alsk', alt: 'Arewa 8', ratio:'3/2' },
@@ -74,11 +74,9 @@ Ces contenus alimentent aujourd'hui leurs réseaux sociaux et leurs campagnes de
     id: 'cordillere',
     titre: 'Cordillère Royale',
     sousTitre: 'Bolivie · Novembre 2025',
-    description: `Au cœur de la Cordillère Royale bolivienne, nous avons mené plusieurs expéditions en haute altitude — Piccostria (5 200 m), Glacier Ventanani (5 100 m) et Huayna Potosí (6 088 m).
+    description: `La Cordillère Royale, en Bolivie, abrite parmis les plus beaux sommets de la planètes.\n\nNous avons au la chance d'y mener plusieurs expéditions : Piccostria (5 200 m), Glacier Ventanani (5 100 m) et Huayna Potosí (6 088 m).
 
-À chaque sommet, nous avons capté des images par drones et caméras, mettant en valeur les paysages vertigineux et la lumière unique de ces environnements d'altitude.
-
-Ces expéditions ont donné naissance à une série de contenus visuels époustouflants, témoignant de la beauté sauvage et de la grandeur des sommets andins boliviens.`,
+Ces expéditions ont donné naissance à une série de contenus visuels, témoignant de la beauté sauvage et de la grandeur des sommets andins boliviens.`,
     videoYoutube: 'REMPLACE_PAR_TON_ID_YOUTUBE',
     galerie: [
       { id: 'c1', type: 'image', cloudinaryId: 'DSC08484_puv6hp',    alt: 'Finca 5', ratio: '3/2' },
@@ -120,7 +118,7 @@ amerique: {
   id: 'amerique',
   titre: 'Amérique du Sud',
   sousTitre: 'Amérique du Sud · 2025 — 2026',
-  description: `Un voyage de plusieurs mois à travers le continent sud-américain, du Guatemala au Chili en passant par la Colombie, le Brésil, la Bolivie et l'Argentine.\n\nNous avons documenté des paysages extraordinaires, des cultures vivantes et des rencontres mémorables.\n\nCe projet regroupe les meilleurs moments visuels d'une aventure humaine et photographique hors du commun.`,
+  description: `Du Guatemala à la Patagonie, ce projet personnel retrace plusieurs mois d'exploration visuelle à travers l'Amérique du Sud, entre paysages vertigineux, cultures vivantes et rencontres humaines au fil de la route.\n\nArmés de notre drone et caméras, nous avons documenté chaque territoire avec la même exigence que pour nos collaborations : capter la lumière, l'atmosphère et l'instant juste.`,
 
 
     videoYoutube: 'REMPLACE_PAR_TON_ID_YOUTUBE',
