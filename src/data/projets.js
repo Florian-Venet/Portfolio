@@ -3,11 +3,7 @@ export const PROJETS = {
     id: 'arewa',
     titre: 'Arewá Biohabitat',
     sousTitre: 'Pijao · Colombie · Janvier 2026',
-    description: `Nichée au cœur des paysages luxuriants de la région du café en Colombie, Arewá Biohabitat s'inscrit comme une parenthèse immersive entre architecture contemporaine et nature préservée.
-
-Notre mission a consisté à retranscrire l'essence du lieu à travers une production visuelle complète : photographie d'intérieur HDR et extérieure, captations drone et caméra, ainsi que storytelling vidéo.
-
-Les contenus réalisés accompagnent aujourd'hui le développement digital du projet, en alimentant ses plateformes de réservation, ses réseaux sociaux et ses supports de communication.`,
+    description: `Niché au cœur de la région colombienne du café, Arewá Biohabitat est un éco-lodge d'exception alliant architecture moderne et immersion totale dans une nature luxuriante.\n\nPour cet établissement, nous avons réalisé une vidéo cinématique capturant l'essence unique du lieu, ainsi qu'une production visuelle complète, livrant un pack de contenus retouchés et prêts à l'emploi.\n\nCes visuels accompagnent aujourd'hui le développement digital d'Arewá : site de réservation, réseaux sociaux et supports de communication.`,
     videoYoutube: '8v99zbPl2N4',
     galerie: [
   { id: 'a1',  type: 'image', cloudinaryId: 'compressed_DSC02856_a3alsk', alt: 'Arewa 8', ratio:'3/2' },
@@ -37,11 +33,11 @@ Les contenus réalisés accompagnent aujourd'hui le développement digital du pr
     id: 'finca',
     titre: 'Finca Carpe Diem',
     sousTitre: 'Minca · Colombie · Janvier 2026',
-    description: `Perché dans les montagnes verdoyantes de Minca, Finca Carpe Diem combine confort, authenticité et immersion au cœur de la nature colombienne, offrant une expérience complète entre hébergement, gastronomie et activités locales.
+    description: `Au coeur des montagnes verdoyantes de Minca, Finca Carpe Diem est un écolodge alliant confort et immersion totale dans la nature colombienne, offrant une expérience complète entre hébergement, gastronomie et activités locales.
 
-Nous avons capturé l'ensemble du lieu à travers une production visuelle complète : photographie d'intérieur et extérieur, prise de vue caméra, captation aérienne par drone et storytelling vidéo. Chaque image et séquence révèlent les volumes, les textures et l'atmosphère unique du site.
+Nous avons réalisé deux vidéos cinématiques de présentation ainsi qu'un pack complet de photos et vidéos prêts à publier.
 
-Le pack photo et vidéo, ainsi que les deux vidéos de présentation permettent aux visiteurs de découvrir Finca Carpe Diem avant leur séjour et de vivre l'essence du lieu à distance.`,
+Ces contenus alimentent aujourd'hui leurs réseaux sociaux et leurs campagnes de communication.`,
     videoYoutube: 'REMPLACE_PAR_TON_ID_YOUTUBE',
     galerie: [
       { id: 'f1', type: 'image', cloudinaryId: 'compressed_DSC01319_g3ophu',  alt: 'Finca 1', ratio: '3/2' },
@@ -61,11 +57,7 @@ Le pack photo et vidéo, ainsi que les deux vidéos de présentation permettent 
     id: 'jaja',
     titre: 'Jaja Tour',
     sousTitre: 'Rue Renabac · Bolivie · 2025',
-    description: `Jaja Tour est une agence de voyage locale bolivienne proposant des expériences authentiques au cœur des paysages andins. Notre collaboration visait à mettre en lumière la richesse culturelle et naturelle de leurs circuits.
-
-Nous avons réalisé une production complète alliant photographie de voyage, captation drone en haute altitude et storytelling vidéo. Chaque contenu a été pensé pour transmettre l'émotion et l'authenticité des aventures proposées par Jaja Tour.
-
-Les visuels produits sont aujourd'hui utilisés sur l'ensemble des supports de communication de l'agence, renforçant son identité visuelle et son rayonnement sur les marchés internationaux.`,
+    description: `Jaja Tour est une agence bolivienne proposant des expéditions authentiques au cœur de la forêt Amazonienne.\n\nNous avons réalisé une vidéo montée alliant captation drone et caméra, pensée pour transmettre la densité, la vie et la magie de la forêt amazonienne.`,
     videoYoutube: 'wMx1RjKXiIM',
     galerie: [
       { id: 'j1', type: 'image', cloudinaryId: 'DSC08492_web_tdkjh6',  alt: 'Jaja 1', ratio:'3/2' },
