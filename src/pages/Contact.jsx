@@ -67,12 +67,12 @@ export default function Contact() {
         alignItems: 'center',
         justifyContent: 'center',
         padding: isMobile ? '6rem 6% 3rem' : '8rem 15% 4rem',
+        position: 'relative',
       }}
     >
       <div style={{ position: 'fixed', inset: 0, backgroundColor: 'rgba(0,0,0,0.10)', zIndex: 0 }} />
 
       <div style={{ position: 'relative', zIndex: 1, width: '100%', maxWidth: '580px' }}>
-
         {/* Titre */}
         <h1
           className="text-white uppercase text-center"
@@ -115,16 +115,10 @@ export default function Contact() {
           </div>
         ) : (
           <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: isMobile ? '0.8rem' : '1.2rem' }}>
-
             {/* Prénom + Nom */}
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.8rem' }}>
               <div>
-                <label
-                  className="text-white/90"
-                  style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.65rem', letterSpacing: '0.15em', display: 'block', marginBottom: '0.3rem' }}
-                >
-                  PRÉNOM *
-                </label>
+                <label className="text-white/90" style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.65rem', letterSpacing: '0.15em', display: 'block', marginBottom: '0.3rem' }}>PRÉNOM *</label>
                 <input
                   type="text"
                   name="prenom"
@@ -142,20 +136,11 @@ export default function Contact() {
                   }}
                   placeholder="Votre prénom"
                 />
-                {errors.prenom && (
-                  <span style={{ color: '#df3f34', fontFamily: 'Montserrat, sans-serif', fontSize: '0.65rem', marginTop: '0.2rem', display: 'block' }}>
-                    {errors.prenom}
-                  </span>
-                )}
+                {errors.prenom && <span style={{ color: '#df3f34', fontFamily: 'Montserrat, sans-serif', fontSize: '0.65rem', marginTop: '0.2rem', display: 'block' }}>{errors.prenom}</span>}
               </div>
 
               <div>
-                <label
-                  className="text-white/90"
-                  style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.65rem', letterSpacing: '0.15em', display: 'block', marginBottom: '0.3rem' }}
-                >
-                  NOM *
-                </label>
+                <label className="text-white/90" style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.65rem', letterSpacing: '0.15em', display: 'block', marginBottom: '0.3rem' }}>NOM *</label>
                 <input
                   type="text"
                   name="nom"
@@ -173,22 +158,13 @@ export default function Contact() {
                   }}
                   placeholder="Votre nom"
                 />
-                {errors.nom && (
-                  <span style={{ color: '#df3f34', fontFamily: 'Montserrat, sans-serif', fontSize: '0.65rem', marginTop: '0.2rem', display: 'block' }}>
-                    {errors.nom}
-                  </span>
-                )}
+                {errors.nom && <span style={{ color: '#df3f34', fontFamily: 'Montserrat, sans-serif', fontSize: '0.65rem', marginTop: '0.2rem', display: 'block' }}>{errors.nom}</span>}
               </div>
             </div>
 
             {/* Email */}
             <div>
-              <label
-                className="text-white/90"
-                style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.65rem', letterSpacing: '0.15em', display: 'block', marginBottom: '0.3rem' }}
-              >
-                EMAIL *
-              </label>
+              <label className="text-white/90" style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.65rem', letterSpacing: '0.15em', display: 'block', marginBottom: '0.3rem' }}>EMAIL *</label>
               <input
                 type="email"
                 name="email"
@@ -206,21 +182,12 @@ export default function Contact() {
                 }}
                 placeholder="votre@email.com"
               />
-              {errors.email && (
-                <span style={{ color: '#df3f34', fontFamily: 'Montserrat, sans-serif', fontSize: '0.65rem', marginTop: '0.2rem', display: 'block' }}>
-                  {errors.email}
-                </span>
-              )}
+              {errors.email && <span style={{ color: '#df3f34', fontFamily: 'Montserrat, sans-serif', fontSize: '0.65rem', marginTop: '0.2rem', display: 'block' }}>{errors.email}</span>}
             </div>
 
             {/* Message */}
             <div>
-              <label
-                className="text-white/90"
-                style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.65rem', letterSpacing: '0.15em', display: 'block', marginBottom: '0.3rem' }}
-              >
-                MESSAGE *
-              </label>
+              <label className="text-white/90" style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.65rem', letterSpacing: '0.15em', display: 'block', marginBottom: '0.3rem' }}>MESSAGE *</label>
               <textarea
                 name="message"
                 value={formData.message}
@@ -239,11 +206,7 @@ export default function Contact() {
                 }}
                 placeholder="Décrivez votre projet..."
               />
-              {errors.message && (
-                <span style={{ color: '#df3f34', fontFamily: 'Montserrat, sans-serif', fontSize: '0.65rem', marginTop: '0.2rem', display: 'block' }}>
-                  {errors.message}
-                </span>
-              )}
+              {errors.message && <span style={{ color: '#df3f34', fontFamily: 'Montserrat, sans-serif', fontSize: '0.65rem', marginTop: '0.2rem', display: 'block' }}>{errors.message}</span>}
             </div>
 
             {/* Bouton */}
@@ -264,9 +227,46 @@ export default function Contact() {
             >
               {sending ? 'ENVOI EN COURS...' : '[ ENVOYER ]'}
             </button>
-
           </form>
         )}
+
+
+        </div> {/* fin du container maxWidth: 580px */}
+
+        <div
+          style={{
+            position: 'absolute', // reste relatif à la div parent principale
+            right: isMobile ? '6%' : '3.75rem', // aligné comme le menu du header
+            bottom: isMobile ? '2rem' : '3rem',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'flex-end',
+            zIndex: 1,
+          }}
+        >
+          <p
+            className="text-white/80"
+            style={{
+              fontFamily: 'Montserrat, sans-serif',
+              fontSize: isMobile ? '0.65rem' : '0.8rem',
+              letterSpacing: '0.1em',
+              marginBottom: '0.6rem',
+              textAlign: 'right',
+              lineHeight: 1.4,
+            }}
+          >
+            Vous préférez nous contacter <br />
+            sur WhatsApp ?
+          </p>
+
+          <a href="https://wa.me/33649226181" target="_blank" rel="noreferrer">
+            <img
+              src="/wtp3.png"
+              alt="WhatsApp"
+              style={{ width: '36px', height: '36px', cursor: 'pointer' }}
+            />
+          </a>
+        
       </div>
     </div>
   )

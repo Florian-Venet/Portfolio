@@ -108,11 +108,7 @@ Ces expéditions ont donné naissance à une série de contenus visuels épousto
     id: 'desert',
     titre: "Désert d'Atacama",
     sousTitre: 'Atacama · Chili · Décembre 2025',
-    description: `Le désert d'Atacama, l'un des endroits les plus arides et envoûtants de la planète, nous a offert un terrain de jeu visuel exceptionnel. Entre geysers, lagunes colorées et étendues de sel à perte de vue, chaque plan raconte une histoire.
-
-Nous avons parcouru les paysages lunaires de l'Atacama armés de drones et de caméras, capturant la lumière rasante du désert à l'aube et au crépuscule pour des résultats saisissants.
-
-Ce projet personnel témoigne de notre passion pour la photographie de paysage et notre capacité à travailler dans des conditions extrêmes pour ramener des images uniques.`,
+    description: `Le désert d'Atacama, reconnu comme le désert le plus aride du monde, offre des paysages parmi les plus saisissants de la planète. Entre geysers, lagunes colorées, étendues de sel à perte de vue, chaque environnement révèle une atmosphère unique.\n\n À travers ce terrain de jeu visuel exceptionnel, nous avons cherché à capturer la beauté brute de ces lieux hors du commun.`,
     videoYoutube: 'REMPLACE_PAR_TON_ID_YOUTUBE',
     galerie: [
       { id: 'a1', type: 'image', cloudinaryId: 'compressed_DSC08924-2_ddarkg',  alt: 'Finca 1', ratio: '2/3' },
@@ -127,15 +123,13 @@ Ce projet personnel témoigne de notre passion pour la photographie de paysage e
     ],
   },
 
-  amerique: {
-    id: 'amerique',
-    titre: 'Amérique du Sud',
-    sousTitre: 'Amérique du Sud · 2025 — 2026',
-    description: `Un voyage au long cours à travers le continent sud-américain, de la Colombie au Chili en passant par la Bolivie et le Pérou. Ce projet regroupe les meilleurs moments visuels d'une aventure humaine et photographique hors du commun.
+amerique: {
+  id: 'amerique',
+  titre: 'Amérique du Sud',
+  sousTitre: 'Amérique du Sud · 2025 — 2026',
+  description: `Un voyage de plusieurs mois à travers le continent sud-américain, du Guatemala au Chili en passant par la Colombie, le Brésil, la Bolivie et l'Argentine.\n\nNous avons documenté des paysages extraordinaires, des cultures vivantes et des rencontres mémorables.\n\nCe projet regroupe les meilleurs moments visuels d'une aventure humaine et photographique hors du commun.`,
 
-Pendant plus d'un an, nous avons documenté des paysages extraordinaires, des cultures vivantes et des rencontres mémorables. Chaque image est le reflet d'un instant authentique, capturé avec soin et passion.
 
-Ce portfolio de voyage illustre toute l'étendue de notre savoir-faire : photographie documentaire, paysage, portrait, drone et vidéo — le tout tissé dans une narration visuelle cohérente et immersive.`,
     videoYoutube: 'REMPLACE_PAR_TON_ID_YOUTUBE',
     galerie: [
       { id: 'm1', type: 'image', src: '/amerique.jpg', alt: 'Amérique 1' },
