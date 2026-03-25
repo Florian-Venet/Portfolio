@@ -293,9 +293,9 @@ export default function Gallery({ items = [] }) {
       <div className="gallery-root" ref={containerRef}>
         {containerWidth > 0
           ? rows.map((row, ri) => {
-              const availableW   = containerWidth - GAP * (row.items.length - 1);
-              const isIncomplete = row.sumRatios < targetRatio * 0.98;
-              const scale        = isIncomplete ? rowHeight : availableW / row.sumRatios;
+              const availableW = containerWidth - GAP * (row.items.length - 1);
+              const isLastRow  = ri === rows.length - 1;
+              const scale      = isLastRow ? Math.min(rowHeight, availableW / row.sumRatios) : availableW / row.sumRatios;
               return (
                 <div key={ri} className="gallery-row">
                   {row.items.map((item) => (
