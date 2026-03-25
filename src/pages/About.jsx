@@ -167,7 +167,7 @@ export default function About() {
         <p style={{ marginTop: '1rem' }}>Spécialisée en portrait et paysage, elle mêle éléments naturels et narration humaine pour créer des images intemporelles.</p>
       </PersonSection>
 
-      <PersonSection name="FLORIAN" imgSrc="/florian.jpeg" isMobile={isMobile} zIndex={2}>
+      <PersonSection name="FLORIAN" imgSrc="/florian.png" isMobile={isMobile} zIndex={2}>
         <p>Derrière chaque image, il y a une intention. Mon travail consiste à révéler ce qui rend un lieu, une expérience ou une marque véritablement unique — et à le traduire en visuels qui font ressentir avant de faire voir.</p>
         <p style={{ marginTop: '1rem' }}>Photographe, vidéaste et pilote de drone, j'aborde chaque projet avec une vision d'ensemble : de la direction artistique à la post-production, chaque détail compte. Parce qu'une image bien faite, c'est une image qui reste.</p>
       </PersonSection>
