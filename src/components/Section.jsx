@@ -1,10 +1,10 @@
 import { useNavigate } from 'react-router-dom'
+import { cloudinaryUrl } from '../utils/cloudinary'
 
 export default function Section({ id, label, cloudinaryId, image, title, cta }) {
   const navigate = useNavigate()
-  const bgImage = cloudinaryId
-    ? `https://res.cloudinary.com/di0mcchgn/image/upload/f_auto,q_auto/${cloudinaryId}`
-    : image
+    const bgImage = cloudinaryId ? cloudinaryUrl(cloudinaryId) : image
+
 
   return (
     <section

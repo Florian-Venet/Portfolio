@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { cloudinaryUrl } from '../utils/cloudinary'
 
 function useIsMobile() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
@@ -57,7 +58,7 @@ export default function Contact() {
     <div
       style={{
         minHeight: '100vh',
-        backgroundImage: "url('/contact.jpg')",
+        backgroundImage: `url(${cloudinaryUrl('compressed_DJI_0001_ajt5wy')})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: isMobile ? 'scroll' : 'fixed',

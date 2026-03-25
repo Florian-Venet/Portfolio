@@ -1,7 +1,8 @@
 import { useParams, useNavigate } from 'react-router-dom'
+import { createPortal } from 'react-dom'
 import { PROJETS } from '../data/projets'
 import { useState, useEffect } from 'react'
-import Gallery from '../components/Gallery' 
+import Gallery from '../components/Gallery'
 
 function useIsMobile() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
@@ -30,16 +31,19 @@ export default function Projet() {
   return (
     <div style={{ backgroundColor: '#141414', minHeight: '100vh' }}>
 
-      {/* Bouton retour */}
-      <div style={{ position: 'fixed', top: '5rem', left: '5%', zIndex: 100 }}>
-        <button
-          onClick={() => navigate('/portfolio')}
-          className="text-white hover:text-orange-400 transition-colors duration-200 tracking-widest"
-          style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.75rem', background: 'none', border: 'none', cursor: 'pointer' }}
-        >
-          ← RETOUR
-        </button>
-      </div>
+      {/* Bouton retour — portal pour dépasser le stacking context de <main> */}
+      {createPortal(
+        <div style={{ position: 'fixed', top: '5rem', left: '5%', zIndex: 100 }}>
+          <button
+            onClick={() => navigate('/portfolio')}
+            className="text-white hover:text-orange-400 transition-colors duration-200 tracking-widest"
+            style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.75rem', background: 'none', border: 'none', cursor: 'pointer' }}
+          >
+            ← RETOUR
+          </button>
+        </div>,
+        document.body
+      )}
 
       {/* Section principale */}
       <section

@@ -1,4 +1,3 @@
-// src/lib/cloudinary.js
 import { Cloudinary } from "@cloudinary/url-gen";
 
 const cld = new Cloudinary({
@@ -6,5 +5,6 @@ const cld = new Cloudinary({
     cloudName: "di0mcchgn", // remplace ici
   },
 });
+
 
 export default cld;

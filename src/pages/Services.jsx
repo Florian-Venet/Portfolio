@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { cloudinaryUrl } from '../utils/cloudinary'
+
 
 function useIsMobile() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
@@ -65,9 +67,9 @@ export default function Services() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: "url('/service.png')",
+            backgroundImage:  `url(${cloudinaryUrl('compressed_DSC02845_gz76oq')})`,
             backgroundSize: 'cover',
-            backgroundPosition: 'center 100%',
+            backgroundPosition: 'center 125%',
             backgroundAttachment: isMobile ? 'scroll' : 'fixed',
           }}
         />

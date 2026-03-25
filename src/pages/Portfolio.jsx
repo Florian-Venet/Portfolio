@@ -15,13 +15,13 @@ function useIsMobile() {
 
 const COLLABORATIONS = [
   { id: 'arewa', title: 'AREWA BIOHABITAT', location: 'Colombie, 2026', cloudinaryId: 'compressed_DJI_0001_ajt5wy' },
-  { id: 'finca', title: 'FINCA CARPE DIEM', location: 'Colombie, 2026', cloudinaryId: 'DSC08492_web_tdkjh6' },
+  { id: 'finca', title: 'FINCA CARPE DIEM', location: 'Colombie, 2026', cloudinaryId: 'FincaPool_puntbe' },
   { id: 'jaja',  title: 'JAJA TOUR',        location: 'Bolivie, 2025',  cloudinaryId: 'DSC08566_web_oba8s6' },
 ]
 
 const HISTOIRES = [
-  { id: 'cordillere', title: 'CORDILLÈRE ROYALE', location: 'Bolivie, 2025',        image: '/cordillere.jpg' },
-  { id: 'desert',     title: "DÉSERT D'ATACAMA",  location: 'Chili, 2025',           image: '/atacama.jpg' },
+  { id: 'cordillere', title: 'CORDILLÈRE ROYALE', location: 'Bolivie, 2025',        cloudinaryId:'DSC08485_ml2nvb' },
+  { id: 'desert',     title: "DÉSERT D'ATACAMA",  location: 'Chili, 2025',           cloudinaryId: 'compressed_DSC08946_xvhgyx' },
   { id: 'amerique',   title: 'AMÉRIQUE DU SUD',   location: 'Amérique du sud, 2025', image: '/amerique.jpg' },
 ]
 
