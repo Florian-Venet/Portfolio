@@ -1,14 +1,11 @@
 import { useState, useRef, useEffect, useCallback, useMemo } from "react";
-import cld from "../lib/cloudinary";
-import { auto } from "@cloudinary/url-gen/actions/resize";
+import { createPortal } from "react-dom";
+import { cloudinaryUrl } from '../utils/cloudinary'
 
 const GAP            = 6;
-const ROW_HEIGHT     = 380;   // ← toutes les lignes font exactement cette hauteur
+const ROW_HEIGHT     = 380;
 const ROW_HEIGHT_MOB = 140;
 
-// ─── Helpers ──────────────────────────────────────────────────────────────────
-
-/** "2/3" → 0.667 | "16/9" → 1.777 | 1.5 → 1.5 */
 function parseRatio(r) {
   if (typeof r === "number") return r;
   if (typeof r === "string" && r.includes("/")) {
@@ -18,21 +15,11 @@ function parseRatio(r) {
   return parseFloat(r) || 1;
 }
 
-function getImageSrc(item, width = 1200) {
-  if (item.cloudinaryId) {
-    return cld.image(item.cloudinaryId).resize(auto().width(width)).toURL();
-  }
-  return item.src;
+function getImageSrc(item, width = null) {
+  if (item.cloudinaryId) return cloudinaryUrl(item.cloudinaryId, width)
+  return item.src
 }
 
-// ─── Layout ───────────────────────────────────────────────────────────────────
-
-/**
- * Greedy : compare l'écart avant/après ajout pour décider où couper.
- * Toutes les lignes sont ensuite rendues à exactement ROW_HEIGHT —
- * les largeurs sont recalculées pour remplir containerWidth,
- * et object-fit:cover gère le recadrage vertical si nécessaire.
- */
 function buildRows(items, targetRatio) {
   const rows    = [];
   let current   = [];
@@ -57,21 +44,18 @@ function buildRows(items, targetRatio) {
     }
 
     const nextSum    = sumRatios + r;
-    const overBefore = targetRatio - sumRatios; // manque si on coupe avant
-    const overAfter  = nextSum - targetRatio;   // excès si on coupe après
+    const overBefore = targetRatio - sumRatios;
+    const overAfter  = nextSum - targetRatio;
 
     if (overAfter <= 0) {
-      // Ça rentre parfaitement ou presque → on ajoute
       current.push(item);
       sumRatios = nextSum;
       if (sumRatios >= targetRatio) flush();
     } else if (overAfter < overBefore) {
-      // Moins d'écart en ajoutant → on ajoute puis on coupe
       current.push(item);
       sumRatios = nextSum;
       flush();
     } else {
-      // Moins d'écart en coupant avant → on coupe puis nouvelle ligne
       flush();
       current.push(item);
       sumRatios = r;
@@ -102,7 +86,7 @@ function MediaCard({ item, width, height, onClick }) {
   const [hovered, setHovered] = useState(false);
 
   useEffect(() => {
-    if (item.type !== "video" || !videoRef.current) return;
+    if (item.type !== "video" || item.vimeoId || !videoRef.current) return;
     const obs = new IntersectionObserver(
       ([e]) => {
         if (e.isIntersecting) videoRef.current?.play().catch(() => {});
@@ -112,14 +96,16 @@ function MediaCard({ item, width, height, onClick }) {
     );
     obs.observe(videoRef.current);
     return () => obs.disconnect();
-  }, [item.type]);
+  }, [item.type, item.vimeoId]);
+
+  const handleMouseEnter = useCallback(() => setHovered(true), []);
 
   return (
     <div
       className="card"
       style={{ width, height, flexShrink: 0, flexGrow: 0 }}
       onClick={() => onClick(item)}
-      onMouseEnter={() => setHovered(true)}
+      onMouseEnter={handleMouseEnter}
       onMouseLeave={() => setHovered(false)}
       role="button" tabIndex={0}
       onKeyDown={(e) => e.key === "Enter" && onClick(item)}
@@ -131,10 +117,27 @@ function MediaCard({ item, width, height, onClick }) {
         <img
           src={getImageSrc(item)}
           alt={item.alt}
-          //loading="lazy"
           onLoad={() => setLoaded(true)}
           style={{ opacity: loaded ? 1 : 0 }}
         />
+      ) : item.vimeoId ? (
+        <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
+          <iframe
+            src={`https://player.vimeo.com/video/${item.vimeoId}?background=1&loop=1&autoplay=1&muted=1`}
+            style={{
+              opacity: loaded ? 1 : 0,
+              border: 'none',
+              position: 'absolute',
+              top: '50%', left: '50%',
+              transform: 'translate(-50%, -50%)',
+              width: 'calc(100% + 200px)',
+              height: 'calc(100% + 200px)',
+              pointerEvents: 'none',
+            }}
+            allow="autoplay; fullscreen"
+            onLoad={() => setLoaded(true)}
+          />
+        </div>
       ) : (
         <video
           ref={videoRef}
@@ -152,11 +155,28 @@ function MediaCard({ item, width, height, onClick }) {
 
 // ─── Lightbox ─────────────────────────────────────────────────────────────────
 
-function Lightbox({ item, onClose, onPrev, onNext }) {
+function Lightbox({ item, items, onClose, onPrev, onNext }) {
   const videoRef = useRef(null);
+  const [imgLoaded, setImgLoaded] = useState(false);
+
+  useEffect(() => { setImgLoaded(false); }, [item?.id]);
+
+  // Précharge prev + next
+  useEffect(() => {
+    if (!item || !items) return;
+    const idx  = items.findIndex((i) => i.id === item.id);
+    const prev = items[(idx - 1 + items.length) % items.length];
+    const next = items[(idx + 1) % items.length];
+    [prev, next].forEach((neighbor) => {
+      if (neighbor?.type === "image") {
+        const img = new Image();
+        img.src = getImageSrc(neighbor, 1800);
+      }
+    });
+  }, [item, items]);
 
   useEffect(() => {
-    if (item?.type === "video") videoRef.current?.play().catch(() => {});
+    if (item?.type === "video" && !item.vimeoId) videoRef.current?.play().catch(() => {});
     const h = (e) => {
       if (e.key === "Escape")     onClose();
       if (e.key === "ArrowLeft")  onPrev();
@@ -166,19 +186,65 @@ function Lightbox({ item, onClose, onPrev, onNext }) {
     return () => window.removeEventListener("keydown", h);
   }, [item, onClose, onPrev, onNext]);
 
+  // Bloque le scroll + cache le header quand la lightbox est ouverte
+  useEffect(() => {
+    const header = document.querySelector("header");
+    if (item) {
+      document.body.style.overflow = "hidden";
+      if (header) header.style.display = "none";
+    } else {
+      document.body.style.overflow = "";
+      if (header) header.style.display = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+      if (header) header.style.display = "";
+    };
+  }, [item]);
+
   if (!item) return null;
 
-  return (
+  return createPortal(
     <div className="lightbox" onClick={onClose} role="dialog" aria-modal="true">
-      <button className="lb-close" onClick={onClose} aria-label="Fermer">✕</button>
+      {/* Bouton fermer dans le portal, z-index max */}
+      <button className="lb-close" onClick={(e) => { e.stopPropagation(); onClose(); }} aria-label="Fermer">✕</button>
       <button className="lb-nav lb-prev" onClick={(e) => { e.stopPropagation(); onPrev(); }}>‹</button>
       <button className="lb-nav lb-next" onClick={(e) => { e.stopPropagation(); onNext(); }}>›</button>
       <div className="lb-content" onClick={(e) => e.stopPropagation()}>
-        {item.type === "image"
-          ? <img src={getImageSrc(item, 2400)} alt={item.alt} />
-          : <video ref={videoRef} src={item.src} controls loop playsInline />}
+        {item.type === "image" ? (
+          <>
+            {!imgLoaded && (
+              <img
+                src={getImageSrc(item, 40)}
+                alt={item.alt}
+                style={{ filter: 'blur(20px)', transform: 'scale(1.05)', transition: 'none' }}
+              />
+            )}
+            <img
+              key={item.id}
+              src={getImageSrc(item, 1800)}
+              alt={item.alt}
+              onLoad={() => setImgLoaded(true)}
+              style={{
+                opacity: imgLoaded ? 1 : 0,
+                position: imgLoaded ? 'relative' : 'absolute',
+                transition: 'opacity 0.2s ease',
+              }}
+            />
+          </>
+        ) : item.vimeoId ? (
+          <iframe
+            src={`https://player.vimeo.com/video/${item.vimeoId}?autoplay=1&loop=1`}
+            style={{ border: 'none', width: '80vw', height: '45vw', maxHeight: '90vh' }}
+            allow="autoplay; fullscreen"
+            allowFullScreen
+          />
+        ) : (
+          <video ref={videoRef} src={item.src} controls loop playsInline />
+        )}
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
 
@@ -190,12 +256,18 @@ export default function Gallery({ items = [] }) {
   const isMobile       = containerWidth > 0 && containerWidth < 640;
 
   const enriched = useMemo(() =>
-    items.map((item) => ({
-      ...item,
-      _aspect: parseRatio(item.ratio),
-    })),
+    items.map((item) => ({ ...item, _aspect: parseRatio(item.ratio) })),
     [items]
   );
+
+  // Précharge toutes les images lightbox dès le montage
+  useEffect(() => {
+    enriched.forEach((item) => {
+      if (item.type !== "image") return;
+      const img = new Image();
+      img.src = getImageSrc(item, 1800);
+    });
+  }, [enriched]);
 
   const rowHeight   = isMobile ? ROW_HEIGHT_MOB : ROW_HEIGHT;
   const targetRatio = useMemo(() => {
@@ -221,11 +293,8 @@ export default function Gallery({ items = [] }) {
       <div className="gallery-root" ref={containerRef}>
         {containerWidth > 0
           ? rows.map((row, ri) => {
-              // Largeurs proportionnelles au ratio, étirées pour remplir containerWidth
               const availableW = containerWidth - GAP * (row.items.length - 1);
-              const scale      = availableW / row.sumRatios; // px par unité de ratio
-              // Toutes les lignes font exactement rowHeight — object-fit:cover recadre
-
+              const scale      = availableW / row.sumRatios;
               return (
                 <div key={ri} className="gallery-row">
                   {row.items.map((item) => (
@@ -246,6 +315,7 @@ export default function Gallery({ items = [] }) {
 
       <Lightbox
         item={lightboxIdx !== null ? enriched[lightboxIdx] : null}
+        items={enriched}
         onClose={close}
         onPrev={prev}
         onNext={next}
@@ -286,7 +356,7 @@ const CSS = `
   }
   .card:focus-visible { box-shadow: 0 0 0 2px var(--accent); }
 
-  .card img, .card video {
+  .card img, .card video, .card iframe {
     position: absolute;
     inset: 0; width: 100%; height: 100%;
     object-fit: cover;
@@ -317,24 +387,27 @@ const CSS = `
   }
   .overlay.visible { opacity: 1; }
 
+  /* ── Lightbox — z-index très élevé pour passer au-dessus du header ── */
   .lightbox {
     position: fixed; inset: 0;
     background: rgba(0,0,0,0.93);
     backdrop-filter: blur(12px);
-    z-index: 9999;
+    z-index: 51;           /* ← au-dessus de tout */
     display: flex; align-items: center; justify-content: center;
     animation: lbIn 0.2s ease;
   }
   @keyframes lbIn { from { opacity: 0; } to { opacity: 1; } }
 
   .lb-content {
+    position: relative;
+    z-index: 52;          /* ← au-dessus de la lightbox elle-même */
     max-width: 90vw; max-height: 90vh;
     display: flex; align-items: center; justify-content: center;
     animation: lbScale 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
   @keyframes lbScale { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 
-  .lb-content img, .lb-content video {
+  .lb-content img, .lb-content video, .lb-content iframe {
     max-width: 100%; max-height: 90vh;
     object-fit: contain; display: block;
   }
@@ -348,9 +421,9 @@ const CSS = `
     border-radius: 50%; cursor: pointer;
     display: flex; align-items: center; justify-content: center;
     transition: background 0.2s, color 0.2s, border-color 0.2s;
-    z-index: 10000;
+    z-index: 53;          /* ← au-dessus de tout le reste */
   }
-  .lb-close:hover { background: var(--accent); color: #000; border-color: var(--accent); }
+  .lb-close:hover { background: rgba(255,255,255,0.12); color: #fff; border-color: rgba(255,255,255,0.4); }
 
   .lb-nav {
     position: fixed; top: 50%; transform: translateY(-50%);
@@ -359,7 +432,9 @@ const CSS = `
     font-size: 2rem; width: 46px; height: 68px;
     cursor: pointer;
     display: flex; align-items: center; justify-content: center;
-    transition: background 0.2s; z-index: 10000; line-height: 1;
+    transition: background 0.2s;
+    z-index: 53;          /* ← même niveau que lb-close */
+    line-height: 1;
   }
   .lb-nav:hover { background: rgba(255,255,255,0.13); }
   .lb-prev { left: 12px;  border-radius: 0 4px 4px 0; }

@@ -10,31 +10,28 @@ Notre mission a consisté à retranscrire l'essence du lieu à travers une produ
 Les contenus réalisés accompagnent aujourd'hui le développement digital du projet, en alimentant ses plateformes de réservation, ses réseaux sociaux et ses supports de communication.`,
     videoYoutube: '8v99zbPl2N4',
     galerie: [
-            { id: 'a12',  type: 'image', cloudinaryId: 'compressed_DSC02856_a3alsk', alt: 'Arewa 8', ratio:'3/2' },
-  { id: 'a13',  type: 'image', cloudinaryId: 'compressed_DJI_0995_t8vlal', alt: 'Arewa 8', ratio:'2/3' },
-
-  
-  { id: 'a2',  type: 'image', cloudinaryId: 'compressed_DSC03092_zjxoxk', alt: 'Arewa 3', ratio:'2/3' },
-  { id: 'a3',  type: 'image', cloudinaryId: 'compressed_DSC03080_hjhd4j', alt: 'Arewa 4', ratio:'3/2' },
-  { id: 'a4',  type: 'video', src: '/colibri.mp4', label: 'Vidéo 2', ratio:'16/9' },
-  { id: 'a5',  type: 'image', cloudinaryId: 'compressed_DSC03054_inlfe8', alt: 'Arewa 5', ratio:'2/3' },
-  
-    { id: 'a18',  type: 'image', cloudinaryId: 'compressed_DJI_0001_ajt5wy', alt: 'Arewa 8', ratio:'3/2' },
-
-  { id: 'a11',  type: 'video', src: '/arewa_pool.mp4', label: 'Vidéo 1' , ratio:'2/3'},
-    { id: 'a10', type: 'image', cloudinaryId: 'compressed_DSC02923_fok7kf', alt: 'Arewa 10', ratio:'3/2' },
-
-  { id: 'a17',  type: 'image', cloudinaryId: 'compressed_DJI_0987_sr0ih6', alt: 'Arewa 8', ratio:'3/2' },
-  { id: 'a15',  type: 'image', cloudinaryId: 'compressed_DSC02845_gz76oq', alt: 'Arewa 8', ratio:'3/2' },
-  { id: 'a1',  type: 'image', cloudinaryId: 'compressed_DSC03361_kylakl', alt: 'Arewa 1', ratio:'2/3' },
-
-  { id: 'a14',  type: 'image', cloudinaryId: 'compressed_DSC02831_lmo0nc', alt: 'Arewa 8', ratio:'2/3' },
-  { id: 'a16',  type: 'image', cloudinaryId: 'compressed_DSC02755_crnz09', alt: 'Arewa 8', ratio:'2/3' },
-  { id: 'a7',  type: 'image', cloudinaryId: 'compressed_DSC02972_asfaaf', alt: 'Arewa 8', ratio:'3/2' },
-
-
+  { id: 'a1',  type: 'image', cloudinaryId: 'compressed_DSC02856_a3alsk', alt: 'Arewa 8', ratio:'3/2' },
+  { id: 'a2',  type: 'image', cloudinaryId: 'compressed_DJI_0995_t8vlal', alt: 'Arewa 8', ratio:'2/3' },
+  { id: 'a3',  type: 'image', cloudinaryId: 'compressed_DSC03092_zjxoxk', alt: 'Arewa 3', ratio:'2/3' },
+  { id: 'a4',  type: 'image', cloudinaryId: 'compressed_DSC03080_hjhd4j', alt: 'Arewa 4', ratio:'3/2' },
+  { id: 'a5',  type: 'video', vimeoId: '1177009622', label: 'Vidéo 2', ratio:'16/9' },
+  { id: 'a6',  type: 'image', cloudinaryId: 'compressed_DSC03054_inlfe8', alt: 'Arewa 5', ratio:'2/3' },
+  { id: 'a7',  type: 'image', cloudinaryId: 'compressed_DJI_0001_ajt5wy', alt: 'Arewa 8', ratio:'3/2' },
+  { id: 'a8',  type: 'video', vimeoId: '1177009595', label: 'Vidéo 1', ratio:'2/3' },
+  { id: 'a9',  type: 'image', cloudinaryId: 'compressed_DSC03106_wuscqr', alt: 'Arewa 8', ratio:'3/2' },
+  { id: 'a10', type: 'image', cloudinaryId: 'compressed_DJI_0987_sr0ih6', alt: 'Arewa 8', ratio:'3/2' },
+  { id: 'a11', type: 'image', cloudinaryId: 'compressed_DSC02845_gz76oq', alt: 'Arewa 8', ratio:'3/2' },
+  { id: 'a12', type: 'image', cloudinaryId: 'compressed_DSC03361_kylakl', alt: 'Arewa 1', ratio:'2/3' },
+  { id: 'a13', type: 'image', cloudinaryId: 'compressed_DSC02831_lmo0nc', alt: 'Arewa 8', ratio:'2/3' },
+  { id: 'a14', type: 'image', cloudinaryId: 'compressed_DSC02755_crnz09', alt: 'Arewa 8', ratio:'9/16' },
+  { id: 'a15', type: 'image', cloudinaryId: 'compressed_DSC02972_asfaaf', alt: 'Arewa 8', ratio:'3/2' },
+  { id: 'a16', type: 'image', cloudinaryId: 'compressed_DSC02949_gv0lrd', alt: 'Arewa 8', ratio:'2/3' },
+  { id: 'a17', type: 'image', cloudinaryId: 'compressed_DSC02773_rwmmes', alt: 'Arewa 8', ratio:'2/3' },
+  { id: 'a18', type: 'image', cloudinaryId: 'compressed_DSC02721_eutdkf', alt: 'Arewa 8', ratio:'3/2' },
+  { id: 'a19', type: 'image', cloudinaryId: 'compressed_DSC02923_fok7kf', alt: 'Arewa 10', ratio:'3/2' },
+  { id: 'a20', type: 'image', cloudinaryId: 'compressed_DSC03035_lvrqmg', alt: 'Arewa 8', ratio:'2/3' },
 ],
-  },
+    },
 
   finca: {
     id: 'finca',
@@ -47,12 +44,15 @@ Nous avons capturé l'ensemble du lieu à travers une production visuelle compl�
 Le pack photo et vidéo, ainsi que les deux vidéos de présentation permettent aux visiteurs de découvrir Finca Carpe Diem avant leur séjour et de vivre l'essence du lieu à distance.`,
     videoYoutube: 'REMPLACE_PAR_TON_ID_YOUTUBE',
     galerie: [
-      { id: 'f1', type: 'image', src: '/finca.jpg',  alt: 'Finca 1' },
-      { id: 'f2', type: 'image', src: '/portfolio.jpg',  alt: 'Finca 2' },
-      { id: 'f3', type: 'image', src: '/finca.jpg',    alt: 'Finca 3' },
-      { id: 'f4', type: 'image', src: '/portfolio.jpg', alt: 'Finca 4' },
-      { id: 'f5', type: 'image', src: '/finca.jpg',  alt: 'Finca 5' },
-      { id: 'f6', type: 'image', src: '/portfolio.jpg',  alt: 'Finca 6' },
+      { id: 'f1', type: 'image', cloudinaryId: 'compressed_DSC01319_g3ophu',  alt: 'Finca 1', ratio: '3/2' },
+      { id: 'f2', type: 'image', cloudinaryId: 'compressed_DSC00873_bbddj1',  alt: 'Finca 2', ratio: '3/2' },
+      { id: 'f3', type: 'image', cloudinaryId: 'compressed_DSC01093_qubp1q',    alt: 'Finca 5', ratio: '9/16' },
+      { id: 'f4', type: 'image', cloudinaryId: 'compressed_DSC00744_kqa0is', alt: 'Finca 4', ratio: '3/2' },
+      { id: 'f5', type: 'image', cloudinaryId: 'compressed_DSC00925_y6mdwx',    alt: 'Finca 5', ratio: '9/16' },
+      { id: 'f6', type: 'image', cloudinaryId: 'compressed_DSC00730_mmi4fd',    alt: 'Finca 3', ratio: '3/2' },
+      { id: 'f7', type: 'image', cloudinaryId: 'compressed_DSC00762_l2vjra',    alt: 'Finca 3', ratio: '3/2' },
+
+      
     ],
   },
 
@@ -88,12 +88,19 @@ Les visuels produits sont aujourd'hui utilisés sur l'ensemble des supports de c
 Ces expéditions ont donné naissance à une série de contenus visuels époustouflants, témoignant de la beauté sauvage et de la grandeur des sommets andins boliviens.`,
     videoYoutube: 'REMPLACE_PAR_TON_ID_YOUTUBE',
     galerie: [
-      { id: 'c1', type: 'image', src: '/cordillere.jpg', alt: 'Cordillère 1' },
-      { id: 'c2', type: 'image', src: '/portfolio.jpg',  alt: 'Cordillère 2' },
-      { id: 'c3', type: 'image', src: '/cordillere.jpg',  alt: 'Cordillère 3' },
-      { id: 'c4', type: 'image', src: '/portfolio.jpg',    alt: 'Cordillère 4' },
-      { id: 'c5', type: 'image', src: '/cordillere.jpg', alt: 'Cordillère 5' },
-      { id: 'c6', type: 'image', src: '/portfolio.jpg',  alt: 'Cordillère 6' },
+      { id: 'c1', type: 'image', cloudinaryId: 'DSC08484_puv6hp',    alt: 'Finca 5', ratio: '3/2' },
+      { id: 'c2', type: 'image', cloudinaryId: 'DSC08084_ylkmgb',  alt: 'Finca 2', ratio: '3/2' },
+      { id: 'c3', type: 'image', cloudinaryId: 'DSC08477_higiax',  alt: 'Finca 1', ratio: '3/2' },
+      { id: 'c4', type: 'image', cloudinaryId: 'DSC08462_hyl2vr',    alt: 'Finca 5', ratio: '3/2' },
+      { id: 'c5', type: 'image', cloudinaryId: 'DSC08464-2_jly3ti',  alt: 'Finca 2', ratio: '3/2' },
+      { id: 'c6', type: 'image', cloudinaryId: 'DSC08465_x9qox3',  alt: 'Finca 1', ratio: '2/3' },
+      { id: 'c7', type: 'image', cloudinaryId: 'DSC08485_ml2nvb',  alt: 'Finca 1', ratio: '3/2' },
+      { id: 'c8', type: 'image', cloudinaryId: 'DSC08470_mtf80d',  alt: 'Finca 2', ratio: '3/2' },
+      { id: 'c10', type: 'image', cloudinaryId: 'DSC08233_zhvpg7',  alt: 'Finca 2', ratio: '2/3' },
+      { id: 'c11', type: 'image', cloudinaryId: 'DSC08235_f9amd4',  alt: 'Finca 1', ratio: '3/2' },
+            { id: 'c9', type: 'image', cloudinaryId: 'DSC08114_qk7bgq',  alt: 'Finca 1', ratio: '2/3' },
+{ id: 'c12', type: 'image', cloudinaryId: 'DSC08244_gxnxio',  alt: 'Finca 2', ratio: '3/2' },
+      { id: 'c14', type: 'image', cloudinaryId: 'DSC08062_adgqpg',    alt: 'Finca 5', ratio: '2/3' }
     ],
   },
 
@@ -108,12 +115,15 @@ Nous avons parcouru les paysages lunaires de l'Atacama armés de drones et de ca
 Ce projet personnel témoigne de notre passion pour la photographie de paysage et notre capacité à travailler dans des conditions extrêmes pour ramener des images uniques.`,
     videoYoutube: 'REMPLACE_PAR_TON_ID_YOUTUBE',
     galerie: [
-      { id: 'd1', type: 'image', src: '/atacama.jpg', alt: 'Atacama 1' },
-      { id: 'd2', type: 'image', src: '/portfolio.jpg',  alt: 'Atacama 2' },
-      { id: 'd3', type: 'image', src: '/atacama.jpg',  alt: 'Atacama 3' },
-      { id: 'd4', type: 'image', src: '/portfolio.jpg',    alt: 'Atacama 4' },
-      { id: 'd5', type: 'image', src: '/atacama.jpg', alt: 'Atacama 5' },
-      { id: 'd6', type: 'image', src: '/portfolio.jpg',  alt: 'Atacama 6' },
+      { id: 'a1', type: 'image', cloudinaryId: 'compressed_DSC08924-2_ddarkg',  alt: 'Finca 1', ratio: '2/3' },
+      { id: 'a2', type: 'image', cloudinaryId: 'compressed_DSC08951_g4wqvf',  alt: 'Finca 2', ratio: '3/2' },
+      { id: 'a3', type: 'image', cloudinaryId: 'compressed_DSC08945_xd5ssw',  alt: 'Finca 1', ratio: '2/3' },
+      { id: 'a4', type: 'image', cloudinaryId: 'compressed_DSC08935_tm4x6f',  alt: 'Finca 2', ratio: '3/2' },
+      { id: 'a5', type: 'image', cloudinaryId: 'compressed_DSC09094_mmnu2j',    alt: 'Finca 5', ratio: '9/16' },
+      { id: 'a6', type: 'image', cloudinaryId: 'compressed_DSC09140_yt0ck5',    alt: 'Finca 5', ratio: '3/2' },
+      { id: 'a7', type: 'image', cloudinaryId: 'compressed_DSC09173_fvcnkr',    alt: 'Finca 3', ratio: '3/2' },
+
+  
     ],
   },
 
