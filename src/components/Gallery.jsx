@@ -115,7 +115,7 @@ function MediaCard({ item, width, height, onClick }) {
 
       {item.type === "image" ? (
         <img
-          src={getImageSrc(item, width * 2)}
+          src={getImageSrc(item, Math.round(width * (window.devicePixelRatio || 1)))}
           alt={item.alt}
           onLoad={() => setLoaded(true)}
           style={{ opacity: loaded ? 1 : 0 }}
@@ -170,7 +170,7 @@ function Lightbox({ item, items, onClose, onPrev, onNext }) {
     [prev, next].forEach((neighbor) => {
       if (neighbor?.type === "image") {
         const img = new Image();
-        img.src = getImageSrc(neighbor, 2400);
+        img.src = getImageSrc(neighbor, Math.round(1800 * (window.devicePixelRatio || 1)));
       }
     });
   }, [item, items]);
@@ -222,7 +222,7 @@ function Lightbox({ item, items, onClose, onPrev, onNext }) {
             )}
             <img
               key={item.id}
-              src={getImageSrc(item, 2400)}
+              src={getImageSrc(item, Math.round(1800 * (window.devicePixelRatio || 1)))}
               alt={item.alt}
               onLoad={() => setImgLoaded(true)}
               style={{
@@ -265,7 +265,7 @@ export default function Gallery({ items = [] }) {
     enriched.forEach((item) => {
       if (item.type !== "image") return;
       const img = new Image();
-      img.src = getImageSrc(item, 2400);
+      img.src = getImageSrc(item, Math.round(1800 * (window.devicePixelRatio || 1)));
     });
   }, [enriched]);
 
