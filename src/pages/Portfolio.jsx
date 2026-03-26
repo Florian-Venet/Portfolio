@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import Gallery from '../components/Gallery' 
+import Gallery from '../components/Gallery'
+import { cloudinaryUrl } from '../utils/cloudinary'
 
 
 function useIsMobile() {
@@ -14,7 +15,7 @@ function useIsMobile() {
 }
 
 const COLLABORATIONS = [
-  { id: 'arewa', title: 'AREWA BIOHABITAT', location: 'Colombie, 2026', cloudinaryId: 'compressed_DJI_0001_ajt5wy' },
+  { id: 'arewa', title: 'AREWA BIOHABITAT', location: 'Colombie, 2026', cloudinaryId: 'compressed_DJI_0001_ajt5wy', width: 1200 },
   { id: 'finca', title: 'FINCA CARPE DIEM', location: 'Colombie, 2026', cloudinaryId: 'FincaPool_puntbe' },
   { id: 'jaja',  title: 'JAJA TOUR',        location: 'Bolivie, 2025',  cloudinaryId: 'DSC08566_web_oba8s6' },
 ]
@@ -47,7 +48,7 @@ const CATEGORIES = [
 
 // ─── Carte projet ─────────────────────────────────────────────────────────────
 
-const ProjectCard = ({ id, title, location, image,cloudinaryId, isMobile }) => {
+const ProjectCard = ({ id, title, location, image, cloudinaryId, width, isMobile }) => {
   const [hovered, setHovered] = useState(false)
   const navigate = useNavigate()
   const handleClick = () => navigate(`/projet/${id}`)
@@ -65,7 +66,7 @@ const ProjectCard = ({ id, title, location, image,cloudinaryId, isMobile }) => {
         <div
           style={{
             position: 'absolute', inset: 0,
-            backgroundImage: `url(${image || `https://res.cloudinary.com/di0mcchgn/image/upload/f_auto,q_auto/${cloudinaryId}`})`,
+            backgroundImage: `url(${image || cloudinaryUrl(cloudinaryId, width)})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
