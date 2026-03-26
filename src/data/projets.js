@@ -26,6 +26,7 @@ export const PROJETS = {
   { id: 'a18', type: 'image', cloudinaryId: 'compressed_DSC02721_eutdkf', alt: 'Arewa 8', ratio:'3/2' },
   { id: 'a19', type: 'image', cloudinaryId: 'compressed_DSC02923_fok7kf', alt: 'Arewa 10', ratio:'3/2' },
   { id: 'a20', type: 'image', cloudinaryId: 'compressed_DSC03035_lvrqmg', alt: 'Arewa 8', ratio:'2/3' },
+  { id: 'a21', type: 'image', cloudinaryId: 'compressed_DSC02949_gv0lrd', alt: 'Arewa 8', ratio:'2/3' },
 ],
     },
 
@@ -48,7 +49,7 @@ Ces contenus alimentent aujourd'hui leurs réseaux sociaux et leurs campagnes de
       { id: 'f5', type: 'image', cloudinaryId: 'compressed_DSC00925_y6mdwx',    alt: 'Finca 5', ratio: '9/16' },
       { id: 'f6', type: 'image', cloudinaryId: 'compressed_DSC00730_mmi4fd',    alt: 'Finca 3', ratio: '3/2' },
       { id: 'f7', type: 'image', cloudinaryId: 'compressed_DSC00762_l2vjra',    alt: 'Finca 3', ratio: '3/2' },
-
+      
       
     ],
   },
@@ -61,11 +62,11 @@ Ces contenus alimentent aujourd'hui leurs réseaux sociaux et leurs campagnes de
     videoYoutube: 'wMx1RjKXiIM',
     galerie: [
       { id: 'j1', type: 'image', cloudinaryId: 'DSC08492_web_tdkjh6',  alt: 'Jaja 1', ratio:'3/2' },
-      { id: 'j2', type: 'image', cloudinaryId: 'DSC08513_web_o6owz7',  alt: 'Jaja 2', ratio:'2/3' },
-      { id: 'j3', type: 'image', cloudinaryId: 'DSC08568-2_web_fknxfd', alt: 'Jaja 4', ratio:'2/3' },
-      { id: 'j4', type: 'image', cloudinaryId: 'DSC08508_web_hcn4mr',    alt: 'Jaja 3', ratio:'3/2' },
-      { id: 'j5', type: 'video', src: '/jaja_bateau.mp4', label: 'Bateau' , ratio:'16/9'},
-            
+      {id: 'j2', type: 'video', vimeoId: '1177392380', label: 'Bateau' , ratio:'3/2'},
+      { id: 'j3', type: 'image', cloudinaryId: 'DSC08568-2_web_fknxfd',  alt: 'Jaja 2', ratio:'2/3' },
+      { id: 'j4', type: 'image', cloudinaryId: 'DSC08508_web_hcn4mr',    alt: 'Jaja 3', ratio:'16/9' },
+      { id: 'j5', type: 'video', vimeoId: '1177391413', label: 'Bateau' , ratio:'16/9'},
+      { id: 'j6', type: 'image', cloudinaryId: 'DSC08513_web_o6owz7', alt: 'Jaja 4', ratio:'2/3' },
 
     ],
   },
@@ -80,18 +81,20 @@ Ces expéditions ont donné naissance à une série de contenus visuels, témoig
     videoYoutube: 'REMPLACE_PAR_TON_ID_YOUTUBE',
     galerie: [
       { id: 'c1', type: 'image', cloudinaryId: 'DSC08484_puv6hp',    alt: 'Finca 5', ratio: '3/2' },
+
       { id: 'c2', type: 'image', cloudinaryId: 'DSC08084_ylkmgb',  alt: 'Finca 2', ratio: '3/2' },
       { id: 'c3', type: 'image', cloudinaryId: 'DSC08477_higiax',  alt: 'Finca 1', ratio: '3/2' },
       { id: 'c4', type: 'image', cloudinaryId: 'DSC08462_hyl2vr',    alt: 'Finca 5', ratio: '3/2' },
       { id: 'c5', type: 'image', cloudinaryId: 'DSC08464-2_jly3ti',  alt: 'Finca 2', ratio: '3/2' },
-      { id: 'c6', type: 'image', cloudinaryId: 'DSC08465_x9qox3',  alt: 'Finca 1', ratio: '2/3' },
+      { id: 'c6', type: 'image', cloudinaryId: 'DSC08465_x9qox3',  alt: 'Finca 1', ratio: '9/16' },
       { id: 'c7', type: 'image', cloudinaryId: 'DSC08485_ml2nvb',  alt: 'Finca 1', ratio: '3/2' },
-      { id: 'c8', type: 'image', cloudinaryId: 'DSC08470_mtf80d',  alt: 'Finca 2', ratio: '3/2' },
-      { id: 'c10', type: 'image', cloudinaryId: 'DSC08233_zhvpg7',  alt: 'Finca 2', ratio: '2/3' },
-      { id: 'c11', type: 'image', cloudinaryId: 'DSC08235_f9amd4',  alt: 'Finca 1', ratio: '3/2' },
             { id: 'c9', type: 'image', cloudinaryId: 'DSC08114_qk7bgq',  alt: 'Finca 1', ratio: '2/3' },
-{ id: 'c12', type: 'image', cloudinaryId: 'DSC08244_gxnxio',  alt: 'Finca 2', ratio: '3/2' },
-      { id: 'c14', type: 'image', cloudinaryId: 'DSC08062_adgqpg',    alt: 'Finca 5', ratio: '2/3' }
+{ id: 'c10', type: 'image', cloudinaryId: 'DSC08062_adgqpg',  alt: 'Finca 2', ratio: '2/3' },
+      { id: 'c8', type: 'image', cloudinaryId: 'DSC08470_mtf80d',  alt: 'Finca 2', ratio: '3/2' },
+      
+      //{ id: 'c11', type: 'image', cloudinaryId: 'DSC08235_f9amd4',  alt: 'Finca 1', ratio: '3/2' },
+      { id: 'c12', type: 'image', cloudinaryId: 'DSC08244_gxnxio',  alt: 'Finca 2', ratio: '3/2' },
+      { id: 'c14', type: 'image', cloudinaryId: 'DSC08233_zhvpg7',    alt: 'Finca 5', ratio: '2/3' }
     ],
   },
 
