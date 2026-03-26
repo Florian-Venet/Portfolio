@@ -168,8 +168,8 @@ export default function About() {
       </PersonSection>
 
       <PersonSection name="FLORIAN" imgSrc="/florian.png" isMobile={isMobile} zIndex={2}>
-        <p>Derrière chaque image, il y a une intention. Mon travail consiste à révéler ce qui rend un lieu, une expérience ou une marque véritablement unique — et à le traduire en visuels qui font ressentir avant de faire voir.</p>
-        <p style={{ marginTop: '1rem' }}>Photographe, vidéaste et pilote de drone, j'aborde chaque projet avec une vision d'ensemble : de la direction artistique à la post-production, chaque détail compte. Parce qu'une image bien faite, c'est une image qui reste.</p>
+        <p>Convaincu qu'une belle image fait la différence, j'aborde chaque projet avec une vision d'ensemble : de la direction artistique à la post-production, chaque détail compte.</p>
+        <p style={{ marginTop: '1rem' }}>Photographe, vidéaste et pilote de drone, je travaille en étroite collaboration avec chaque client pour saisir ce qui rend son univers unique et le mettre en lumière avec précision. </p>
       </PersonSection>
 
       

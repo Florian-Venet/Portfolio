@@ -26,14 +26,14 @@ export default function Footer() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', paddingTop: '2rem' }}>
           <span
             className="text-white/50 tracking-widest"
-            style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.6rem' }}
+            style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.7rem' }}
           >
             CONTACT
           </span>
           <a
             href="mailto:contact@shot.com"
             className="text-white hover:text-orange-400 transition-colors duration-200"
-            style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.75rem' }}
+            style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.80rem' }}
           >
             contact@shot.com
           </a>
@@ -52,16 +52,16 @@ export default function Footer() {
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.4rem', paddingTop: '2rem' }}>
           <span
             className="text-white/50 tracking-widest"
-            style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.6rem' }}
+            style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.7rem' }}
           >
             SUIVEZ-NOUS
           </span>
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/echoes.visuals/"
             target="_blank"
             rel="noreferrer"
             className="text-white hover:text-orange-400 transition-colors duration-200"
-            style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.75rem' }}
+            style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.80rem' }}
           >
             Instagram
           </a>
@@ -70,7 +70,7 @@ export default function Footer() {
             target="_blank"
             rel="noreferrer"
             className="text-white hover:text-orange-400 transition-colors duration-200"
-            style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.75rem' }}
+            style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.80rem' }}
           >
             YouTube
           </a>
