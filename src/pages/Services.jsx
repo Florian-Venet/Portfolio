@@ -1,17 +1,6 @@
-import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { cloudinaryUrl } from '../utils/cloudinary'
-
-
-function useIsMobile() {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
-  useEffect(() => {
-    const handler = () => setIsMobile(window.innerWidth < 768)
-    window.addEventListener('resize', handler)
-    return () => window.removeEventListener('resize', handler)
-  }, [])
-  return isMobile
-}
+import { useIsMobile } from '../hooks/useIsMobile'
 
 const OFFRES = [
   {
@@ -83,35 +72,19 @@ export default function Services() {
             paddingTop: isMobile ? '5rem' : '0',
           }}
         >
-          {!isMobile && (
-            <div style={{ display: 'flex', alignItems: 'center', height: '75vh' }}>
-              <h1
-                className="text-white uppercase"
-                style={{
-                  fontFamily: 'Bebas Neue, sans-serif',
-                  fontSize: '4.2rem',
-                  letterSpacing: '0.02em',
-                  lineHeight: 1.1,
-                }}
-              >
-                EXPLOREZ<br />VOS POSSIBILITÉS.
-              </h1>
-            </div>
-          )}
-          {isMobile && (
+          <div style={{ display: 'flex', alignItems: 'center', height: isMobile ? 'auto' : '75vh', marginTop: isMobile ? '11.5rem' : 0 }}>
             <h1
               className="text-white uppercase"
               style={{
                 fontFamily: 'Bebas Neue, sans-serif',
-                fontSize: '3rem',
+                fontSize: isMobile ? '3rem' : '4.2rem',
                 letterSpacing: '0.02em',
                 lineHeight: 1.1,
-                marginTop: '11.5rem',
               }}
             >
               EXPLOREZ<br />VOS POSSIBILITÉS.
             </h1>
-          )}
+          </div>
         </div>
 
         {/* Sommaire mobile */}

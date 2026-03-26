@@ -344,7 +344,7 @@ const CSS = `
     --bg:      #141414;
     --surface: #1e1e1e;
     --border:  #2a2a2a;
-    --accent:  #c9a84c;
+    --accent:  #facc15;
     --ease:    cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 

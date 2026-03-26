@@ -121,7 +121,7 @@ amerique: {
   id: 'amerique',
   titre: 'Amérique du Sud',
   sousTitre: 'Amérique du Sud · 2025 — 2026',
-  description: `Du Guatemala à la Patagonie, ce projet personnel retrace plusieurs mois d'exploration visuelle à travers l'Amérique du Sud, entre paysages vertigineux, cultures vivantes et rencontres humaines au fil de la route.\n\nArmés de notre drone et caméras, nous avons documenté chaque territoire avec la même exigence que pour nos collaborations : capter la lumière, l'atmosphère et l'instant juste.`,
+  description: `Du Guatemala à la Patagonie, ce projet personnel retrace plusieurs mois d'exploration visuelle à travers l'Amérique du Sud, entre paysages exceptionnels, cultures vivantes et rencontres humaines au fil de la route.\n\nDrone et caméra en main, nous avons documenté chaque pays avec la même exigence que pour nos collaborations : capter la lumière, l'atmosphère et l'instant juste.`,
 
 
     videoYoutube: 'REMPLACE_PAR_TON_ID_YOUTUBE',

@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export default function Footer() {
   return (
     <footer
@@ -10,13 +12,13 @@ export default function Footer() {
 
       {/* Logo — mobile: visible ici centré ; desktop: absolu */}
       <div className="flex justify-center mb-6 md:hidden">
-        <a
-          href="/"
+        <Link
+          to="/"
           className="text-white"
           style={{ fontFamily: 'Playfair Display, serif', fontSize: '2rem', letterSpacing: '0.1em' }}
         >
           SHØT
-        </a>
+        </Link>
       </div>
 
       {/* Contenu principal */}
@@ -26,42 +28,42 @@ export default function Footer() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', paddingTop: '2rem' }}>
           <span
             className="text-white/50 tracking-widest"
-            style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.6rem' }}
+            style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.7rem' }}
           >
             CONTACT
           </span>
           <a
             href="mailto:contact@shot.com"
             className="text-white hover:text-orange-400 transition-colors duration-200"
-            style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.75rem' }}
+            style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.80rem' }}
           >
             contact@shot.com
           </a>
         </div>
 
         {/* Logo centré — desktop seulement */}
-        <a
-          href="/"
+        <Link
+          to="/"
           className="text-white hidden md:block absolute left-1/2 -translate-x-1/2"
           style={{ fontFamily: 'Playfair Display, serif', fontSize: '2rem', letterSpacing: '0.1em' }}
         >
           SHØT
-        </a>
+        </Link>
 
         {/* Réseaux droite */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.4rem', paddingTop: '2rem' }}>
           <span
             className="text-white/50 tracking-widest"
-            style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.6rem' }}
+            style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.7rem' }}
           >
             SUIVEZ-NOUS
           </span>
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/echoes.visuals/"
             target="_blank"
             rel="noreferrer"
             className="text-white hover:text-orange-400 transition-colors duration-200"
-            style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.75rem' }}
+            style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.80rem' }}
           >
             Instagram
           </a>
@@ -70,7 +72,7 @@ export default function Footer() {
             target="_blank"
             rel="noreferrer"
             className="text-white hover:text-orange-400 transition-colors duration-200"
-            style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.75rem' }}
+            style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.80rem' }}
           >
             YouTube
           </a>

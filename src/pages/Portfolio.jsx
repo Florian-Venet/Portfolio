@@ -1,20 +1,11 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import Gallery from '../components/Gallery' 
-
-
-function useIsMobile() {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
-  useEffect(() => {
-    const handler = () => setIsMobile(window.innerWidth < 768)
-    window.addEventListener('resize', handler)
-    return () => window.removeEventListener('resize', handler)
-  }, [])
-  return isMobile
-}
+import Gallery from '../components/Gallery'
+import { cloudinaryUrl } from '../utils/cloudinary'
+import { useIsMobile } from '../hooks/useIsMobile'
 
 const COLLABORATIONS = [
-  { id: 'arewa', title: 'AREWA BIOHABITAT', location: 'Colombie, 2026', cloudinaryId: 'compressed_DJI_0001_ajt5wy' },
+  { id: 'arewa', title: 'AREWA BIOHABITAT', location: 'Colombie, 2026', cloudinaryId: 'compressed_DJI_0001_ajt5wy', width: 1200 },
   { id: 'finca', title: 'FINCA CARPE DIEM', location: 'Colombie, 2026', cloudinaryId: 'FincaPool_puntbe' },
   { id: 'jaja',  title: 'JAJA TOUR',        location: 'Bolivie, 2025',  cloudinaryId: 'DSC08566_web_oba8s6' },
 ]
@@ -47,7 +38,7 @@ const CATEGORIES = [
 
 // ─── Carte projet ─────────────────────────────────────────────────────────────
 
-const ProjectCard = ({ id, title, location, image,cloudinaryId, isMobile }) => {
+const ProjectCard = ({ id, title, location, image, cloudinaryId, width, isMobile }) => {
   const [hovered, setHovered] = useState(false)
   const navigate = useNavigate()
   const handleClick = () => navigate(`/projet/${id}`)
@@ -61,11 +52,14 @@ const ProjectCard = ({ id, title, location, image,cloudinaryId, isMobile }) => {
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         onClick={handleClick}
+        onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && handleClick()}
+        role="button"
+        tabIndex={0}
       >
         <div
           style={{
             position: 'absolute', inset: 0,
-            backgroundImage: `url(${image || `https://res.cloudinary.com/di0mcchgn/image/upload/f_auto,q_auto/${cloudinaryId}`})`,
+            backgroundImage: `url(${image || cloudinaryUrl(cloudinaryId, width)})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
@@ -75,7 +69,7 @@ const ProjectCard = ({ id, title, location, image,cloudinaryId, isMobile }) => {
             position: 'absolute', inset: 0,
             backgroundColor: 'rgba(0,0,0,0.5)',
             opacity: hovered ? 1 : 0,
-            transition: 'opacity 0.3s ease',
+            transition: 'opacity 0.2s ease',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
           }}
         >
@@ -248,28 +242,16 @@ export default function Portfolio() {
         {!isMobile && (
           <div
             className="relative z-10"
-            style={{ paddingLeft: '15%' }}
+            style={{ paddingLeft: isMobile ? '6%' : '15%' }}
           >
-            <div style={{ display: 'flex', alignItems: 'center', height: '75vh' }}>
+            <div style={{ display: 'flex', alignItems: 'center', height: isMobile ? 'auto' : '75vh', marginTop: isMobile ? '11.5rem' : 0 }}>
               <h1
                 className="text-white uppercase"
-                style={{ fontFamily: 'Bebas Neue, sans-serif', fontSize: '4.2rem', letterSpacing: '0.02em', lineHeight: 1.1 }}
+                style={{ fontFamily: 'Bebas Neue, sans-serif', fontSize: isMobile ? '3rem' : '4.2rem', letterSpacing: '0.02em', lineHeight: 1.1 }}
               >
                 DÉCOUVREZ<br />NOTRE UNIVERS.
               </h1>
             </div>
-          </div>
-        )}
-
-        {/* Titre mobile */}
-        {isMobile && (
-          <div className="relative z-10" style={{ paddingLeft: '6%' }}>
-            <h1
-              className="text-white uppercase"
-              style={{ fontFamily: 'Bebas Neue, sans-serif', fontSize: '3rem', letterSpacing: '0.02em', lineHeight: 1.1, marginTop: '11.5rem' }}
-            >
-              DÉCOUVREZ<br />NOTRE UNIVERS.
-            </h1>
           </div>
         )}
 

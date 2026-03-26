@@ -1,18 +1,8 @@
 import { useParams, useNavigate } from 'react-router-dom'
 import { createPortal } from 'react-dom'
 import { PROJETS } from '../data/projets'
-import { useState, useEffect } from 'react'
 import Gallery from '../components/Gallery'
-
-function useIsMobile() {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
-  useEffect(() => {
-    const handler = () => setIsMobile(window.innerWidth < 768)
-    window.addEventListener('resize', handler)
-    return () => window.removeEventListener('resize', handler)
-  }, [])
-  return isMobile
-}
+import { useIsMobile } from '../hooks/useIsMobile'
 
 export default function Projet() {
   const { id } = useParams()
@@ -92,10 +82,9 @@ export default function Projet() {
             height="100%"
             src={`https://www.youtube.com/embed/${projet.videoYoutube}`}
             title={projet.titre}
-            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
-            style={{ display: 'block' }}
+            style={{ display: 'block', border: 'none' }}
           />
         </div>
       </section>

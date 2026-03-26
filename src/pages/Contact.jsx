@@ -1,15 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { cloudinaryUrl } from '../utils/cloudinary'
-
-function useIsMobile() {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
-  useEffect(() => {
-    const handler = () => setIsMobile(window.innerWidth < 768)
-    window.addEventListener('resize', handler)
-    return () => window.removeEventListener('resize', handler)
-  }, [])
-  return isMobile
-}
+import { useIsMobile } from '../hooks/useIsMobile'
 
 export default function Contact() {
   const isMobile = useIsMobile()
@@ -70,7 +61,7 @@ export default function Contact() {
         position: 'relative',
       }}
     >
-      <div style={{ position: 'fixed', inset: 0, backgroundColor: 'rgba(0,0,0,0.10)', zIndex: 0 }} />
+      <div style={{ position: 'fixed', inset: 0, backgroundColor: 'rgba(0,0,0,0.40)', zIndex: 0 }} />
 
       <div style={{ position: 'relative', zIndex: 1, width: '100%', maxWidth: '580px' }}>
         {/* Titre */}
