@@ -4,7 +4,7 @@ import { cloudinaryUrl } from '../utils/cloudinary'
 
 const GAP            = 6;
 const ROW_HEIGHT     = 380;
-const ROW_HEIGHT_MOB = 140;
+const ROW_HEIGHT_MOB = 220;
 
 function parseRatio(r) {
   if (typeof r === "number") return r;
@@ -115,7 +115,7 @@ function MediaCard({ item, width, height, onClick }) {
 
       {item.type === "image" ? (
         <img
-          src={getImageSrc(item, Math.round(width * (window.devicePixelRatio || 1)))}
+          src={getImageSrc(item, Math.max(Math.round(width * (window.devicePixelRatio || 1)), 800))}
           alt={item.alt}
           onLoad={() => setLoaded(true)}
           style={{ opacity: loaded ? 1 : 0 }}
@@ -123,7 +123,7 @@ function MediaCard({ item, width, height, onClick }) {
       ) : item.vimeoId ? (
         <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
           <iframe
-            src={`https://player.vimeo.com/video/${item.vimeoId}?background=1&loop=1&autoplay=1&muted=1`}
+            src={`https://player.vimeo.com/video/${item.vimeoId}?background=1&loop=1&autoplay=1&muted=1&quality=1080p`}
             style={{
               opacity: loaded ? 1 : 0,
               border: 'none',
@@ -234,8 +234,8 @@ function Lightbox({ item, items, onClose, onPrev, onNext }) {
           </>
         ) : item.vimeoId ? (
           <iframe
-            src={`https://player.vimeo.com/video/${item.vimeoId}?autoplay=1&loop=1`}
-            style={{ border: 'none', width: '80vw', height: '45vw', maxHeight: '90vh' }}
+            src={`https://player.vimeo.com/video/${item.vimeoId}?autoplay=1&loop=1&quality=1080p`}
+            style={{ border: 'none', width: '95vw', height: '53.4vw', maxHeight: '90vh' }}
             allow="autoplay; fullscreen"
             allowFullScreen
           />
@@ -292,24 +292,34 @@ export default function Gallery({ items = [] }) {
 
       <div className="gallery-root" ref={containerRef}>
         {containerWidth > 0
-          ? rows.map((row, ri) => {
-              const availableW = containerWidth - GAP * (row.items.length - 1);
-              const isLastRow  = ri === rows.length - 1;
-              const scale      = isLastRow ? Math.min(rowHeight, availableW / row.sumRatios) : availableW / row.sumRatios;
-              return (
-                <div key={ri} className="gallery-row">
-                  {row.items.map((item) => (
-                    <MediaCard
-                      key={item.id}
-                      item={item}
-                      width={Math.round(item._aspect * scale)}
-                      height={rowHeight}
-                      onClick={open}
-                    />
-                  ))}
-                </div>
-              );
-            })
+          ? isMobile
+            ? enriched.map((item) => {
+                const w = Math.round(containerWidth * 0.92);
+                const h = Math.round(w / item._aspect);
+                return (
+                  <div key={item.id} style={{ display: 'flex', justifyContent: 'center', marginBottom: GAP }}>
+                    <MediaCard item={item} width={w} height={h} onClick={open} />
+                  </div>
+                );
+              })
+            : rows.map((row, ri) => {
+                const availableW = containerWidth - GAP * (row.items.length - 1);
+                const isLastRow  = ri === rows.length - 1;
+                const scale      = isLastRow ? Math.min(rowHeight, availableW / row.sumRatios) : availableW / row.sumRatios;
+                return (
+                  <div key={ri} className="gallery-row">
+                    {row.items.map((item) => (
+                      <MediaCard
+                        key={item.id}
+                        item={item}
+                        width={Math.round(item._aspect * scale)}
+                        height={rowHeight}
+                        onClick={open}
+                      />
+                    ))}
+                  </div>
+                );
+              })
           : <div style={{ height: rowHeight, background: "#1e1e1e" }} />
         }
       </div>

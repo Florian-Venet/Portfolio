@@ -39,10 +39,10 @@ function PersonSection({ name, imgSrc, children, isMobile, zIndex }) {
       </div>
 
       {isMobile ? (
-  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100%', paddingTop: '4rem', gap: '1.5rem' }}>
-    
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%', paddingTop: '3rem', paddingBottom: '3rem', gap: '1.5rem' }}>
+
     {/* Image verticale centrée */}
-    <div style={{ position: 'relative', width: '40%', aspectRatio: '3/4', flexShrink: 0 }}>
+    <div style={{ position: 'relative', width: '60%', aspectRatio: '3/4', flexShrink: 0 }}>
       <img
         src={imgSrc}
         alt={name}
