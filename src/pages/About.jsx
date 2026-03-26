@@ -1,16 +1,5 @@
-import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { cloudinaryUrl } from '../utils/cloudinary'
-
-function useIsMobile() {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
-  useEffect(() => {
-    const handler = () => setIsMobile(window.innerWidth < 768)
-    window.addEventListener('resize', handler)
-    return () => window.removeEventListener('resize', handler)
-  }, [])
-  return isMobile
-}
+import { useIsMobile } from '../hooks/useIsMobile'
 
 function PersonSection({ name, imgSrc, children, isMobile, zIndex }) {
   return (
@@ -48,7 +37,7 @@ function PersonSection({ name, imgSrc, children, isMobile, zIndex }) {
         alt={name}
         style={{ width: '100%', height: '100%', objectFit: 'cover' }}
       />
-      <h1 style={{
+      <h2 style={{
         position: 'absolute',
         bottom: '0.8rem',
         left: 0,
@@ -61,7 +50,7 @@ function PersonSection({ name, imgSrc, children, isMobile, zIndex }) {
         zIndex: 2,
       }}>
         {name}
-      </h1>
+      </h2>
       <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(0,0,0,0.3)', zIndex: 1 }} />
     </div>
 
@@ -73,6 +62,7 @@ function PersonSection({ name, imgSrc, children, isMobile, zIndex }) {
       fontSize: '0.8rem',
       lineHeight: 1.8,
       overflowY: 'auto',
+      fontFamily: 'Montserrat, sans-serif',
     }}>
       {children}
     </div>
@@ -93,7 +83,7 @@ function PersonSection({ name, imgSrc, children, isMobile, zIndex }) {
               zIndex: 0,
             }}
           />
-          <h1 style={{
+          <h2 style={{
             position: 'absolute',
             top: '8%',
             left: '32%',
@@ -104,7 +94,7 @@ function PersonSection({ name, imgSrc, children, isMobile, zIndex }) {
             color: 'white',
           }}>
             {name}
-          </h1>
+          </h2>
           <div style={{
             position: 'absolute',
             top: '32%',
@@ -114,6 +104,7 @@ function PersonSection({ name, imgSrc, children, isMobile, zIndex }) {
             fontSize: '1rem',
             lineHeight: 1.8,
             zIndex: 2,
+            fontFamily: 'Montserrat, sans-serif',
           }}>
             {children}
           </div>
@@ -125,7 +116,6 @@ function PersonSection({ name, imgSrc, children, isMobile, zIndex }) {
 }
 
 export default function About() {
-  const navigate = useNavigate()
   const isMobile = useIsMobile()
 
   return (

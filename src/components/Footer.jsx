@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export default function Footer() {
   return (
     <footer
@@ -10,13 +12,13 @@ export default function Footer() {
 
       {/* Logo — mobile: visible ici centré ; desktop: absolu */}
       <div className="flex justify-center mb-6 md:hidden">
-        <a
-          href="/"
+        <Link
+          to="/"
           className="text-white"
           style={{ fontFamily: 'Playfair Display, serif', fontSize: '2rem', letterSpacing: '0.1em' }}
         >
           SHØT
-        </a>
+        </Link>
       </div>
 
       {/* Contenu principal */}
@@ -40,13 +42,13 @@ export default function Footer() {
         </div>
 
         {/* Logo centré — desktop seulement */}
-        <a
-          href="/"
+        <Link
+          to="/"
           className="text-white hidden md:block absolute left-1/2 -translate-x-1/2"
           style={{ fontFamily: 'Playfair Display, serif', fontSize: '2rem', letterSpacing: '0.1em' }}
         >
           SHØT
-        </a>
+        </Link>
 
         {/* Réseaux droite */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.4rem', paddingTop: '2rem' }}>

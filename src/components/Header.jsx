@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useLocation, Link } from 'react-router-dom'
+import { useIsMobile } from '../hooks/useIsMobile'
 
 const NAV_LINKS = [
   { label: 'ACCUEIL', href: '/' },
@@ -12,13 +13,7 @@ const NAV_LINKS = [
 export default function Header() {
   const location = useLocation()
   const [menuOpen, setMenuOpen] = useState(false)
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
-
-  useEffect(() => {
-    const handler = () => setIsMobile(window.innerWidth < 768)
-    window.addEventListener('resize', handler)
-    return () => window.removeEventListener('resize', handler)
-  }, [])
+  const isMobile = useIsMobile()
 
   return (
     <header className="fixed top-0 left-0 w-full h-32 z-50">
