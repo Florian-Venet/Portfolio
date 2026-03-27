@@ -19,23 +19,51 @@ const HISTOIRES = [
 // ── Médias de la galerie ──────────────────────────────────────────────────────
 // Remplacez ces entrées par vos vraies images / vidéos.
 // Chaque item requiert : type, src, aspect (largeur/hauteur), alt ou label.
-const GALERIE_MEDIA = [
-  { id: 'm1',  type: 'image', cloudinaryId: 'DSC01475_oh8xxp', alt: 'Amérique 1', ratio: '3/2' },
-      { id: 'm2',  type: 'image', cloudinaryId: 'DSC01752_beqghb', alt: 'Amérique 2', ratio: '3/2' },
-      { id: 'm3',  type: 'image', cloudinaryId: 'DSC01716_lbzydi', alt: 'Amérique 3', ratio: '3/2' },
-      { id: 'm4',  type: 'image', cloudinaryId: 'DSC02455_qvp2yf', alt: 'Amérique 4', ratio: '3/2' },
-      { id: 'm5',  type: 'image', cloudinaryId: 'DSC02632_tpsqqk', alt: 'Amérique 5', ratio: '3/2' },
-      { id: 'm6',  type: 'image', cloudinaryId: 'DSC02231_hwawfd', alt: 'Amérique 6', ratio: '3/2' },
-      { id: 'm7',  type: 'image', cloudinaryId: 'DSC02036_atr8lp', alt: 'Amérique 7', ratio: '3/2' },
-      { id: 'm8',  type: 'image', cloudinaryId: 'DSC02635_fmprv0', alt: 'Amérique 8', ratio: '3/2' },
-      { id: 'm9',  type: 'image', cloudinaryId: 'DSC03080_jjgq9n', alt: 'Amérique 9', ratio: '3/2' },
-      { id: 'm12', type: 'image', cloudinaryId: 'DSC02156_uoo27l', alt: 'Amérique 12', ratio: '3/2' },
-{ id: 'm21', type: 'image', cloudinaryId: 'DSC04708_eu1jcq', alt: 'Amérique 21', ratio: '3/2' },
-      { id: 'm22', type: 'image', cloudinaryId: 'DSC05271_xotq0k', alt: 'Amérique 22', ratio: '3/2' },
-      { id: 'm23', type: 'image', cloudinaryId: 'DSC04764_yjjtiz', alt: 'Amérique 23', ratio: '3/2' },
-      { id: 'm24', type: 'image', cloudinaryId: 'compressed_DSC00521_ie3mbn', alt: 'Amérique 24', ratio: '3/2' },
-      { id: 'm25', type: 'image', cloudinaryId: 'compressed_DSC02713_y3w0ju', alt: 'Amérique 25', ratio: '3/2' },
-      { id: 'm52', type: 'image', cloudinaryId: 'compressed_DSC04322_bcghlx', alt: 'Amérique 52', ratio: '3/2' },
+const GALERIE_MEDIA = [          
+      { id: 'm7',  type: 'image', cloudinaryId: 'DSC02036_atr8lp', alt: 'batur', ratio: '2/3' },   
+          { id: 'm6',  type: 'image', cloudinaryId: 'DSC02231_hwawfd', alt: 'chauvesouris', ratio: '2/3' }, 
+{ id: 'm1',  type: 'image', cloudinaryId: 'DSC01475_oh8xxp', alt: 'lamer', ratio: '4/3' },
+
+        { id: 'm2',  type: 'image', cloudinaryId: 'compressed_DSC08384_h9jmn0',   alt: 'isladelsol',        ratio: '2/3' },
+{ id: 'm3',  type: 'image', cloudinaryId: 'DSC01716_lbzydi', alt: 'uluwatuvoilier', ratio: '2/3' },
+
+                   { id: 'm12', type: 'image', cloudinaryId: 'DSC02156_uoo27l', alt: 'labuanbajo', ratio: '2/3' },
+
+      { id: 'm25', type: 'image', cloudinaryId: 'compressed_DSC02713_y3w0ju', alt: 'ijen', ratio: '16/9' },                              { id: 'm12', type: 'image', cloudinaryId: 'compressed_DSC02151_madeii',   alt: 'enfant3',           ratio: '2/3' },
+
+      { id: 'm4',  type: 'image', cloudinaryId: 'DSC02455_qvp2yf', alt: 'padarisland', ratio: '3/2' },
+
+      { id: 'm7',  type: 'image', cloudinaryId: 'P1020386_peroo5',              alt: 'rio3',              ratio: '3/2' },
+
+      
+      
+
+
+      { id: 'm14', type: 'image', cloudinaryId: 'compressed_DSC08492_jofjvx',   alt: 'peruche',           ratio: '3/2' },
+      { id: 'm15', type: 'image', cloudinaryId: 'compressed_DSC01835_fpqgf3',   alt: 'lufi', ratio: '3/2' },
+        { id: 'a1',  type: 'image', cloudinaryId: 'compressed_DSC02856_a3alsk', alt: 'Arewa 8', ratio:'3/2' },
+          { id: 'a7',  type: 'image', cloudinaryId: 'compressed_DJI_0001_ajt5wy', alt: 'Arewa 8', ratio:'3/2' },
+
+
+            { id: 'm20', type: 'image', cloudinaryId: 'DSC07892_soadas',              alt: 'atitlan',           ratio: '2/3' },//{ id: 'm5',  type: 'image', cloudinaryId: 'DSC02632_tpsqqk', alt: 'waerebo', ratio: '3/2' },
+      { id: 'm8',  type: 'image', cloudinaryId: 'DSC02635_fmprv0', alt: 'waerebo2', ratio: '3/2' }, 
+
+      { id: 'm52', type: 'image', cloudinaryId: 'compressed_DSC04322_bcghlx', alt: 'nepalyak', ratio: '3/2' },
+            { id: 'c2', type: 'image', cloudinaryId: 'DSC08084_ylkmgb',  alt: 'Finca 2', ratio: '3/2' },
+
+                                   { id: 'm26', type: 'image', cloudinaryId: 'compressed_DSC07041_tuj7pb',   alt: 'salvador',          ratio: '2/3' },
+
+{ id: 'm21', type: 'image', cloudinaryId: 'DSC04708_eu1jcq', alt: 'nepalporteur', ratio: '3/2' },
+
+                  { id: 'm23', type: 'image', cloudinaryId: 'P1020190_nlc28j',              alt: 'arbreslencois',     ratio: '2/3' },
+                              { id: 'm32', type: 'image', cloudinaryId: 'DSC07128_dxgujt',              alt: 'surfcamp',          ratio: '2/3' },
+
+
+
+
+
+
+
 
 ]
 

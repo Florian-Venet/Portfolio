@@ -125,61 +125,40 @@ amerique: {
 
 
     videoYoutube: 'REMPLACE_PAR_TON_ID_YOUTUBE',
-    galerie: [{ id: 'm10', type: 'image', cloudinaryId: 'DSC07497_llxh6c', alt: 'rioviolet', ratio: '2/3' },
-             { id: 'm35', type: 'image', cloudinaryId: 'compressed_DSC08384_h9jmn0', alt: 'isladelsol', ratio: '2/3' },
-             
-      { id: 'm19', type: 'image', cloudinaryId: 'compressed_DSC08847_g4gpul', alt: 'lagunerose1', ratio: '3/2' },
-      { id: 'm20', type: 'image', cloudinaryId: 'compressed_DSC08844_q5kndf', alt: 'lagunerose2', ratio: '2/3' },
-      
-  { id: 'm4',  type: 'image', cloudinaryId: 'DSC07591-2_b0rmzw', alt: 'rio', ratio: '3/2' },
-      { id: 'm7',  type: 'image', cloudinaryId: 'P1020385_qfbpja', alt: 'rio2', ratio: '3/2' },
-      { id: 'm8',  type: 'image', cloudinaryId: 'P1020386_peroo5', alt: 'rio3', ratio: '3/2' },
-      { id: 'm9',  type: 'image', cloudinaryId: 'P1020391_dtuhwx', alt: 'rio4', ratio: '2/3' },
-
-      { id: 'm1',  type: 'image', cloudinaryId: 'DSC06811_lwvbqr', alt: 'chevaux', ratio: '3/2' },     
-
-      { id: 'm30', type: 'image', cloudinaryId: 'compressed_DSC02147_eeggmw', alt: 'enfant1', ratio: '2/3' },
-      { id: 'm31', type: 'image', cloudinaryId: 'compressed_DSC02149_phs6ji', alt: 'enfant2', ratio: '2/3' },
-      { id: 'm32', type: 'image', cloudinaryId: 'compressed_DSC02151_madeii', alt: 'enfant3', ratio: '2/3' },
-       { id: 'm6',  type: 'image', cloudinaryId: 'P1020334_e07jcg', alt: 'parcrio', ratio: '3/2' }, 
-       
-            { id: 'm11', type: 'image', cloudinaryId: 'compressed_DSC08492_jofjvx', alt: 'peruche', ratio: '3/2' },
-                  { id: 'm29', type: 'image', cloudinaryId: 'compressed_DSC01835_fpqgf3', alt: 'lufi', ratio: '3/2' },
-
-
-      { id: 'm16', type: 'image', cloudinaryId: 'DSC00356_rdqcqr', alt: 'barque', ratio: '2/3' },
-
-    
-           
-
-      { id: 'm27', type: 'image', cloudinaryId: 'DSC00554_bncr8x', alt: 'triganaenfant', ratio: '2/3' },
-      { id: 'm33', type: 'image', cloudinaryId: 'compressed_DSC02559_hikoou', alt: 'gallinadelosrocas', ratio: '2/3' },                  { id: 'm26', type: 'image', cloudinaryId: 'DSC00521_o5lmvm', alt: 'triganavic', ratio: '2/3' },
-       { id: 'm38', type: 'image', cloudinaryId: 'DSC07892_soadas', alt: 'atitlan', ratio: '2/3' },
-
-            { id: 'm12', type: 'image', cloudinaryId: 'compressed_DSC07191_jvgdri', alt: 'surf', ratio: '3/2' },
-
-
-            { id: 'm2',  type: 'image', cloudinaryId: 'DSC06822_xcecjb', alt: 'lencois', ratio: '2/3' },
-
-      { id: 'm5',  type: 'image', cloudinaryId: 'P1020190_nlc28j', alt: 'arbreslencois', ratio: '2/3' },
-
-      { id: 'm13', type: 'image', cloudinaryId: 'compressed_DSC08670_akexnu', alt: 'cactus', ratio: '2/3' },
-            { id: 'm22', type: 'image', cloudinaryId: 'compressed_DSC08659_bmwjbx', alt: 'uyuni', ratio: '3/2' },
-                  { id: 'm34', type: 'image', cloudinaryId: 'compressed_DSC07041_tuj7pb', alt: 'salvador', ratio: '2/3' },
-
-{ id: 'm17', type: 'image', cloudinaryId: 'compressed_P1120747_fs7yef', alt: 'peritomoreno', ratio: '3/2' },
-      { id: 'm18', type: 'image', cloudinaryId: 'compressed_P1120445_fegwpi', alt: 'wtrek', ratio: '3/2' },
-            { id: 'm18', type: 'image', cloudinaryId: 'DSC08462_hyl2vr', alt: 'potosi', ratio: '3/2' },       { id: 'm37', type: 'image', cloudinaryId: 'compressed_DSC08175-2_gnykbn', alt: 'lapaz', ratio: '3/2' },
-{ id: 'm28', type: 'image', cloudinaryId: 'DSC07467_u1vhry', alt: 'voiturerio', ratio: '3/2' },
-     
-      //{ id: 'm36', type: 'image', cloudinaryId: 'guatemala-2_aw10an', alt: 'fuego', ratio: '3/2' },
-
-
-                        { id: 'm3',  type: 'image', cloudinaryId: 'DSC07128_dxgujt', alt: 'surfcamp', ratio: '2/3' },
-
-      
-
-
+    galerie: [
+      { id: 'm1',  type: 'image', cloudinaryId: 'DSC07497_llxh6c',              alt: 'rioviolet',         ratio: '2/3' },
+      { id: 'm2',  type: 'image', cloudinaryId: 'compressed_DSC08384_h9jmn0',   alt: 'isladelsol',        ratio: '2/3' },
+      { id: 'm3',  type: 'image', cloudinaryId: 'compressed_DSC08847_g4gpul',   alt: 'lagunerose1',       ratio: '3/2' },
+      { id: 'm4',  type: 'image', cloudinaryId: 'compressed_DSC08844_q5kndf',   alt: 'lagunerose2',       ratio: '2/3' },
+      { id: 'm5',  type: 'image', cloudinaryId: 'DSC07591-2_b0rmzw',            alt: 'rio',               ratio: '3/2' },
+      { id: 'm6',  type: 'image', cloudinaryId: 'P1020385_qfbpja',              alt: 'rio2',              ratio: '3/2' },
+      { id: 'm7',  type: 'image', cloudinaryId: 'P1020386_peroo5',              alt: 'rio3',              ratio: '3/2' },
+      { id: 'm8',  type: 'image', cloudinaryId: 'P1020391_dtuhwx',              alt: 'rio4',              ratio: '2/3' },
+      { id: 'm9',  type: 'image', cloudinaryId: 'DSC06811_lwvbqr',              alt: 'chevaux',           ratio: '3/2' },
+      { id: 'm10', type: 'image', cloudinaryId: 'compressed_DSC02147_eeggmw',   alt: 'enfant1',           ratio: '2/3' },
+      { id: 'm11', type: 'image', cloudinaryId: 'compressed_DSC02149_phs6ji',   alt: 'enfant2',           ratio: '2/3' },
+      { id: 'm12', type: 'image', cloudinaryId: 'compressed_DSC02151_madeii',   alt: 'enfant3',           ratio: '2/3' },
+      { id: 'm13', type: 'image', cloudinaryId: 'P1020334_e07jcg',              alt: 'parcrio',           ratio: '3/2' },
+      { id: 'm14', type: 'image', cloudinaryId: 'compressed_DSC08492_jofjvx',   alt: 'peruche',           ratio: '3/2' },
+      { id: 'm15', type: 'image', cloudinaryId: 'compressed_DSC01835_fpqgf3',   alt: 'lufi',              ratio: '3/2' },
+      { id: 'm16', type: 'image', cloudinaryId: 'DSC00356_rdqcqr',              alt: 'barque',            ratio: '2/3' },
+      { id: 'm17', type: 'image', cloudinaryId: 'DSC00554_bncr8x',              alt: 'triganaenfant',     ratio: '2/3' },
+      { id: 'm18', type: 'image', cloudinaryId: 'compressed_DSC02559_hikoou',   alt: 'gallinadelosrocas', ratio: '2/3' },
+      { id: 'm19', type: 'image', cloudinaryId: 'DSC00521_o5lmvm',              alt: 'triganavic',        ratio: '2/3' },
+      { id: 'm20', type: 'image', cloudinaryId: 'DSC07892_soadas',              alt: 'atitlan',           ratio: '2/3' },
+      { id: 'm21', type: 'image', cloudinaryId: 'compressed_DSC07191_jvgdri',   alt: 'surf',              ratio: '3/2' },
+      { id: 'm22', type: 'image', cloudinaryId: 'DSC06822_xcecjb',              alt: 'lencois',           ratio: '2/3' },
+      { id: 'm23', type: 'image', cloudinaryId: 'P1020190_nlc28j',              alt: 'arbreslencois',     ratio: '2/3' },
+      { id: 'm24', type: 'image', cloudinaryId: 'compressed_DSC08670_akexnu',   alt: 'cactus',            ratio: '2/3' },
+      { id: 'm25', type: 'image', cloudinaryId: 'compressed_DSC08659_bmwjbx',   alt: 'uyuni',             ratio: '3/2' },
+      { id: 'm26', type: 'image', cloudinaryId: 'compressed_DSC07041_tuj7pb',   alt: 'salvador',          ratio: '2/3' },
+      { id: 'm27', type: 'image', cloudinaryId: 'compressed_P1120747_fs7yef',   alt: 'peritomoreno',      ratio: '3/2' },
+      { id: 'm28', type: 'image', cloudinaryId: 'compressed_P1120445_fegwpi',   alt: 'wtrek',             ratio: '3/2' },
+      { id: 'm29', type: 'image', cloudinaryId: 'DSC08462_hyl2vr',              alt: 'potosi',            ratio: '3/2' },
+      { id: 'm30', type: 'image', cloudinaryId: 'compressed_DSC08175-2_gnykbn', alt: 'lapaz',             ratio: '3/2' },
+      { id: 'm31', type: 'image', cloudinaryId: 'DSC07467_u1vhry',              alt: 'voiturerio',        ratio: '3/2' },
+      { id: 'm32', type: 'image', cloudinaryId: 'DSC07128_dxgujt',              alt: 'surfcamp',          ratio: '2/3' },
+      //{ id: 'm33', type: 'image', cloudinaryId: 'guatemala-2_aw10an',          alt: 'fuego',             ratio: '3/2' },
     ],
   },
 }
