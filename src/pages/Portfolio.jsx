@@ -20,14 +20,23 @@ const HISTOIRES = [
 // Remplacez ces entrées par vos vraies images / vidéos.
 // Chaque item requiert : type, src, aspect (largeur/hauteur), alt ou label.
 const GALERIE_MEDIA = [
-  { id: 'g2', type: 'image', src: '/atacama.jpg',                          alt: 'Photo 2', ratio: '3/2' },
-  { id: 'g3', type: 'image', src: '/finca.jpg',                            alt: 'Photo 3', ratio: '16/9' },
-  { id: 'g1', type: 'image', cloudinaryId: 'compressed_portfolio_n6vmgu',  alt: 'Photo 1', ratio: '3/2' },
-  { id: 'g4', type: 'video', src: '/colibri.mp4',                          label: 'Vidéo 1', ratio: '3/2' },
-  { id: 'g6', type: 'image', src: '/jaja.jpg',                             alt: 'Photo 5', ratio: '3/2' },
-  { id: 'g7', type: 'image', src: '/vic.jpg',                              label: 'Photo 7', ratio: '2/3' },
-  { id: 'g8', type: 'video', src: '/jaja_toucan.mp4',                      label: 'Vidéo 3', ratio: '16/9' },
-  { id: 'g9', type: 'image', cloudinaryId: 'P1120445_bysdt5',              alt: 'Photo 6', ratio: '3/2' },
+  { id: 'm1',  type: 'image', cloudinaryId: 'DSC01475_oh8xxp', alt: 'Amérique 1', ratio: '3/2' },
+      { id: 'm2',  type: 'image', cloudinaryId: 'DSC01752_beqghb', alt: 'Amérique 2', ratio: '3/2' },
+      { id: 'm3',  type: 'image', cloudinaryId: 'DSC01716_lbzydi', alt: 'Amérique 3', ratio: '3/2' },
+      { id: 'm4',  type: 'image', cloudinaryId: 'DSC02455_qvp2yf', alt: 'Amérique 4', ratio: '3/2' },
+      { id: 'm5',  type: 'image', cloudinaryId: 'DSC02632_tpsqqk', alt: 'Amérique 5', ratio: '3/2' },
+      { id: 'm6',  type: 'image', cloudinaryId: 'DSC02231_hwawfd', alt: 'Amérique 6', ratio: '3/2' },
+      { id: 'm7',  type: 'image', cloudinaryId: 'DSC02036_atr8lp', alt: 'Amérique 7', ratio: '3/2' },
+      { id: 'm8',  type: 'image', cloudinaryId: 'DSC02635_fmprv0', alt: 'Amérique 8', ratio: '3/2' },
+      { id: 'm9',  type: 'image', cloudinaryId: 'DSC03080_jjgq9n', alt: 'Amérique 9', ratio: '3/2' },
+      { id: 'm12', type: 'image', cloudinaryId: 'DSC02156_uoo27l', alt: 'Amérique 12', ratio: '3/2' },
+{ id: 'm21', type: 'image', cloudinaryId: 'DSC04708_eu1jcq', alt: 'Amérique 21', ratio: '3/2' },
+      { id: 'm22', type: 'image', cloudinaryId: 'DSC05271_xotq0k', alt: 'Amérique 22', ratio: '3/2' },
+      { id: 'm23', type: 'image', cloudinaryId: 'DSC04764_yjjtiz', alt: 'Amérique 23', ratio: '3/2' },
+      { id: 'm24', type: 'image', cloudinaryId: 'compressed_DSC00521_ie3mbn', alt: 'Amérique 24', ratio: '3/2' },
+      { id: 'm25', type: 'image', cloudinaryId: 'compressed_DSC02713_y3w0ju', alt: 'Amérique 25', ratio: '3/2' },
+      { id: 'm52', type: 'image', cloudinaryId: 'compressed_DSC04322_bcghlx', alt: 'Amérique 52', ratio: '3/2' },
+
 ]
 
 const CATEGORIES = [
