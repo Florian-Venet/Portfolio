@@ -8,7 +8,8 @@ const OFFRES = [
     num: '01',
     titre: 'PACK CONTENU',
     accroche: "VOTRE UNIVERS, PRÊT À L'EMPLOI.",
-    description: `Photos et vidéos brutes retouchées, livrées clé en main.\n\nRéseaux sociaux, plateformes de réservation, supports de communication — chaque visuel est pensé pour votre audience et prêt à publier.`,
+    description: `Photos et vidéos retouchées, livrées clé en main.\n\nRéseaux sociaux, plateformes de réservation, supports de communication — chaque visuel est pensé pour votre audience et prêt à publier.`,
+    techniques: 'Photographie & HDR · Drone · Vidéo courte · Retouche',
     detail: 'Sur mesure · Selon vos besoins',
   },
   {
@@ -16,7 +17,8 @@ const OFFRES = [
     num: '02',
     titre: 'VIDÉO MONTÉE',
     accroche: 'UNE HISTOIRE. UNE IMAGE. UN IMPACT.',
-    description: `De la captation au montage final.\n\nFormat court ou long, vertical ou horizontal, cinématique ou dynamique. Chaque vidéo est conçue pour votre plateforme et votre vision.`,
+    description: `Format court ou long, vertical ou horizontal, cinématique ou dynamique — chaque vidéo est conçue pour votre plateforme et votre vision.`,
+    techniques: 'Tournage · Montage · Étalonnage · Sound design',
     detail: 'Sur mesure · Selon vos besoins',
   },
   {
@@ -24,7 +26,8 @@ const OFFRES = [
     num: '03',
     titre: 'MINI DOCUMENTAIRE',
     accroche: "AU-DELÀ DE L'IMAGE.",
-    description: `Le format premium pour raconter une vraie histoire.\n\nNarration, interviews, immersion complète. Pour les marques qui veulent laisser une empreinte durable dans l'esprit de leur audience.`,
+    description: `Narration, interviews, immersion complète.\n\nLe format idéal pour vos films corporate, événementiels, touristiques ou micro-documentaires.`,
+    techniques: 'Réalisation · Interview · Narration · Drone',
     detail: 'Sur mesure · Selon vos besoins',
   },
 ]
@@ -174,7 +177,7 @@ export default function Services() {
             </div>
 
             {/* Numéro + titre */}
-            <div style={{ display: 'flex', alignItems: 'baseline', gap: '1.5rem', marginBottom: '1rem' }}>
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: '1.5rem', marginBottom: '3rem' }}>
               <span style={{ fontFamily: 'Bebas Neue, sans-serif', fontSize: isMobile ? '3rem' : '5rem', lineHeight: 1, color: 'rgba(255,255,255,0.2)' }}>
                 {offre.num}
               </span>
@@ -182,20 +185,6 @@ export default function Services() {
                 {offre.titre}
               </span>
             </div>
-
-            {/* Accroche */}
-            <h2
-              className="text-white uppercase"
-              style={{
-                fontFamily: 'Bebas Neue, sans-serif',
-                fontSize: isMobile ? '1.3rem' : '2rem',
-                letterSpacing: '0.05em',
-                marginBottom: '1rem',
-                marginTop: isMobile ? '0.5rem' : '1.5rem',
-              }}
-            >
-              {offre.accroche}
-            </h2>
 
             {/* Description */}
             {offre.description.split('\n\n').map((para, i) => (
@@ -207,17 +196,24 @@ export default function Services() {
                   fontSize: isMobile ? '0.85rem' : '0.9rem',
                   lineHeight: 1.9,
                   marginBottom: '0.5rem',
-                  maxWidth: '600px',
                 }}
               >
                 {para}
               </p>
             ))}
 
+            {/* Techniques */}
+            <p
+              className="text-white/60"
+              style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.9rem', marginTop: '2rem' }}
+            >
+              {offre.techniques}
+            </p>
+
             {/* Detail */}
             <p
-              className="text-white/50"
-              style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.8rem', letterSpacing: '0.2em', marginTop: '1rem' }}
+              className="text-white/40"
+              style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.8rem', letterSpacing: '0.2em', marginTop: '4rem' }}
             >
               {offre.detail}
             </p>
