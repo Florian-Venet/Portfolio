@@ -15,8 +15,8 @@ export const PROJETS = {
   { id: 'a14', type: 'image', cloudinaryId: 'compressed_DSC02831_lmo0nc', alt: 'Arewa 8',  ratio: '2/3' },
 
   { id: 'a7',  type: 'image', cloudinaryId: 'compressed_DJI_0001_ajt5wy', alt: 'Arewa 8',  ratio: '3/2' },
+  { id: 'a2',  type: 'image', cloudinaryId: 'compressed_DJI_0995_t8vlal', alt: 'Arewa 8',  ratio: '3/4' },
 
-  { id: 'a6',  type: 'image', cloudinaryId: 'compressed_DSC03054_inlfe8', alt: 'Arewa 5',  ratio: '2/3' },
   { id: 'a21', type: 'image', cloudinaryId: 'compressed_DSC02949_gv0lrd', alt: 'Arewa 8',  ratio: '2/3' },
 
   { id: 'a11', type: 'video', vimeoId: '1177082479',              label: 'Vidéo 1',        ratio: '16/9' },
@@ -30,8 +30,8 @@ export const PROJETS = {
 
   { id: 'a16', type: 'image', cloudinaryId: 'compressed_DSC02972_asfaaf', alt: 'Arewa 8',  ratio: '3/2' },
   { id: 'a17', type: 'image', cloudinaryId: 'compressed_DSC02773_rwmmes', alt: 'Arewa 8',  ratio: '2/3' },
+  { id: 'a6',  type: 'image', cloudinaryId: 'compressed_DSC03054_inlfe8', alt: 'Arewa 5',  ratio: '2/3' },
 
-  { id: 'a2',  type: 'image', cloudinaryId: 'compressed_DJI_0995_t8vlal', alt: 'Arewa 8',  ratio: '3/4' },
   { id: 'a18', type: 'image', cloudinaryId: 'compressed_DSC02721_eutdkf', alt: 'Arewa 8',  ratio: '3/2' },
 
   { id: 'a15', type: 'image', cloudinaryId: 'compressed_DSC02755_crnz09', alt: 'Arewa 8',  ratio: '2/3' },

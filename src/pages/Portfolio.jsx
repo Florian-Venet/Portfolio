@@ -11,9 +11,9 @@ const COLLABORATIONS = [
 ]
 
 const HISTOIRES = [
-  { id: 'cordillere', title: 'CORDILLÈRE ROYALE', location: 'Bolivie, 2025',        cloudinaryId:'DSC08485_ml2nvb' },
-  { id: 'desert',     title: "DÉSERT D'ATACAMA",  location: 'Chili, 2025',           cloudinaryId: 'compressed_DSC08946_xvhgyx' },
-  { id: 'amerique',   title: 'AMÉRIQUE DU SUD',   location: 'Amérique du sud, 2025', image: '/amerique.jpg' },
+  { id: 'cordillere', title: 'CORDILLÈRE ROYALE', location: 'Bolivie, 2025',        cloudinaryId:'DSC08465_x9qox3', backgroundPosition: 'center 70%' },
+  { id: 'desert',     title: "DÉSERT D'ATACAMA",  location: 'Chili, 2025',           cloudinaryId: 'compressed_DSC08935_tm4x6f' },
+  { id: 'amerique',   title: 'AMÉRIQUE DU SUD',   location: 'Amérique du sud, 2025', cloudinaryId: 'DSC07467_u1vhry' },
 ]
 
 // ── Médias de la galerie ──────────────────────────────────────────────────────
@@ -41,7 +41,7 @@ const GALERIE_MEDIA = [
   { id: 'm18', type: 'image', cloudinaryId: 'compressed_DSC07041_tuj7pb', alt: 'salvador',        ratio: '2/3' },
   { id: 'm19', type: 'image', cloudinaryId: 'DSC04708_eu1jcq',             alt: 'nepalporteur',    ratio: '3/2' },
   { id: 'm20', type: 'image', cloudinaryId: 'P1020190_hqu9su',             alt: 'arbreslencois',   ratio: '2/3' },
-  { id: 'm21', type: 'image', cloudinaryId: 'indonesia_imrpaf',            alt: 'ijen',            ratio: '3/2' },
+  //{ id: 'm21', type: 'image', cloudinaryId: 'indonesia_imrpaf',            alt: 'ijen',            ratio: '3/2' },
   { id: 'm22', type: 'image', cloudinaryId: 'DSC07128_dxgujt',             alt: 'surfcamp',        ratio: '2/3' },
 
 
@@ -61,7 +61,7 @@ const CATEGORIES = [
 
 // ─── Carte projet ─────────────────────────────────────────────────────────────
 
-const ProjectCard = ({ id, title, location, image, cloudinaryId, width, isMobile }) => {
+const ProjectCard = ({ id, title, location, image, cloudinaryId, width, backgroundPosition, isMobile }) => {
   const [hovered, setHovered] = useState(false)
   const navigate = useNavigate()
   const handleClick = () => navigate(`/projet/${id}`)
@@ -84,7 +84,7 @@ const ProjectCard = ({ id, title, location, image, cloudinaryId, width, isMobile
             position: 'absolute', inset: 0,
             backgroundImage: `url(${image || cloudinaryUrl(cloudinaryId, width)})`,
             backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            backgroundPosition: backgroundPosition || 'center',
           }}
         />
         <div
