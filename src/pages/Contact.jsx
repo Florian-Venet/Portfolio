@@ -61,12 +61,12 @@ export default function Contact() {
         position: 'relative',
       }}
     >
-      <div style={{ position: 'fixed', inset: 0, backgroundColor: 'rgba(0,0,0,0.40)', zIndex: 0 }} />
+      <div style={{ position: 'fixed', inset: 0, backgroundColor: 'rgba(0,0,0,0.)', zIndex: 0 }} />
 
       <div style={{ position: 'relative', zIndex: 1, width: '100%', maxWidth: '580px' }}>
         <div
           style={{
-            backgroundColor: 'rgba(40, 40, 40, 0.60)',
+            backgroundColor: 'rgba(0, 0, 0, 0.4)',
             padding: isMobile ? '2rem 1.5rem' : '2.5rem 3rem',
             marginBottom: '1.5rem',
           }}
