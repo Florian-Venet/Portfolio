@@ -4,6 +4,7 @@ import { useIsMobile } from '../hooks/useIsMobile'
 
 export default function Contact() {
   const isMobile = useIsMobile()
+  const bgExtra = '5rem' // élargissement du fond de chaque côté
   const [formData, setFormData] = useState({ prenom: '', nom: '', email: '', message: '' })
   const [errors, setErrors] = useState({})
   const [submitted, setSubmitted] = useState(false)
@@ -67,7 +68,9 @@ export default function Contact() {
         <div
           style={{
             backgroundColor: 'rgba(0, 0, 0, 0.4)',
-            padding: isMobile ? '2rem 1.5rem' : '2.5rem 3rem',
+            marginLeft: isMobile ? 0 : `calc(-1 * ${bgExtra})`,
+            marginRight: isMobile ? 0 : `calc(-1 * ${bgExtra})`,
+            padding: isMobile ? '2rem 1.5rem' : `2.5rem calc(3rem + ${bgExtra})`,
             marginBottom: '1.5rem',
           }}
         >
