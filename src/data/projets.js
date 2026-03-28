@@ -6,27 +6,37 @@ export const PROJETS = {
     description: `Niché au cœur de la région colombienne du café, Arewá Biohabitat est un éco-lodge d'exception alliant architecture moderne et immersion totale dans une nature luxuriante.\n\nNous avons réalisé une vidéo cinématique capturant l'essence unique du lieu, ainsi qu'une production visuelle complète, livrant un pack de contenus retouchés et prêts à l'emploi.\n\nCes visuels accompagnent aujourd'hui le développement digital d'Arewá : site de réservation, réseaux sociaux et supports de communication.`,
     videoYoutube: '8v99zbPl2N4',
     galerie: [
-  { id: 'a1',  type: 'image', cloudinaryId: 'compressed_DSC02856_a3alsk', alt: 'Arewa 8', ratio:'3/2' },
-  { id: 'a2',  type: 'image', cloudinaryId: 'compressed_DJI_0995_t8vlal', alt: 'Arewa 8', ratio:'2/3' },
-  { id: 'a3',  type: 'image', cloudinaryId: 'compressed_DSC03092_zjxoxk', alt: 'Arewa 3', ratio:'2/3' },
-  { id: 'a4',  type: 'image', cloudinaryId: 'compressed_DSC03080_hjhd4j', alt: 'Arewa 4', ratio:'3/2' },
-  { id: 'a5',  type: 'video', vimeoId: '1177009622', label: 'Vidéo 2', ratio:'16/9' },
-  { id: 'a6',  type: 'image', cloudinaryId: 'compressed_DSC03054_inlfe8', alt: 'Arewa 5', ratio:'2/3' },
-  { id: 'a7',  type: 'image', cloudinaryId: 'compressed_DJI_0001_ajt5wy', alt: 'Arewa 8', ratio:'3/2' },
-  { id: 'a8',  type: 'video', vimeoId: '1177009595', label: 'Vidéo 1', ratio:'2/3' },
-  { id: 'a9',  type: 'image', cloudinaryId: 'compressed_DSC03106_wuscqr', alt: 'Arewa 8', ratio:'3/2' },
-  { id: 'a10', type: 'image', cloudinaryId: 'compressed_DJI_0987_sr0ih6', alt: 'Arewa 8', ratio:'3/2' },
-  { id: 'a11',  type: 'video', vimeoId: '1177082479', label: 'Vidéo 1', ratio:'16/9' },
-  { id: 'a12', type: 'image', cloudinaryId: 'compressed_DSC02845_gz76oq', alt: 'Arewa 8', ratio:'3/2' },
-  { id: 'a13', type: 'image', cloudinaryId: 'compressed_DSC03361_kylakl', alt: 'Arewa 1', ratio:'2/3' },
-  { id: 'a14', type: 'image', cloudinaryId: 'compressed_DSC02831_lmo0nc', alt: 'Arewa 8', ratio:'2/3' },
-  { id: 'a15', type: 'image', cloudinaryId: 'compressed_DSC02755_crnz09', alt: 'Arewa 8', ratio:'9/16' },
-  { id: 'a16', type: 'image', cloudinaryId: 'compressed_DSC02972_asfaaf', alt: 'Arewa 8', ratio:'3/2' },
-  { id: 'a17', type: 'image', cloudinaryId: 'compressed_DSC02773_rwmmes', alt: 'Arewa 8', ratio:'2/3' },
-  { id: 'a18', type: 'image', cloudinaryId: 'compressed_DSC02721_eutdkf', alt: 'Arewa 8', ratio:'3/2' },
-  { id: 'a19', type: 'image', cloudinaryId: 'compressed_DSC02923_fok7kf', alt: 'Arewa 10', ratio:'3/2' },
-  { id: 'a20', type: 'image', cloudinaryId: 'compressed_DSC03035_lvrqmg', alt: 'Arewa 8', ratio:'2/3' },
-  { id: 'a21', type: 'image', cloudinaryId: 'compressed_DSC02949_gv0lrd', alt: 'Arewa 8', ratio:'2/3' },
+  { id: 'a1',  type: 'image', cloudinaryId: 'compressed_DSC02856_a3alsk', alt: 'Arewa 8',  ratio: '3/2' },
+  { id: 'a20', type: 'image', cloudinaryId: 'compressed_DSC03035_lvrqmg', alt: 'Arewa 8',  ratio: '2/3' },
+  { id: 'a3',  type: 'image', cloudinaryId: 'compressed_DSC03092_zjxoxk', alt: 'Arewa 3',  ratio: '2/3' },
+  { id: 'a4',  type: 'image', cloudinaryId: 'compressed_DSC03080_hjhd4j', alt: 'Arewa 4',  ratio: '3/2' },
+
+  { id: 'a5',  type: 'video', vimeoId: '1177009622',              label: 'Vidéo 2',        ratio: '16/9' },
+  { id: 'a14', type: 'image', cloudinaryId: 'compressed_DSC02831_lmo0nc', alt: 'Arewa 8',  ratio: '2/3' },
+
+  { id: 'a7',  type: 'image', cloudinaryId: 'compressed_DJI_0001_ajt5wy', alt: 'Arewa 8',  ratio: '3/2' },
+
+  { id: 'a6',  type: 'image', cloudinaryId: 'compressed_DSC03054_inlfe8', alt: 'Arewa 5',  ratio: '2/3' },
+  { id: 'a21', type: 'image', cloudinaryId: 'compressed_DSC02949_gv0lrd', alt: 'Arewa 8',  ratio: '2/3' },
+
+  { id: 'a11', type: 'video', vimeoId: '1177082479',              label: 'Vidéo 1',        ratio: '16/9' },
+  { id: 'a10', type: 'image', cloudinaryId: 'compressed_DJI_0987_sr0ih6', alt: 'Arewa 8',  ratio: '3/2' },
+  { id: 'a9',  type: 'image', cloudinaryId: 'compressed_DSC03106_wuscqr', alt: 'Arewa 8',  ratio: '3/2' },
+  { id: 'a8',  type: 'video', vimeoId: '1177009595',              label: 'Vidéo 1',        ratio: '2/3' },
+
+  { id: 'a12', type: 'image', cloudinaryId: 'compressed_DSC02845_gz76oq', alt: 'Arewa 8',  ratio: '16/9' },
+
+  { id: 'a13', type: 'image', cloudinaryId: 'compressed_DSC03361_kylakl', alt: 'Arewa 1',  ratio: '2/3' },
+
+  { id: 'a16', type: 'image', cloudinaryId: 'compressed_DSC02972_asfaaf', alt: 'Arewa 8',  ratio: '3/2' },
+  { id: 'a17', type: 'image', cloudinaryId: 'compressed_DSC02773_rwmmes', alt: 'Arewa 8',  ratio: '2/3' },
+
+  { id: 'a2',  type: 'image', cloudinaryId: 'compressed_DJI_0995_t8vlal', alt: 'Arewa 8',  ratio: '3/4' },
+  { id: 'a18', type: 'image', cloudinaryId: 'compressed_DSC02721_eutdkf', alt: 'Arewa 8',  ratio: '3/2' },
+
+  { id: 'a15', type: 'image', cloudinaryId: 'compressed_DSC02755_crnz09', alt: 'Arewa 8',  ratio: '2/3' },
+
+  { id: 'a19', type: 'image', cloudinaryId: 'compressed_DSC02923_fok7kf', alt: 'Arewa 10', ratio: '3/2' },
 ],
     },
 
