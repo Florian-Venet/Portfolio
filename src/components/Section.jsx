@@ -17,7 +17,7 @@ export default function Section({ id, label, cloudinaryId, image, title, cta }) 
       }}
     >
       {/* reste du composant inchangé */}
-      <div className="absolute inset-0 bg-black/19" />
+      <div className="absolute inset-0 bg-black/25" />
 
       <div className="relative z-10 flex flex-col items-center" style={{ paddingTop: '1cm' }}>
         
