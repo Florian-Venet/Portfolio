@@ -8,17 +8,17 @@ const OFFRES = [
     num: '01',
     titre: 'PACK CONTENU',
     accroche: "VOTRE UNIVERS, PRÊT À L'EMPLOI.",
-    description: `Photos et vidéos retouchées, livrées clé en main.\n\nRéseaux sociaux, plateformes de réservation, supports de communication — chaque visuel est pensé pour votre audience et prêt à publier.`,
-    techniques: 'Photographie & HDR · Drone · Vidéo courte · Retouche',
+    description: `Photos et vidéos retouchées, prêtes à l'emploi.\n\nRéseaux sociaux, plateformes de réservation, supports de communication — chaque visuel est pensé pour votre audience et prêt à publier.`,
+    techniques: 'Photographie & HDR · Drone · Vidéographie · Retouche',
     detail: 'Sur mesure · Selon vos besoins',
   },
   {
-    id: 'video-montee',
+    id: 'video-promotionnelle',
     num: '02',
-    titre: 'VIDÉO MONTÉE',
+    titre: 'VIDÉO PROMOTIONNELLE',
     accroche: 'UNE HISTOIRE. UNE IMAGE. UN IMPACT.',
-    description: `Format court ou long, vertical ou horizontal, cinématique ou dynamique — chaque vidéo est conçue pour votre plateforme et votre vision.`,
-    techniques: 'Tournage · Montage · Étalonnage · Sound design',
+    description: `Format court ou long, vertical ou horizontal, cinématique ou dynamique — chaque vidéo est conçue pour sublimer vos lieux et vos expériences.`,
+    techniques: 'Direction artistique · Tournage · Montage · Étalonnage ',
     detail: 'Sur mesure · Selon vos besoins',
   },
   {
@@ -26,15 +26,15 @@ const OFFRES = [
     num: '03',
     titre: 'MINI DOCUMENTAIRE',
     accroche: "AU-DELÀ DE L'IMAGE.",
-    description: `Narration, interviews, immersion complète.\n\nLe format idéal pour vos films corporate, événementiels, touristiques ou micro-documentaires.`,
-    techniques: 'Réalisation · Interview · Narration · Drone',
+    description: ` Interviews, portraits, témoignages — donnez une voix à votre univers. Le format idéal pour vos films corporate, événementiels, touristiques.`,
+    techniques: 'Interviews · Tournage · Montage · Étalonnage',
     detail: 'Sur mesure · Selon vos besoins',
   },
 ]
 
 const CATEGORIES = [
   { num: '01', label: 'PACK CONTENU', anchor: 'pack-contenu' },
-  { num: '02', label: 'VIDÉO MONTÉE', anchor: 'video-montee' },
+  { num: '02', label: 'VIDÉO PROMOTIONNELLE', anchor: 'video-promotionnelle' },
   { num: '03', label: 'MINI DOCUMENTAIRE', anchor: 'mini-documentaire' },
 ]
 
