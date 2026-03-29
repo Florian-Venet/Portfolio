@@ -20,7 +20,7 @@ function PersonSection({ name, imgSrc, children, isMobile, zIndex }) {
         right: isMobile ? '6%' : '15%',
         zIndex: 10,
       }}>
-        <div style={{ borderTop: '1px solid rgba(255,255,255,0.2)' }} />
+        <div style={{ borderTop: '1px solid rgba(255,255,255,0.3)' }} />
         <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '0.5rem' }}>
           <span style={{ color: 'white' }}>+</span>
           <span style={{ color: 'white' }}>+</span>

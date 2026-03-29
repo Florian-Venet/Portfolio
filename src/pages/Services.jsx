@@ -159,17 +159,17 @@ export default function Services() {
               minHeight: isMobile ? 'auto' : undefined,
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'center',
+              justifyContent: 'flex-start',
               paddingLeft: isMobile ? '6%' : '15%',
               paddingRight: isMobile ? '6%' : '15%',
-              paddingTop: isMobile ? '2rem' : '0',
+              paddingTop: isMobile ? '2rem' : '2rem',
               paddingBottom: isMobile ? '2rem' : '0',
               marginBottom: isMobile ? '0' : '4rem',
             }}
           >
             {/* Trait + + */}
             <div style={{ marginBottom: '2rem' }}>
-              <div style={{ borderTop: '1px solid rgba(255,255,255,0.2)' }} />
+              <div style={{ borderTop: '1px solid rgba(255,255,255,0.3)' }} />
               <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '0.5rem' }}>
                 <span className="text-white">+</span>
                 <span className="text-white">+</span>

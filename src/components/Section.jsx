@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { cloudinaryUrl } from '../utils/cloudinary'
 
-export default function Section({ id, label, cloudinaryId, image, title, cta }) {
+export default function Section({ id, label, cloudinaryId, image, title, cta, backgroundPosition }) {
   const navigate = useNavigate()
     const bgImage = cloudinaryId ? cloudinaryUrl(cloudinaryId) : image
 
@@ -13,7 +13,7 @@ export default function Section({ id, label, cloudinaryId, image, title, cta }) 
       style={{
         backgroundImage: `url(${bgImage})`,
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundPosition: backgroundPosition || 'center',
       }}
     >
       {/* reste du composant inchangé */}

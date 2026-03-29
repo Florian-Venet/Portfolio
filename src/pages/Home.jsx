@@ -26,7 +26,7 @@ const SECTIONS = [
   {
     id: 'contact',
     label: 'CONTACT',
-    cloudinaryId: 'compressed_DJI_0001_ajt5wy',
+    cloudinaryId: 'compressed_DSC03080_hjhd4j',
     title: 'DISCUTONS.',
     cta: 'NOUS CONTACTER',
   },

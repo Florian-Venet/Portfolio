@@ -4,7 +4,7 @@ import { useIsMobile } from '../hooks/useIsMobile'
 
 export default function Contact() {
   const isMobile = useIsMobile()
-  const bgExtra = '5rem' // élargissement du fond de chaque côté
+  const bgExtra = '3rem' // élargissement du fond de chaque côté
   const [formData, setFormData] = useState({ prenom: '', nom: '', email: '', message: '' })
   const [errors, setErrors] = useState({})
   const [submitted, setSubmitted] = useState(false)
@@ -50,7 +50,7 @@ export default function Contact() {
     <div
       style={{
         minHeight: '100vh',
-        backgroundImage: `url(${cloudinaryUrl('compressed_DJI_0001_ajt5wy')})`,
+        backgroundImage: `url(${cloudinaryUrl('compressed_DSC03080_hjhd4j')})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: isMobile ? 'scroll' : 'fixed',
@@ -67,10 +67,10 @@ export default function Contact() {
       <div style={{ position: 'relative', zIndex: 1, width: '100%', maxWidth: '580px' }}>
         <div
           style={{
-            backgroundColor: 'rgba(0, 0, 0, 0.4)',
+            backgroundColor: 'rgba(0, 0, 0, 0.3)',
             marginLeft: isMobile ? 0 : `calc(-1 * ${bgExtra})`,
             marginRight: isMobile ? 0 : `calc(-1 * ${bgExtra})`,
-            padding: isMobile ? '2rem 1.5rem' : `2.5rem calc(3rem + ${bgExtra})`,
+            padding: isMobile ? '2rem 1.5rem' : `2rem calc(3rem + ${bgExtra})`,
             marginBottom: '1.5rem',
           }}
         >
@@ -237,12 +237,12 @@ export default function Contact() {
 
         <div
           style={{
-            position: 'absolute', // reste relatif à la div parent principale
-            right: isMobile ? '6%' : '3.75rem', // aligné comme le menu du header
-            bottom: isMobile ? '2rem' : '3rem',
+            position: 'absolute',
+            left: isMobile ? '6%' : '7rem',
+            bottom: isMobile ? '2rem' : '5rem',
             display: 'flex',
             flexDirection: 'column',
-            alignItems: 'flex-end',
+            alignItems: 'flex-start',
             zIndex: 1,
           }}
         >
@@ -253,7 +253,7 @@ export default function Contact() {
               fontSize: isMobile ? '0.65rem' : '0.8rem',
               letterSpacing: '0.1em',
               marginBottom: '0.6rem',
-              textAlign: 'right',
+              textAlign: 'left',
               lineHeight: 1.4,
             }}
           >

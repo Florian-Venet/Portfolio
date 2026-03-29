@@ -7,7 +7,7 @@ import { useIsMobile } from '../hooks/useIsMobile'
 const COLLABORATIONS = [
   { id: 'arewa', title: 'AREWA BIOHABITAT', location: 'Colombie, 2026', cloudinaryId: 'compressed_DJI_0001_ajt5wy', width: 1200 },
   { id: 'finca', title: 'FINCA CARPE DIEM', location: 'Colombie, 2026', cloudinaryId: 'FincaPool_puntbe' },
-  { id: 'jaja',  title: 'JAJA TOUR',        location: 'Bolivie, 2025',  cloudinaryId: 'DSC08566_web_oba8s6' },
+  { id: 'jaja',  title: 'JAJA TOUR',        location: 'Bolivie, 2025',  cloudinaryId: 'DSC08568-2_web_fknxfd', backgroundPosition: 'center 55%' },
 ]
 
 const HISTOIRES = [
@@ -166,9 +166,9 @@ const SectionHeader = ({ num, title, description, isMobile }) => (
         gap: isMobile ? '0.5rem' : '0',
       }}
     >
-      <div style={{ display: 'flex', alignItems: 'baseline', gap: '1rem' }}>
-        <span className="text-white" style={{ fontFamily: 'Bebas Neue, sans-serif', fontSize: isMobile ? '2rem' : '3rem' }}>{num}</span>
-        <span className="text-white uppercase" style={{ fontFamily: 'Bebas Neue, sans-serif', fontSize: isMobile ? '2rem' : '3rem' }}>{title}</span>
+      <div style={{ display: 'flex', alignItems: 'baseline', gap: '1.5rem' }}>
+        <span style={{ fontFamily: 'Bebas Neue, sans-serif', fontSize: isMobile ? '3rem' : '5rem', lineHeight: 1, color: 'rgba(255,255,255,0.2)' }}>{num}</span>
+        <span className="text-white uppercase" style={{ fontFamily: 'Bebas Neue, sans-serif', fontSize: isMobile ? '2rem' : '3.5rem', lineHeight: 1 }}>{title}</span>
       </div>
       <p
         className="text-white/70"
@@ -259,22 +259,20 @@ export default function Portfolio() {
         />
         <div className="absolute inset-0 bg-black/40" />
 
-        {/* Titre desktop */}
-        {!isMobile && (
-          <div
-            className="relative z-10"
-            style={{ paddingLeft: isMobile ? '6%' : '15%' }}
-          >
-            <div style={{ display: 'flex', alignItems: 'center', height: isMobile ? 'auto' : '75vh', marginTop: isMobile ? '11.5rem' : 0 }}>
-              <h1
-                className="text-white uppercase"
-                style={{ fontFamily: 'Bebas Neue, sans-serif', fontSize: isMobile ? '3rem' : '4.2rem', letterSpacing: '0.02em', lineHeight: 1.1 }}
-              >
-                DÉCOUVREZ<br />NOTRE UNIVERS.
-              </h1>
-            </div>
+        {/* Titre */}
+        <div
+          className="relative z-10"
+          style={{ paddingLeft: isMobile ? '6%' : '15%', paddingTop: isMobile ? '5rem' : '0' }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', height: isMobile ? 'auto' : '75vh', marginTop: isMobile ? '11.5rem' : 0 }}>
+            <h1
+              className="text-white uppercase"
+              style={{ fontFamily: 'Bebas Neue, sans-serif', fontSize: isMobile ? '3rem' : '4.2rem', letterSpacing: '0.02em', lineHeight: 1.1 }}
+            >
+              DÉCOUVREZ<br />NOTRE UNIVERS.
+            </h1>
           </div>
-        )}
+        </div>
 
         {/* Sommaire mobile */}
         {isMobile && (
