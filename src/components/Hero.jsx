@@ -9,14 +9,16 @@ export default function Hero() {
       className="relative w-full h-screen flex flex-col overflow-hidden"
     >
       <div className="absolute inset-0 w-full h-full overflow-hidden">
-        <iframe
-          src="https://player.vimeo.com/video/1178262213?autoplay=1&loop=1&muted=1&background=1"
-          className="absolute w-full h-full"
-          style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)', minWidth: '100%', minHeight: '100%', width: 'auto', height: 'auto', aspectRatio: '16/9' }}
-
-          allow="autoplay; fullscreen; picture-in-picture"
-          title="Hero video"
-        />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          className="absolute w-full h-full object-cover"
+        >
+          <source src="/herosite.mp4" type="video/mp4" />
+        </video>
       </div>
 
       <div className="absolute inset-0 bg-black/35" />

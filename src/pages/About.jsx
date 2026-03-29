@@ -152,12 +152,12 @@ export default function About() {
       </section>
 
       {/* Victoria + Florian — sticky comme Services */}
-      <PersonSection name="VICTORIA" imgSrc="/vic.jpg" isMobile={isMobile} zIndex={1}>
+      <PersonSection name="VICTORIA" imgSrc={cloudinaryUrl('vic_gx82jw')} isMobile={isMobile} zIndex={1}>
         <p>Victoria est une photographe talentueuse qui capture l'essence de chaque moment. Son travail explore la lumière, l'ombre et l'émotion à travers des compositions uniques.</p>
         <p style={{ marginTop: '1rem' }}>Spécialisée en portrait et paysage, elle mêle éléments naturels et narration humaine pour créer des images intemporelles.</p>
       </PersonSection>
 
-      <PersonSection name="FLORIAN" imgSrc="/florian.png" isMobile={isMobile} zIndex={2}>
+      <PersonSection name="FLORIAN" imgSrc={cloudinaryUrl('florian_shovdw')} isMobile={isMobile} zIndex={2}>
         <p>Convaincu qu'une belle image fait la différence, j'aborde chaque projet avec une vision d'ensemble : de la direction artistique à la post-production, chaque détail compte.</p>
         <p style={{ marginTop: '1rem' }}>Photographe, vidéaste et pilote de drone, je travaille en étroite collaboration avec chaque client pour saisir ce qui rend son univers unique et le mettre en lumière avec précision. </p>
       </PersonSection>

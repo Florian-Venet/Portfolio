@@ -227,7 +227,7 @@ export default function Services() {
           position: 'sticky',
           top: 0,
           zIndex: OFFRES.length + 1,
-          backgroundImage: "url('/contact.jpg')",
+          backgroundImage: `url(${cloudinaryUrl('DSC08470_mtf80d')})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center 65%',
           backgroundAttachment: isMobile ? 'scroll' : 'fixed',
