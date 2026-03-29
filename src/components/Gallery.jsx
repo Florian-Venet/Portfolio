@@ -80,7 +80,7 @@ function useContainerWidth(ref) {
 
 // ─── Carte ────────────────────────────────────────────────────────────────────
 
-function MediaCard({ item, width, height, onClick }) {
+function MediaCard({ item, width, height, onClick, vimeoKey = 0 }) {
   const videoRef = useRef(null);
   const [loaded,  setLoaded]  = useState(false);
   const [hovered, setHovered] = useState(false);
@@ -123,6 +123,7 @@ function MediaCard({ item, width, height, onClick }) {
       ) : item.vimeoId ? (
         <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
           <iframe
+            key={vimeoKey}
             src={`https://player.vimeo.com/video/${item.vimeoId}?background=1&loop=1&autoplay=1&muted=1&quality=1080p`}
             style={{
               opacity: loaded ? 1 : 0,
@@ -191,26 +192,27 @@ function Lightbox({ item, items, onClose, onPrev, onNext }) {
     const header = document.querySelector("header");
     if (item) {
       document.body.style.overflow = "hidden";
-      if (header) header.style.display = "none";
+      if (header) header.style.visibility = "hidden";
     } else {
       document.body.style.overflow = "";
-      if (header) header.style.display = "";
+      if (header) header.style.visibility = "";
     }
     return () => {
       document.body.style.overflow = "";
-      if (header) header.style.display = "";
+      if (header) header.style.visibility = "";
     };
   }, [item]);
 
   if (!item) return null;
 
   return createPortal(
-    <div className="lightbox" onClick={onClose} role="dialog" aria-modal="true">
-      {/* Bouton fermer dans le portal, z-index max */}
+    <div className="lightbox" role="dialog" aria-modal="true">
+      {/* Fond cliquable pour fermer — div explicite pour contourner les iframes Vimeo qui avalent les events */}
+      <div className="lb-backdrop" onClick={onClose} />
       <button className="lb-close" onClick={(e) => { e.stopPropagation(); onClose(); }} aria-label="Fermer">✕</button>
-      <button className="lb-nav lb-prev" onClick={(e) => { e.stopPropagation(); onPrev(); }}>‹</button>
-      <button className="lb-nav lb-next" onClick={(e) => { e.stopPropagation(); onNext(); }}>›</button>
       <div className="lb-content" onClick={(e) => e.stopPropagation()}>
+        <button className="lb-nav lb-prev" onClick={(e) => { e.stopPropagation(); onPrev(); }}>‹</button>
+        <button className="lb-nav lb-next" onClick={(e) => { e.stopPropagation(); onNext(); }}>›</button>
         {item.type === "image" ? (
           <>
             {!imgLoaded && (
@@ -281,8 +283,9 @@ export default function Gallery({ items = [] }) {
   );
 
   const [lightboxIdx, setLightboxIdx] = useState(null);
+  const [vimeoKey, setVimeoKey] = useState(0);
   const open  = useCallback((item) => setLightboxIdx(enriched.findIndex((i) => i.id === item.id)), [enriched]);
-  const close = useCallback(() => setLightboxIdx(null), []);
+  const close = useCallback(() => { setLightboxIdx(null); setVimeoKey((k) => k + 1); }, []);
   const prev  = useCallback(() => setLightboxIdx((i) => (i - 1 + enriched.length) % enriched.length), [enriched.length]);
   const next  = useCallback(() => setLightboxIdx((i) => (i + 1) % enriched.length), [enriched.length]);
 
@@ -298,7 +301,7 @@ export default function Gallery({ items = [] }) {
                 const h = Math.round(w / item._aspect);
                 return (
                   <div key={item.id} style={{ display: 'flex', justifyContent: 'center', marginBottom: GAP }}>
-                    <MediaCard item={item} width={w} height={h} onClick={open} />
+                    <MediaCard item={item} width={w} height={h} onClick={open} vimeoKey={vimeoKey} />
                   </div>
                 );
               })
@@ -315,6 +318,7 @@ export default function Gallery({ items = [] }) {
                         width={Math.round(item._aspect * scale)}
                         height={rowHeight}
                         onClick={open}
+                        vimeoKey={vimeoKey}
                       />
                     ))}
                   </div>
@@ -399,6 +403,13 @@ const CSS = `
   .overlay.visible { opacity: 1; }
 
   /* ── Lightbox — z-index très élevé pour passer au-dessus du header ── */
+  .lb-backdrop {
+    position: absolute;
+    inset: 0;
+    cursor: default;
+    z-index: 0;
+  }
+
   .lightbox {
     position: fixed; inset: 0;
     background: rgba(0,0,0,0.93);
@@ -437,23 +448,21 @@ const CSS = `
   .lb-close:hover { background: rgba(255,255,255,0.12); color: #fff; border-color: rgba(255,255,255,0.4); }
 
   .lb-nav {
-    position: fixed; top: 50%; transform: translateY(-50%);
+    position: absolute; top: 50%; transform: translateY(-50%);
     background: rgba(255,255,255,0.06);
     border: 1px solid var(--border); color: #e8e4dc;
     font-size: 2rem; width: 46px; height: 68px;
     cursor: pointer;
     display: flex; align-items: center; justify-content: center;
     transition: background 0.2s;
-    z-index: 53;          /* ← même niveau que lb-close */
+    z-index: 2;
     line-height: 1;
   }
   .lb-nav:hover { background: rgba(255,255,255,0.13); }
-  .lb-prev { left: 12px;  border-radius: 0 4px 4px 0; }
-  .lb-next { right: 12px; border-radius: 4px 0 0 4px; }
+  .lb-prev { left: 0; border-radius: 0 4px 4px 0; }
+  .lb-next { right: 0; border-radius: 4px 0 0 4px; }
 
   @media (max-width: 479px) {
     .lb-nav { width: 34px; height: 52px; font-size: 1.4rem; }
-    .lb-prev { left: 4px; }
-    .lb-next { right: 4px; }
   }
 `;
