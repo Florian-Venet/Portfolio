@@ -25,7 +25,7 @@ export default function Header() {
           className="text-white"
           style={{ fontFamily: 'Playfair Display, serif', fontSize: '2.4rem', letterSpacing: '0.1em' }}
         >
-          SHØT
+          ELØRIA
         </Link>
       </div>
 
