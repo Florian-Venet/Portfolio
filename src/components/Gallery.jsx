@@ -210,9 +210,9 @@ function Lightbox({ item, items, onClose, onPrev, onNext }) {
       {/* Fond cliquable pour fermer — div explicite pour contourner les iframes Vimeo qui avalent les events */}
       <div className="lb-backdrop" onClick={onClose} />
       <button className="lb-close" onClick={(e) => { e.stopPropagation(); onClose(); }} aria-label="Fermer">✕</button>
+      <button className="lb-nav lb-prev" onClick={(e) => { e.stopPropagation(); onPrev(); }}>‹</button>
+      <button className="lb-nav lb-next" onClick={(e) => { e.stopPropagation(); onNext(); }}>›</button>
       <div className="lb-content" onClick={(e) => e.stopPropagation()}>
-        <button className="lb-nav lb-prev" onClick={(e) => { e.stopPropagation(); onPrev(); }}>‹</button>
-        <button className="lb-nav lb-next" onClick={(e) => { e.stopPropagation(); onNext(); }}>›</button>
         {item.type === "image" ? (
           <>
             {!imgLoaded && (
@@ -448,14 +448,14 @@ const CSS = `
   .lb-close:hover { background: rgba(255,255,255,0.12); color: #fff; border-color: rgba(255,255,255,0.4); }
 
   .lb-nav {
-    position: absolute; top: 50%; transform: translateY(-50%);
+    position: fixed; top: 50%; transform: translateY(-50%);
     background: rgba(255,255,255,0.06);
     border: 1px solid var(--border); color: #e8e4dc;
     font-size: 2rem; width: 46px; height: 68px;
     cursor: pointer;
     display: flex; align-items: center; justify-content: center;
     transition: background 0.2s;
-    z-index: 2;
+    z-index: 53;
     line-height: 1;
   }
   .lb-nav:hover { background: rgba(255,255,255,0.13); }
