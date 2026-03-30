@@ -129,8 +129,8 @@ Ces expéditions ont donné naissance à une série de contenus visuels, témoig
 
 amerique: {
   id: 'amerique',
-  titre: 'Amérique du Sud',
-  sousTitre: 'Amérique du Sud · 2025 — 2026',
+  titre: 'Amérique latine',
+  sousTitre: 'Amérique latine · 2025 — 2026',
   description: `Du Guatemala à la Patagonie, ce projet personnel retrace plusieurs mois d'exploration visuelle à travers l'Amérique du Sud, entre paysages exceptionnels, cultures vivantes et rencontres humaines au fil de la route.\n\nDrone et caméra en main, nous avons documenté chaque pays avec la même exigence que pour nos collaborations : capter la lumière, l'atmosphère et l'instant juste.`,
 
 
