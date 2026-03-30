@@ -45,3 +45,7 @@ textarea:focus-visible {
 @theme {
   --color-orange-400: #f5d020;
 }
+
+nextjs-portal {
+  display: none !important;
+}
