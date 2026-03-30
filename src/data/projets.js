@@ -4,7 +4,7 @@ export const PROJETS = {
     titre: 'Arewá Biohabitat',
     sousTitre: 'Pijao · Colombie · Janvier 2026',
     description: `Niché au cœur de la région colombienne du café, Arewá Biohabitat est un éco-lodge d'exception alliant architecture moderne et immersion totale dans une nature luxuriante.\n\nNous avons réalisé une vidéo cinématique capturant l'essence unique du lieu, ainsi qu'une production visuelle complète, livrant un pack de contenus retouchés et prêts à l'emploi.\n\nCes visuels accompagnent aujourd'hui le développement digital d'Arewá : site de réservation, réseaux sociaux et supports de communication.`,
-    videoYoutube: '59H6NT51LZE',
+    videoYoutube: 'OB2-Zf67BX0',
     galerie: [
   { id: 'a1',  type: 'image', cloudinaryId: 'compressed_DSC02856_a3alsk', alt: 'Arewa 8',  ratio: '3/2' },
   { id: 'a20', type: 'image', cloudinaryId: 'compressed_DSC03035_lvrqmg', alt: 'Arewa 8',  ratio: '2/3' },
