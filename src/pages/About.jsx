@@ -153,8 +153,9 @@ export default function About() {
 
       {/* Victoria + Florian — sticky comme Services */}
       <PersonSection name="VICTORIA" imgSrc={cloudinaryUrl('vic_gx82jw')} isMobile={isMobile} zIndex={1}>
-        <p>Victoria est une photographe talentueuse qui capture l'essence de chaque moment. Son travail explore la lumière, l'ombre et l'émotion à travers des compositions uniques.</p>
-        <p style={{ marginTop: '1rem' }}>Spécialisée en portrait et paysage, elle mêle éléments naturels et narration humaine pour créer des images intemporelles.</p>
+        <p> Passionnée d’art et de création depuis toujours, mon regard s’attarde sur les détails les plus infimes. Ma pratique de la peinture a façonné ma manière de voir:  je décompose chaque scène pour me concentrer sur la lumière, les couleurs et les compositions, afin de créer des images à la fois esthétiques et vivantes. </p>
+        <p style={{ marginTop: '1rem' }}>À travers la photographie et la vidéographie, je cherche à révéler les émotions et l’atmosphère de chaque instant.</p>
+        
       </PersonSection>
 
       <PersonSection name="FLORIAN" imgSrc={cloudinaryUrl('florian_shovdw')} isMobile={isMobile} zIndex={2}>

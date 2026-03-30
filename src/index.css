@@ -11,6 +11,15 @@ html {
   scroll-behavior: smooth;
 }
 
+@keyframes pageFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.page-transition {
+  animation: pageFadeIn 0.25s ease-out;
+}
+
 body {
   background: #000;
   overflow-x: hidden;
