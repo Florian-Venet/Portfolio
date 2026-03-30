@@ -172,7 +172,7 @@ const SectionHeader = ({ num, title, description, isMobile }) => (
       </div>
       <p
         className="text-white/70"
-        style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.85rem', textAlign: isMobile ? 'left' : 'right', maxWidth: '280px' }}
+        style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.95rem', textAlign: isMobile ? 'left' : 'right', maxWidth: '280px' }}
       >
         {description}
       </p>
