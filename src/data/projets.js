@@ -3,7 +3,7 @@ export const PROJETS = {
     id: 'arewa',
     titre: 'Arewá Biohabitat',
     sousTitre: 'Pijao · Colombie · Janvier 2026',
-    description: `Niché au cœur de la région colombienne du café, Arewá Biohabitat est un éco-lodge d'exception alliant architecture moderne et immersion totale dans une nature luxuriante.\n\nNous avons réalisé une vidéo cinématique capturant l'essence unique du lieu, ainsi qu'une production visuelle complète, livrant un pack de contenus retouchés et prêts à l'emploi.\n\nCes visuels accompagnent aujourd'hui le développement digital d'Arewá : site de réservation, réseaux sociaux et supports de communication.`,
+    description: `Niché au cœur de la région colombienne du café, Arewá Biohabitat est un éco-lodge d'exception alliant architecture moderne et immersion totale dans une nature luxuriante.\n\nNous avons réalisé une vidéo cinématique capturant l'essence unique du lieu, ainsi qu'un pack de contenus retouchés et prêts à l'emploi.\n\nCes visuels accompagnent aujourd'hui le développement digital d'Arewá : site de réservation, réseaux sociaux et supports de communication.`,
     videoYoutube: 'OB2-Zf67BX0',
     galerie: [
   { id: 'a1',  type: 'image', cloudinaryId: 'compressed_DSC02856_a3alsk', alt: 'Arewa 8',  ratio: '3/2' },
@@ -112,7 +112,7 @@ Ces expéditions ont donné naissance à une série de contenus visuels, témoig
     id: 'desert',
     titre: "Désert d'Atacama",
     sousTitre: 'Atacama · Chili · Décembre 2025',
-    description: `Le désert d'Atacama, reconnu comme le désert le plus aride du monde, offre des paysages parmi les plus saisissants de la planète. Entre geysers, lagunes colorées, étendues de sel à perte de vue, chaque environnement révèle une atmosphère unique.\n\n À travers ce terrain de jeu visuel exceptionnel, nous avons cherché à capturer la beauté brute de ces lieux hors du commun.`,
+    description: `Le désert d'Atacama, reconnu comme le désert le plus aride du monde, offre des paysages parmi les plus saisissants de la planète. Entre geysers, lagunes colorées, étendues de sel à perte de vue, chaque environnement révèle une atmosphère unique.\n\n À travers ce terrain de jeu visuel exceptionnel, nous avons cherché à capturer la beauté de ces lieux hors du commun.`,
     videoYoutube: 'gG2mjak3VpQ',
     galerie: [
       { id: 'a1', type: 'image', cloudinaryId: 'compressed_DSC08924-2_ddarkg',  alt: 'Finca 1', ratio: '2/3' },
@@ -128,10 +128,9 @@ Ces expéditions ont donné naissance à une série de contenus visuels, témoig
   },
 
 amerique: {
-  id: 'amerique',
   titre: 'Amérique latine',
   sousTitre: 'Amérique latine · 2025 — 2026',
-  description: `Du Guatemala à la Patagonie, ce projet personnel retrace plusieurs mois d'exploration visuelle à travers l'Amérique du Sud, entre paysages exceptionnels, cultures vivantes et rencontres humaines au fil de la route.\n\nDrone et caméra en main, nous avons documenté chaque pays avec la même exigence que pour nos collaborations : capter la lumière, l'atmosphère et l'instant juste.`,
+  description: `Du Guatemala à la Patagonie, ce projet personnel retrace plusieurs mois d'exploration visuelle à travers l'Amérique du Sud, entre paysages exceptionnels, cultures vivantes et rencontres humaines au fil de la route.\n\nDrone et caméra en main, nous avons documenté chaque pays avec la même exigence que pour nos collaborations : capter la lumière et l'atmosphère à travers chaque image.`,
 
 
     videoYoutube: 'Y7HVxNMmVIo',
