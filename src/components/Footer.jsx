@@ -59,7 +59,7 @@ export default function Footer() {
             SUIVEZ-NOUS
           </span>
           <a
-            href="https://www.instagram.com/echoes.visuals/"
+            href="https://www.instagram.com/eloriafilms"
             target="_blank"
             rel="noreferrer"
             className="text-white hover:text-orange-400 transition-colors duration-200"
@@ -68,7 +68,7 @@ export default function Footer() {
             Instagram
           </a>
           <a
-            href="https://youtube.com"
+            href="https://www.youtube.com/@user-ce5sj6cl6p"
             target="_blank"
             rel="noreferrer"
             className="text-white hover:text-orange-400 transition-colors duration-200"
@@ -86,7 +86,7 @@ export default function Footer() {
           className="text-white/30 tracking-widest"
           style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.7rem' }}
         >
-          © 2026 ELØRIA. TOUS DROITS RÉSERVÉS.
+          © 2025 ELØRIA. TOUS DROITS RÉSERVÉS.
         </span>
       </div>
 
