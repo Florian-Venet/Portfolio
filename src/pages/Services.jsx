@@ -137,7 +137,7 @@ export default function Services() {
                 style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '1rem', letterSpacing: '0.2em', gap: '4rem', marginBottom: '1.5rem' }}
               >
                 <span style={{ color: 'rgba(255,255,255,0.5)', minWidth: '2rem', textAlign: 'right' }}>{num}</span>
-                <span style={{ minWidth: '260px', textAlign: 'right' }}>{label}</span>
+                <span style={{ width: '280px', textAlign: 'right', whiteSpace: 'nowrap' }}>{label}</span>
               </a>
             ))}
           </div>

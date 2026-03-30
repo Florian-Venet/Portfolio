@@ -86,7 +86,7 @@ export default function Footer() {
           className="text-white/30 tracking-widest"
           style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.7rem' }}
         >
-          © 2025 ELØRIA. TOUS DROITS RÉSERVÉS.
+          © 2026 ELØRIA. TOUS DROITS RÉSERVÉS.
         </span>
       </div>
 
