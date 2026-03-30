@@ -30,7 +30,7 @@ export const PROJETS = {
 
   { id: 'a16', type: 'image', cloudinaryId: 'compressed_DSC02972_asfaaf', alt: 'Arewa 8',  ratio: '3/2' },
   { id: 'a17', type: 'image', cloudinaryId: 'compressed_DSC02773_rwmmes', alt: 'Arewa 8',  ratio: '2/3' },
-  { id: 'a6',  type: 'image', cloudinaryId: 'compressed_DSC03054_inlfe8', alt: 'Arewa 5',  ratio: '2/3' },
+  { id: 'a6',  type: 'image', cloudinaryId: 'DSC03049_gvhhxa', alt: 'Arewa 5',  ratio: '2/3' },
 
   { id: 'a18', type: 'image', cloudinaryId: 'compressed_DSC02721_eutdkf', alt: 'Arewa 8',  ratio: '3/2' },
 

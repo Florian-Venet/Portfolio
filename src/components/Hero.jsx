@@ -22,7 +22,7 @@ export default function Hero() {
         </video>
       </div>
 
-      <div className="absolute inset-0 bg-black/35" />
+      <div className="absolute inset-0 bg-black/30" />
 
       <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center"
         style={{ padding: isMobile ? '0 5%' : '0 15%' }}
