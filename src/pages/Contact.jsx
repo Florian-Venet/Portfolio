@@ -237,9 +237,11 @@ export default function Contact() {
 
         <div
           style={{
-            position: 'absolute',
-            left: isMobile ? '6%' : '7rem',
-            bottom: isMobile ? '2rem' : '5rem',
+            position: isMobile ? 'relative' : 'absolute',
+            left: isMobile ? 'auto' : '7rem',
+            bottom: isMobile ? 'auto' : '5rem',
+            marginTop: isMobile ? '-1rem' : 0,
+            marginLeft: isMobile ? '-8.5rem' : 0,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'flex-start',
@@ -265,7 +267,7 @@ export default function Contact() {
             <img
               src="/wtp3.png"
               alt="WhatsApp"
-              style={{ width: '36px', height: '36px', cursor: 'pointer' }}
+              style={{ width: isMobile ? '28px' : '36px', height: isMobile ? '28px' : '36px', cursor: 'pointer' }}
             />
           </a>
         

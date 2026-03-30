@@ -13,7 +13,7 @@ const COLLABORATIONS = [
 const HISTOIRES = [
   { id: 'cordillere', title: 'CORDILLÈRE ROYALE', location: 'Bolivie, 2025',        cloudinaryId:'DSC08465_x9qox3', backgroundPosition: 'center 70%' },
   { id: 'desert',     title: "DÉSERT D'ATACAMA",  location: 'Chili, 2025',           cloudinaryId: 'compressed_DSC08935_tm4x6f' },
-  { id: 'amerique',   title: 'AMÉRIQUE DU SUD',   location: 'Amérique du sud, 2025', cloudinaryId: 'DSC07467_u1vhry' },
+  { id: 'amerique',   title: 'AMÉRIQUE LATINE',   location: 'Amérique latine, 2025/26', cloudinaryId: 'DSC07467_u1vhry' },
 ]
 
 // ── Médias de la galerie ──────────────────────────────────────────────────────
