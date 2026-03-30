@@ -161,7 +161,7 @@ export default function About() {
 
       <PersonSection name="FLORIAN" imgSrc={cloudinaryUrl('florian_shovdw')} isMobile={isMobile} zIndex={2}>
         <p>Convaincu qu'une belle image fait la différence, j'aborde chaque projet avec une vision d'ensemble : de la direction artistique à la post-production, chaque détail compte.</p>
-        <p style={{ marginTop: '1rem' }}>Photographe, vidéaste et pilote de drone, je travaille en étroite collaboration avec chaque client pour saisir ce qui rend son univers unique et le mettre en lumière avec précision. </p>
+        <p style={{ marginTop: '1rem' }}>Photographe, vidéaste et pilote de drone, je m’implique pleinement auprès de chaque client pour capter ce qui rend son univers unique et le mettre en lumière avec précision. </p>
       </PersonSection>
 
 
