@@ -17,7 +17,7 @@ export default function Footer() {
           className="text-white"
           style={{ fontFamily: 'Playfair Display, serif', fontSize: '2rem', letterSpacing: '0.1em' }}
         >
-          SHØT
+          ELØRIA
         </Link>
       </div>
 
@@ -33,11 +33,11 @@ export default function Footer() {
             CONTACT
           </span>
           <a
-            href="mailto:contact@shot.com"
+            href="mailto:contact@eloria.com"
             className="text-white hover:text-orange-400 transition-colors duration-200"
             style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.80rem' }}
           >
-            contact@shot.com
+            contact@eloria.com
           </a>
         </div>
 
@@ -47,7 +47,7 @@ export default function Footer() {
           className="text-white hidden md:block absolute left-1/2 -translate-x-1/2"
           style={{ fontFamily: 'Playfair Display, serif', fontSize: '2rem', letterSpacing: '0.1em' }}
         >
-          SHØT
+          ELØRIA
         </Link>
 
         {/* Réseaux droite */}
@@ -86,7 +86,7 @@ export default function Footer() {
           className="text-white/30 tracking-widest"
           style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.7rem' }}
         >
-          © 2025 SHØT. TOUS DROITS RÉSERVÉS.
+          © 2025 ELØRIA. TOUS DROITS RÉSERVÉS.
         </span>
       </div>
 
