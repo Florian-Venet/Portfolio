@@ -1,10 +1,15 @@
 import { useNavigate } from 'react-router-dom'
 import { cloudinaryUrl } from '../utils/cloudinary'
+import { useIsMobile } from '../hooks/useIsMobile'
 
-export default function Section({ id, label, cloudinaryId, image, title, cta, backgroundPosition }) {
+export default function Section({ id, label, cloudinaryId, image, title, cta, backgroundPosition, mobileBackgroundPosition }) {
   const navigate = useNavigate()
-    const bgImage = cloudinaryId ? cloudinaryUrl(cloudinaryId) : image
+  const isMobile = useIsMobile()
+  const bgImage = cloudinaryId ? cloudinaryUrl(cloudinaryId) : image
 
+  const resolvedPosition = isMobile && mobileBackgroundPosition
+    ? mobileBackgroundPosition
+    : backgroundPosition || 'center'
 
   return (
     <section
@@ -13,7 +18,7 @@ export default function Section({ id, label, cloudinaryId, image, title, cta, ba
       style={{
         backgroundImage: `url(${bgImage})`,
         backgroundSize: 'cover',
-        backgroundPosition: backgroundPosition || 'center',
+        backgroundPosition: resolvedPosition,
       }}
     >
       {/* reste du composant inchangé */}

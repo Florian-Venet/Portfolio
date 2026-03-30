@@ -253,7 +253,7 @@ export default function Portfolio() {
           style={{
             backgroundImage: "url('https://res.cloudinary.com/di0mcchgn/image/upload/f_auto,q_auto/compressed_portfolio_n6vmgu')",
             backgroundSize: 'cover',
-            backgroundPosition: 'center 80%',
+            backgroundPosition: isMobile ? '15% center' : 'center 80%',
             backgroundAttachment: isMobile ? 'scroll' : 'fixed',
           }}
         />

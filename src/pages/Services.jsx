@@ -61,7 +61,7 @@ export default function Services() {
           style={{
             backgroundImage:  `url(${cloudinaryUrl('compressed_DSC02845_gz76oq')})`,
             backgroundSize: 'cover',
-            backgroundPosition: 'center 125%',
+            backgroundPosition: isMobile ? '40% center' : 'center 125%',
             backgroundAttachment: isMobile ? 'scroll' : 'fixed',
           }}
         />

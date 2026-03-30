@@ -52,7 +52,7 @@ export default function Contact() {
         minHeight: '100vh',
         backgroundImage: `url(${cloudinaryUrl('compressed_DSC03080_hjhd4j')})`,
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundPosition: isMobile ? '65% center' : 'center',
         backgroundAttachment: isMobile ? 'scroll' : 'fixed',
         display: 'flex',
         flexDirection: 'column',
