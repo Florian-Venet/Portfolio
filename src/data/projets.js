@@ -4,7 +4,7 @@ export const PROJETS = {
     titre: 'Arewá Biohabitat',
     sousTitre: 'Pijao · Colombie · Janvier 2026',
     description: `Niché au cœur de la région colombienne du café, Arewá Biohabitat est un éco-lodge d'exception alliant architecture moderne et immersion totale dans une nature luxuriante.\n\nNous avons réalisé une vidéo cinématique capturant l'essence unique du lieu, ainsi qu'une production visuelle complète, livrant un pack de contenus retouchés et prêts à l'emploi.\n\nCes visuels accompagnent aujourd'hui le développement digital d'Arewá : site de réservation, réseaux sociaux et supports de communication.`,
-    videoYoutube: '8v99zbPl2N4',
+    videoYoutube: '59H6NT51LZE',
     galerie: [
   { id: 'a1',  type: 'image', cloudinaryId: 'compressed_DSC02856_a3alsk', alt: 'Arewa 8',  ratio: '3/2' },
   { id: 'a20', type: 'image', cloudinaryId: 'compressed_DSC03035_lvrqmg', alt: 'Arewa 8',  ratio: '2/3' },
@@ -49,7 +49,7 @@ export const PROJETS = {
 Nous avons réalisé deux vidéos cinématiques de présentation ainsi qu'un pack complet de photos et vidéos prêts à publier.
 
 Ces contenus alimentent aujourd'hui leurs réseaux sociaux et leurs campagnes de communication.`,
-    videoYoutube: 'REMPLACE_PAR_TON_ID_YOUTUBE',
+    videoYoutube: 'xHB321jBmkY',
     galerie: [      
       { id: 'f1', type: 'video', vimeoId: '1177089318',  alt: 'Finca 1', ratio: '3/2' },
       { id: 'f2', type: 'image', cloudinaryId: 'compressed_DSC01319_g3ophu',  alt: 'Finca 1', ratio: '3/2' },
@@ -69,7 +69,7 @@ Ces contenus alimentent aujourd'hui leurs réseaux sociaux et leurs campagnes de
     titre: 'Jaja Tour',
     sousTitre: 'Rue Renabac · Bolivie · 2025',
     description: `Jaja Tour est une agence bolivienne proposant des expéditions authentiques au cœur de la forêt Amazonienne.\n\nNous avons réalisé une vidéo montée alliant captation drone et caméra, pensée pour transmettre la densité, la vie et la magie de la forêt amazonienne.`,
-    videoYoutube: 'wMx1RjKXiIM',
+    videoYoutube: 'FRZaqEUfsfE',
     galerie: [
       { id: 'j1', type: 'image', cloudinaryId: 'DSC08492_web_tdkjh6',  alt: 'Jaja 1', ratio:'3/2' },
       {id: 'j2', type: 'video', vimeoId: '1177392380', label: 'Bateau' , ratio:'3/2'},
@@ -88,7 +88,7 @@ Ces contenus alimentent aujourd'hui leurs réseaux sociaux et leurs campagnes de
     description: `La Cordillère Royale, en Bolivie, abrite parmis les plus beaux sommets de la planètes.\n\nNous avons au la chance d'y mener plusieurs expéditions : Piccostria (5 200 m), Glacier Ventanani (5 100 m) et Huayna Potosí (6 088 m).
 
 Ces expéditions ont donné naissance à une série de contenus visuels, témoignant de la beauté sauvage et de la grandeur des sommets andins boliviens.`,
-    videoYoutube: 'REMPLACE_PAR_TON_ID_YOUTUBE',
+    videoYoutube: 'zUREp2jTPzY',
     galerie: [
       { id: 'c1', type: 'image', cloudinaryId: 'DSC08484_puv6hp',    alt: 'Finca 5', ratio: '3/2' },
 
@@ -113,7 +113,7 @@ Ces expéditions ont donné naissance à une série de contenus visuels, témoig
     titre: "Désert d'Atacama",
     sousTitre: 'Atacama · Chili · Décembre 2025',
     description: `Le désert d'Atacama, reconnu comme le désert le plus aride du monde, offre des paysages parmi les plus saisissants de la planète. Entre geysers, lagunes colorées, étendues de sel à perte de vue, chaque environnement révèle une atmosphère unique.\n\n À travers ce terrain de jeu visuel exceptionnel, nous avons cherché à capturer la beauté brute de ces lieux hors du commun.`,
-    videoYoutube: 'REMPLACE_PAR_TON_ID_YOUTUBE',
+    videoYoutube: 'gG2mjak3VpQ',
     galerie: [
       { id: 'a1', type: 'image', cloudinaryId: 'compressed_DSC08924-2_ddarkg',  alt: 'Finca 1', ratio: '2/3' },
       { id: 'a2', type: 'image', cloudinaryId: 'compressed_DSC08951_g4wqvf',  alt: 'Finca 2', ratio: '3/2' },
@@ -134,7 +134,7 @@ amerique: {
   description: `Du Guatemala à la Patagonie, ce projet personnel retrace plusieurs mois d'exploration visuelle à travers l'Amérique du Sud, entre paysages exceptionnels, cultures vivantes et rencontres humaines au fil de la route.\n\nDrone et caméra en main, nous avons documenté chaque pays avec la même exigence que pour nos collaborations : capter la lumière, l'atmosphère et l'instant juste.`,
 
 
-    videoYoutube: 'REMPLACE_PAR_TON_ID_YOUTUBE',
+    videoYoutube: 'Y7HVxNMmVIo',
     galerie: [
       { id: 'm1',  type: 'image', cloudinaryId: 'DSC07497_llxh6c',               alt: 'rioviolet',         ratio: '2/3' },
       { id: 'm2',  type: 'image', cloudinaryId: 'compressed_DSC08384_h9jmn0',   alt: 'isladelsol',        ratio: '2/3' },
