@@ -520,6 +520,9 @@ textarea:focus-visible {
   border-color: rgba(255, 255, 255, 0.6) !important;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3);
 }
+nextjs-portal {
+  display: none !important;
+}
 @property --tw-translate-x {
   syntax: "*";
   inherits: false;
