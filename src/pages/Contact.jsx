@@ -1,3 +1,4 @@
+'use client'
 import { useState } from 'react'
 import { cloudinaryUrl } from '../utils/cloudinary'
 import { useIsMobile } from '../hooks/useIsMobile'

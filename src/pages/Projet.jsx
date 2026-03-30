@@ -1,4 +1,5 @@
-import { useParams, useNavigate } from 'react-router-dom'
+'use client'
+import { useParams, useRouter } from 'next/navigation'
 import { createPortal } from 'react-dom'
 import { PROJETS } from '../data/projets'
 import Gallery from '../components/Gallery'
@@ -6,7 +7,7 @@ import { useIsMobile } from '../hooks/useIsMobile'
 
 export default function Projet() {
   const { id } = useParams()
-  const navigate = useNavigate()
+  const router = useRouter()
   const projet = PROJETS[id]
   const isMobile = useIsMobile()
 
@@ -25,7 +26,7 @@ export default function Projet() {
       {createPortal(
         <div style={{ position: 'fixed', top: '5rem', left: '5%', zIndex: 100 }}>
           <button
-            onClick={() => navigate('/portfolio')}
+            onClick={() => router.push('/portfolio')}
             className="text-white hover:text-orange-400 transition-colors duration-200 tracking-widest"
             style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.75rem', background: 'none', border: 'none', cursor: 'pointer' }}
           >
@@ -89,7 +90,7 @@ export default function Projet() {
         </div>
       </section>
 
-      {/* Galerie — même padding que les autres sections */}
+      {/* Galerie */}
       <section
         style={{
           paddingLeft:  isMobile ? '6%' : '15%',
@@ -103,7 +104,7 @@ export default function Projet() {
       {/* Bouton retour portfolio */}
       <div style={{ textAlign: 'center', paddingBottom: '6rem' }}>
         <button
-          onClick={() => navigate('/portfolio')}
+          onClick={() => router.push('/portfolio')}
           className="text-white hover:text-orange-400 transition-colors duration-200 tracking-widest text-sm"
           style={{ fontFamily: 'Montserrat, sans-serif', background: 'none', border: 'none', cursor: 'pointer' }}
         >

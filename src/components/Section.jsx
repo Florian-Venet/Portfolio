@@ -1,9 +1,10 @@
-import { useNavigate } from 'react-router-dom'
+'use client'
+import { useRouter } from 'next/navigation'
 import { cloudinaryUrl } from '../utils/cloudinary'
 import { useIsMobile } from '../hooks/useIsMobile'
 
 export default function Section({ id, label, cloudinaryId, image, title, cta, backgroundPosition, mobileBackgroundPosition }) {
-  const navigate = useNavigate()
+  const router = useRouter()
   const isMobile = useIsMobile()
   const bgImage = cloudinaryId ? cloudinaryUrl(cloudinaryId) : image
 
@@ -21,11 +22,10 @@ export default function Section({ id, label, cloudinaryId, image, title, cta, ba
         backgroundPosition: resolvedPosition,
       }}
     >
-      {/* reste du composant inchangé */}
       <div className="absolute inset-0 bg-black/25" />
 
       <div className="relative z-10 flex flex-col items-center" style={{ paddingTop: '1cm' }}>
-        
+
         {/* Trait */}
         <div className="w-4/5 border-t border-white/50" />
 
@@ -59,10 +59,8 @@ export default function Section({ id, label, cloudinaryId, image, title, cta, ba
           {title}
         </h2>
 
-        
-
         <button
-          onClick={() => navigate(`/${id}`)}
+          onClick={() => router.push(`/${id}`)}
           className="text-white text-sm tracking-widest transition-colors duration-200 hover:text-orange-400"
           style={{ fontFamily: 'Montserrat, sans-serif' }}
         >

@@ -1,4 +1,5 @@
-import { useNavigate } from 'react-router-dom'
+'use client'
+import { useRouter } from 'next/navigation'
 import { cloudinaryUrl } from '../utils/cloudinary'
 import { useIsMobile } from '../hooks/useIsMobile'
 
@@ -39,7 +40,7 @@ const CATEGORIES = [
 ]
 
 export default function Services() {
-  const navigate = useNavigate()
+  const router = useRouter()
   const isMobile = useIsMobile()
 
   return (
@@ -255,7 +256,7 @@ export default function Services() {
             Chaque projet est unique. Contactez-nous et imaginons des images à la hauteur de votre vision.
           </p>
           <button
-            onClick={() => navigate('/contact')}
+            onClick={() => router.push('/contact')}
             className="text-white hover:text-orange-400 transition-colors duration-200 tracking-widest"
             style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.8rem', background: 'none', border: 'none', cursor: 'pointer', letterSpacing: '0.25em' }}
           >

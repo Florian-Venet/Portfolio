@@ -1,5 +1,6 @@
+'use client'
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useRouter } from 'next/navigation'
 import Gallery from '../components/Gallery'
 import { cloudinaryUrl } from '../utils/cloudinary'
 import { useIsMobile } from '../hooks/useIsMobile'
@@ -61,8 +62,8 @@ const CATEGORIES = [
 
 const ProjectCard = ({ id, title, location, image, cloudinaryId, width, backgroundPosition, isMobile }) => {
   const [hovered, setHovered] = useState(false)
-  const navigate = useNavigate()
-  const handleClick = () => navigate(`/projet/${id}`)
+  const router = useRouter()
+  const handleClick = () => router.push(`/projet/${id}`)
   
 
   return (

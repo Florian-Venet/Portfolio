@@ -1,5 +1,7 @@
+'use client'
 import { useState } from 'react'
-import { useLocation, Link } from 'react-router-dom'
+import { usePathname } from 'next/navigation'
+import Link from 'next/link'
 import { useIsMobile } from '../hooks/useIsMobile'
 
 const NAV_LINKS = [
@@ -11,7 +13,7 @@ const NAV_LINKS = [
 ]
 
 export default function Header() {
-  const location = useLocation()
+  const pathname = usePathname()
   const [menuOpen, setMenuOpen] = useState(false)
   const isMobile = useIsMobile()
 
@@ -21,7 +23,7 @@ export default function Header() {
       {/* Logo centré */}
       <div className="absolute left-1/2 top-6 -translate-x-1/2">
         <Link
-          to="/"
+          href="/"
           className="text-white"
           style={{ fontFamily: 'Playfair Display, serif', fontSize: '2.4rem', letterSpacing: '0.1em' }}
         >
@@ -35,11 +37,11 @@ export default function Header() {
           {NAV_LINKS.map(({ label, href }) => (
             <Link
               key={href}
-              to={href}
+              href={href}
               className="text-white text-sm tracking-widest transition-colors duration-200 hover:text-orange-400"
               style={{
                 fontFamily: 'Montserrat, sans-serif',
-                borderBottom: location.pathname === href ? '1px solid white' : 'none',
+                borderBottom: pathname === href ? '1px solid white' : 'none',
                 paddingBottom: '2px',
               }}
             >
@@ -92,12 +94,12 @@ export default function Header() {
           {NAV_LINKS.map(({ label, href }) => (
             <Link
               key={href}
-              to={href}
+              href={href}
               onClick={() => setMenuOpen(false)}
               className="text-white text-sm tracking-widest transition-colors duration-200 hover:text-orange-400"
               style={{
                 fontFamily: 'Montserrat, sans-serif',
-                borderBottom: location.pathname === href ? '1px solid white' : 'none',
+                borderBottom: pathname === href ? '1px solid white' : 'none',
                 paddingBottom: '2px',
               }}
             >

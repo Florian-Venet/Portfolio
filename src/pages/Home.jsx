@@ -39,11 +39,11 @@ const SECTIONS = [
 
 export default function Home() {
   return (
-    <main>
+    <>
       <Hero />
       {SECTIONS.map((section) => (
         <Section key={section.id} {...section} />
       ))}
-    </main>
+    </>
   )
 }
