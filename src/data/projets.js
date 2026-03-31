@@ -67,7 +67,7 @@ Ces contenus alimentent aujourd'hui leurs réseaux sociaux et leurs campagnes de
   jaja: {
     id: 'jaja',
     titre: 'Jaja Tour',
-    sousTitre: 'Rue Renabac · Bolivie · 2025',
+    sousTitre: 'Rurrenabaque · Bolivie · 2025',
     description: `Jaja Tour est une agence bolivienne proposant des expéditions authentiques au cœur de la forêt Amazonienne.\n\nNous avons réalisé une vidéo montée alliant captation drone et caméra, pensée pour transmettre la densité, la vie et la magie de la forêt amazonienne.`,
     videoYoutube: 'FRZaqEUfsfE',
     galerie: [
