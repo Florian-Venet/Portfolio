@@ -9,7 +9,7 @@ const OFFRES = [
     num: '01',
     titre: 'PACK CONTENU',
     accroche: "VOTRE UNIVERS, PRÊT À L'EMPLOI.",
-    description: `Photos et vidéos retouchées, prêtes à l'emploi.\n\nRéseaux sociaux, plateformes de réservation, supports de communication — chaque visuel est pensé pour votre audience et prêt à publier.`,
+    description: `Photos et vidéos retouchées, prêtes à l'emploi.\n\nRéseaux sociaux, plateformes de réservation, supports de communication — chaque visuel est pensé pour votre audience et prêt à être publié.`,
     techniques: 'Photographie & HDR · Drone · Vidéographie · Retouche',
     detail: 'Sur mesure · Selon vos besoins',
   },
