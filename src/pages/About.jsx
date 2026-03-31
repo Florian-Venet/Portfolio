@@ -147,7 +147,7 @@ export default function About() {
               lineHeight: 1.1,
             }}
           >
-            DERRIÈRE<br />LA CAMÉRA.
+            DERRIÈRE<br />LA CAMÉRA
           </h1>
         </div>
       </section>

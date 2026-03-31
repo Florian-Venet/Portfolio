@@ -14,7 +14,7 @@ const COLLABORATIONS = [
 const HISTOIRES = [
   { id: 'cordillere', title: 'CORDILLÈRE ROYALE', location: 'Bolivie, 2025',        cloudinaryId:'DSC08465_x9qox3', backgroundPosition: 'center 70%' },
   { id: 'desert',     title: "DÉSERT D'ATACAMA",  location: 'Chili, 2025',           cloudinaryId: 'compressed_DSC08935_tm4x6f' },
-  { id: 'amerique',   title: 'AMÉRIQUE LATINE',   location: 'Amérique latine, 2025/26', cloudinaryId: 'DSC07467_u1vhry' },
+  { id: 'amerique',   title: 'AMÉRIQUE LATINE',   location: 'Amérique latine, 2025-2026', cloudinaryId: 'DSC07467_u1vhry' },
 ]
 
 // ── Médias de la galerie ──────────────────────────────────────────────────────
@@ -270,7 +270,7 @@ export default function Portfolio() {
               className="text-white uppercase"
               style={{ fontFamily: 'Bebas Neue, sans-serif', fontSize: isMobile ? '3rem' : '4.2rem', letterSpacing: '0.02em', lineHeight: 1.1 }}
             >
-              DÉCOUVREZ<br />NOTRE UNIVERS.
+              DÉCOUVREZ<br />NOTRE UNIVERS
             </h1>
           </div>
         </div>

@@ -7,9 +7,10 @@ import Gallery from '../components/Gallery'
 import { useIsMobile } from '../hooks/useIsMobile'
 
 export default function Projet() {
-  const { id } = useParams()
+  const params = useParams()
+  const id = params?.id
   const router = useRouter()
-  const projet = PROJETS[id]
+  const projet = id ? PROJETS[id] : null
   const isMobile = useIsMobile()
   const [mounted, setMounted] = useState(false)
   useEffect(() => setMounted(true), [])
@@ -26,7 +27,7 @@ export default function Projet() {
     <div style={{ backgroundColor: '#141414', minHeight: '100vh' }}>
 
       {/* Bouton retour — portal pour dépasser le stacking context de <main> */}
-      {mounted && createPortal(
+      {typeof document !== 'undefined' && createPortal(
         <div style={{ position: 'fixed', top: '5rem', left: '5%', zIndex: 100 }}>
           <button
             onClick={() => router.push('/portfolio')}
