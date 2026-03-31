@@ -86,7 +86,7 @@ export default function Services() {
                 lineHeight: 1.1,
               }}
             >
-              EXPLOREZ<br />VOS POSSIBILITÉS.
+              EXPLOREZ<br />VOS POSSIBILITÉS
             </h1>
           </div>
         </div>
@@ -247,7 +247,7 @@ export default function Services() {
             className="text-white uppercase"
             style={{ fontFamily: 'Bebas Neue, sans-serif', fontSize: isMobile ? '2.5rem' : '3.5rem', letterSpacing: '0.02em', marginBottom: '1rem' }}
           >
-            DISCUTONS.
+            DISCUTONS
           </h2>
           <p
             className="text-white"

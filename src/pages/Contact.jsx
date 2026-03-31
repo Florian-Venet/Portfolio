@@ -63,7 +63,6 @@ export default function Contact() {
         position: 'relative',
       }}
     >
-      <div style={{ position: 'fixed', inset: 0, backgroundColor: 'rgba(0,0,0,0.)', zIndex: 0 }} />
 
       <div style={{ position: 'relative', zIndex: 1, width: '100%', maxWidth: '580px' }}>
         <div
@@ -86,7 +85,7 @@ export default function Contact() {
             marginBottom: '0.6rem',
           }}
         >
-          DISCUTONS.
+          DISCUTONS
         </h1>
 
         {/* Sous-titre */}

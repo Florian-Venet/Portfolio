@@ -37,7 +37,7 @@ export default function Hero() {
             marginBottom: '1.5rem',
           }}
         >
-          L'ART DE METTRE EN IMAGE CE QUI VOUS REND UNIQUE.
+          L'ART DE METTRE EN IMAGE CE QUI VOUS REND UNIQUE
         </h1>
         <a
           href="#portfolio"

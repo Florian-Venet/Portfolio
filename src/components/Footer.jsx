@@ -37,7 +37,7 @@ export default function Footer() {
             className="text-white hover:text-orange-400 transition-colors duration-200"
             style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.80rem' }}
           >
-            contact@eloria.com
+            contact@eloria-studio.com
           </a>
         </div>
 

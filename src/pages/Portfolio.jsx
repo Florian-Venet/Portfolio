@@ -270,7 +270,7 @@ export default function Portfolio() {
               className="text-white uppercase"
               style={{ fontFamily: 'Bebas Neue, sans-serif', fontSize: isMobile ? '3rem' : '4.2rem', letterSpacing: '0.02em', lineHeight: 1.1 }}
             >
-              DÉCOUVREZ<br />NOTRE UNIVERS.
+              DÉCOUVREZ<br />NOTRE UNIVERS
             </h1>
           </div>
         </div>
