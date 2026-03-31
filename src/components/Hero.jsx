@@ -1,8 +1,18 @@
 'use client'
+import { useRef, useEffect } from 'react'
 import { useIsMobile } from '../hooks/useIsMobile'
 
 export default function Hero() {
   const isMobile = useIsMobile()
+  const videoRef = useRef(null)
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+    const handleEnded = () => video.play().catch(() => {})
+    video.addEventListener('ended', handleEnded)
+    return () => video.removeEventListener('ended', handleEnded)
+  }, [])
 
   return (
     <section
@@ -11,6 +21,7 @@ export default function Hero() {
     >
       <div className="absolute inset-0 w-full h-full overflow-hidden">
         <video
+          ref={videoRef}
           autoPlay
           loop
           muted

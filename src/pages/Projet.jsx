@@ -1,4 +1,5 @@
 'use client'
+import { useState, useEffect } from 'react'
 import { useParams, useRouter } from 'next/navigation'
 import { createPortal } from 'react-dom'
 import { PROJETS } from '../data/projets'
@@ -10,6 +11,8 @@ export default function Projet() {
   const router = useRouter()
   const projet = PROJETS[id]
   const isMobile = useIsMobile()
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => setMounted(true), [])
 
   if (!projet) {
     return (
@@ -23,7 +26,7 @@ export default function Projet() {
     <div style={{ backgroundColor: '#141414', minHeight: '100vh' }}>
 
       {/* Bouton retour — portal pour dépasser le stacking context de <main> */}
-      {createPortal(
+      {mounted && createPortal(
         <div style={{ position: 'fixed', top: '5rem', left: '5%', zIndex: 100 }}>
           <button
             onClick={() => router.push('/portfolio')}

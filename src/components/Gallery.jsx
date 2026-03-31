@@ -88,15 +88,22 @@ function MediaCard({ item, width, height, onClick, vimeoKey = 0 }) {
 
   useEffect(() => {
     if (item.type !== "video" || item.vimeoId || !videoRef.current) return;
+    const video = videoRef.current;
+    const handleEnded = () => video.play().catch(() => {});
+    video.addEventListener('ended', handleEnded);
     const obs = new IntersectionObserver(
       ([e]) => {
-        if (e.isIntersecting) videoRef.current?.play().catch(() => {});
-        else                  videoRef.current?.pause();
+        if (e.isIntersecting) {
+          if (video.readyState === 0) video.load();
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
       },
       { threshold: 0.3 }
     );
-    obs.observe(videoRef.current);
-    return () => obs.disconnect();
+    obs.observe(video);
+    return () => { obs.disconnect(); video.removeEventListener('ended', handleEnded); };
   }, [item.type, item.vimeoId]);
 
   const handleMouseEnter = useCallback(() => setHovered(true), []);
@@ -144,8 +151,8 @@ function MediaCard({ item, width, height, onClick, vimeoKey = 0 }) {
         <video
           ref={videoRef}
           src={item.src}
-          muted loop playsInline preload="metadata"
-          onLoadedMetadata={() => setLoaded(true)}
+          muted loop playsInline preload="none"
+          onCanPlay={() => setLoaded(true)}
           style={{ opacity: loaded ? 1 : 0 }}
         />
       )}
@@ -172,7 +179,7 @@ function Lightbox({ item, items, onClose, onPrev, onNext }) {
     [prev, next].forEach((neighbor) => {
       if (neighbor?.type === "image") {
         const img = new Image();
-        img.src = getImageSrc(neighbor, Math.round(1800 * (window.devicePixelRatio || 1)));
+        img.src = getImageSrc(neighbor, Math.min(Math.round(1800 * (window.devicePixelRatio || 1)), 2400));
       }
     });
   }, [item, items]);
@@ -218,27 +225,23 @@ function Lightbox({ item, items, onClose, onPrev, onNext }) {
           <>
             {!imgLoaded && (
               <img
-                src={getImageSrc(item, 40)}
+                src={getImageSrc(item, 400)}
                 alt={item.alt}
-                style={{ filter: 'blur(20px)', transform: 'scale(1.05)', transition: 'none' }}
+                style={{ filter: 'blur(12px)', transform: 'scale(1.05)', transition: 'none' }}
               />
             )}
             <img
               key={item.id}
-              src={getImageSrc(item, Math.round(1800 * (window.devicePixelRatio || 1)))}
+              src={getImageSrc(item, Math.min(Math.round(1800 * (window.devicePixelRatio || 1)), 2400))}
               alt={item.alt}
               onLoad={() => setImgLoaded(true)}
-              style={{
-                opacity: imgLoaded ? 1 : 0,
-                position: imgLoaded ? 'relative' : 'absolute',
-                transition: 'opacity 0.2s ease',
-              }}
+              style={{ opacity: imgLoaded ? 1 : 0, position: imgLoaded ? 'relative' : 'absolute', transition: 'opacity 0.2s ease' }}
             />
           </>
         ) : item.vimeoId ? (
           <iframe
             src={`https://player.vimeo.com/video/${item.vimeoId}?autoplay=1&loop=1&quality=1080p`}
-            style={{ border: 'none', width: '95vw', height: '53.4vw', maxHeight: '90vh' }}
+            style={{ border: 'none', width: '100vw', height: `calc(100vw / ${item._aspect})`, maxHeight: '100vh' }}
             allow="autoplay; fullscreen"
             allowFullScreen
           />
@@ -268,7 +271,7 @@ export default function Gallery({ items = [] }) {
     enriched.forEach((item) => {
       if (item.type !== "image") return;
       const img = new Image();
-      img.src = getImageSrc(item, Math.round(1800 * (window.devicePixelRatio || 1)));
+      img.src = getImageSrc(item, Math.min(Math.round(1800 * (window.devicePixelRatio || 1)), 2400));
     });
   }, [enriched]);
 
@@ -415,7 +418,7 @@ const CSS = `
     position: fixed; inset: 0;
     background: rgba(0,0,0,0.93);
     backdrop-filter: blur(12px);
-    z-index: 51;           /* ← au-dessus de tout */
+    z-index: 200;
     display: flex; align-items: center; justify-content: center;
     animation: lbIn 0.2s ease;
   }
@@ -423,18 +426,19 @@ const CSS = `
 
   .lb-content {
     position: relative;
-    z-index: 52;          /* ← au-dessus de la lightbox elle-même */
-    max-width: 90vw; max-height: 90vh;
+    z-index: 201;
+    width: 100vw;
     display: flex; align-items: center; justify-content: center;
     animation: lbScale 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
   @keyframes lbScale { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 
-  .lb-content img, .lb-content video, .lb-content iframe {
-    max-width: 100%; max-height: 90vh;
+  .lb-content img, .lb-content video {
+    width: 100vw; height: auto;
+    max-height: 100vh;
     object-fit: contain; display: block;
   }
-  .lb-content video { background: #000; min-width: 280px; }
+  .lb-content video { background: #000; }
 
   .lb-close {
     position: fixed; top: 18px; right: 22px;
@@ -444,7 +448,7 @@ const CSS = `
     border-radius: 50%; cursor: pointer;
     display: flex; align-items: center; justify-content: center;
     transition: background 0.2s, color 0.2s, border-color 0.2s;
-    z-index: 53;          /* ← au-dessus de tout le reste */
+    z-index: 202;          /* ← au-dessus de tout le reste */
   }
   .lb-close:hover { background: rgba(255,255,255,0.12); color: #fff; border-color: rgba(255,255,255,0.4); }
 
@@ -456,7 +460,7 @@ const CSS = `
     cursor: pointer;
     display: flex; align-items: center; justify-content: center;
     transition: background 0.2s;
-    z-index: 53;
+    z-index: 202;
     line-height: 1;
   }
   .lb-nav:hover { background: rgba(255,255,255,0.13); }

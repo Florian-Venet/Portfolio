@@ -4,7 +4,6 @@ import Footer from '../components/Footer'
 
 export const metadata = {
   title: 'ELØRIA',
-  description: 'Portfolio cinématographique ELØRIA',
 }
 
 export default function RootLayout({ children }) {
