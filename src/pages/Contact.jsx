@@ -116,7 +116,7 @@ export default function Contact() {
             Message envoyé. Nous vous répondrons rapidement.
           </div>
         ) : (
-          <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: isMobile ? '0.8rem' : '1.2rem' }}>
+          <form action="https://formspree.io/f/xwvwbolj" method="POST" style={{ display: 'flex', flexDirection: 'column', gap: isMobile ? '0.8rem' : '1.2rem' }}>
             {/* Prénom + Nom */}
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.8rem' }}>
               <div>
