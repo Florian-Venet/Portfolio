@@ -11,7 +11,7 @@ const OFFRES = [
     accroche: "VOTRE UNIVERS, PRÊT À L'EMPLOI.",
     description: `Photos et vidéos retouchées, prêtes à l'emploi.\n\nRéseaux sociaux, plateformes de réservation, supports de communication — chaque visuel est pensé pour votre audience et prêt à être publié.`,
     techniques: 'Photographie & HDR · Drone · Vidéographie · Retouche',
-    detail: 'Sur mesure · Selon vos besoins',
+    detail: 'À partir de 240€ · Devis sur mesure ',
   },
   {
     id: 'video-promotionnelle',
@@ -20,7 +20,7 @@ const OFFRES = [
     accroche: 'UNE HISTOIRE. UNE IMAGE. UN IMPACT.',
     description: `Format court ou long, vertical ou horizontal, cinématique ou dynamique — chaque vidéo est conçue pour sublimer vos lieux et vos expériences.`,
     techniques: 'Direction artistique · Tournage · Montage · Étalonnage ',
-    detail: 'Sur mesure · Selon vos besoins',
+    detail: 'À partir de 350€ · Devis sur mesure ',
   },
   {
     id: 'mini-documentaire',
@@ -29,7 +29,7 @@ const OFFRES = [
     accroche: "AU-DELÀ DE L'IMAGE.",
     description: ` Interviews, portraits, témoignages — donnez une voix à votre univers. Le format idéal pour vos films corporate, événementiels, touristiques.`,
     techniques: 'Interviews · Tournage · Montage · Étalonnage',
-    detail: 'Sur mesure · Selon vos besoins',
+    detail: 'À partir de 700€ · Devis sur mesure',
   },
 ]
 
