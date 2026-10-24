@@ -3,7 +3,7 @@ import { useRouter } from 'next/navigation'
 import { cloudinaryUrl } from '../utils/cloudinary'
 import { useIsMobile } from '../hooks/useIsMobile'
 
-export default function Section({ id, label, cloudinaryId, image, title, cta, backgroundPosition, mobileBackgroundPosition }) {
+export default function Section({ id, label, cloudinaryId, image, title, cta, ctaSize, backgroundPosition, mobileBackgroundPosition }) {
   const router = useRouter()
   const isMobile = useIsMobile()
   const bgImage = cloudinaryId ? cloudinaryUrl(cloudinaryId) : image
@@ -11,6 +11,8 @@ export default function Section({ id, label, cloudinaryId, image, title, cta, ba
   const resolvedPosition = isMobile && mobileBackgroundPosition
     ? mobileBackgroundPosition
     : backgroundPosition || 'center'
+
+  const buttonFontSize = ctaSize || '1rem'
 
   return (
     <section
@@ -50,7 +52,7 @@ export default function Section({ id, label, cloudinaryId, image, title, cta, ba
           className="text-white uppercase mb-10"
           style={{
             fontFamily: 'Bebas Neue, sans-serif',
-            fontSize: '3.1rem',
+            fontSize: '4rem',
             letterSpacing: '0.02em',
             lineHeight: 1,
             marginBottom: '1.5rem',
@@ -61,8 +63,11 @@ export default function Section({ id, label, cloudinaryId, image, title, cta, ba
 
         <button
           onClick={() => router.push(`/${id}`)}
-          className="text-white text-sm tracking-widest transition-colors duration-200 hover:text-orange-400"
-          style={{ fontFamily: 'Montserrat, sans-serif' }}
+          className="text-white tracking-widest transition-colors duration-200 hover:text-orange-400"
+          style={{
+            fontFamily: 'Montserrat, sans-serif',
+            fontSize: buttonFontSize,
+          }}
         >
           [ {cta} ]
         </button>

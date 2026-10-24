@@ -6,6 +6,7 @@ import { cloudinaryUrl } from '../utils/cloudinary'
 import { useIsMobile } from '../hooks/useIsMobile'
 
 const COLLABORATIONS = [
+  { id: 'relai-valdieu', title: 'RELAI VALDIEU', location: 'France, 2026', cloudinaryId: 'DSC04759_d12d8a', backgroundPosition: '75% center' },
   { id: 'arewa', title: 'AREWA BIOHABITAT', location: 'Colombie, 2026', cloudinaryId: 'compressed_DJI_0001_ajt5wy', width: 1200 },
   { id: 'finca', title: 'FINCA CARPE DIEM', location: 'Colombie, 2026', cloudinaryId: 'FincaPool_puntbe' },
   { id: 'jaja',  title: 'JAJA TOUR',        location: 'Bolivie, 2025',  cloudinaryId: 'DSC08568-2_web_fknxfd', backgroundPosition: 'center 55%' },
@@ -53,7 +54,7 @@ const GALERIE_MEDIA = [
 ]
 
 const CATEGORIES = [
-  { num: '01', label: 'COLLABORATIONS',     anchor: 'collaborations' },
+  { num: '01', label: 'RÉLISATION CLIENTS',     anchor: 'collaborations' },
   { num: '02', label: "HISTOIRES D'AILLEURS", anchor: 'histoires' },
   { num: '03', label: 'GALERIE',            anchor: 'galerie' },
 ]
@@ -320,8 +321,8 @@ export default function Portfolio() {
       <SectionGrid
         id="collaborations"
         num="01"
-        title="COLLABORATIONS"
-        description="Les projets réalisés pour nos clients."
+        title="Réalisations clients"
+        description="Une sélection de projets réalisés pour nos clients."
         items={COLLABORATIONS}
         paddingTop="2rem"
         isMobile={isMobile}
@@ -332,7 +333,7 @@ export default function Portfolio() {
         id="histoires"
         num="02"
         title="HISTOIRES D'AILLEURS"
-        description="Nos plus beaux souvenirs autour du globe, racontés en image."
+        description="Des fragments du monde, racontés en images.Nos plus beaux souvenirs autour du globe, racontés en image."
         items={HISTOIRES}
         paddingTop="0rem"
         isMobile={isMobile}

@@ -39,6 +39,29 @@ const CATEGORIES = [
   { num: '03', label: 'MINI DOCUMENTAIRE', anchor: 'mini-documentaire' },
 ]
 
+const CLIENT_CATEGORIES = [
+  {
+    title: 'HÉBERGEMENTS & LIEUX DE CARACTÈRE',
+    description: 'Maisons d’hôtes, hôtels indépendants, agences immobilières, gîtes et lodges.',
+    image: 'compressed_DSC02845_gz76oq',
+  },
+  {
+    title: 'AGENCES DE VOYAGES & OPÉRATEURS',
+    description: 'Agences spécialisées, créateurs de séjours, circuits d’aventure et voyages sur mesure.',
+    image: 'DSC07467_u1vhry',
+  },
+  {
+    title: 'ACTIVITÉS & EXPÉRIENCES',
+    description: 'Écoles de surf, guides.',
+    image: 'DSC08470_mtf80d',
+  },
+  {
+    title: 'DESTINATIONS & ACTEURS DU TOURISME',
+    description: 'Destinations locales, offices de tourisme et acteurs souhaitant mettre en avant un territoire.',
+    image: 'DJI_0242_fs4tpz',
+  },
+]
+
 export default function Services() {
   const router = useRouter()
   const isMobile = useIsMobile()
@@ -144,6 +167,213 @@ export default function Services() {
           </div>
         )}
       </section>
+
+      <div
+        style={{
+          backgroundColor: '#141414',
+          padding: isMobile ? '4rem 6% 0' : '5rem 15% 0',
+        }}
+      >
+        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+          <div style={{ marginBottom: '2rem' }}>
+            <div style={{ borderTop: '1px solid rgba(255,255,255,0.25)', marginBottom: '1.5rem' }} />
+            <p
+              className="text-white/80 uppercase"
+              style={{
+                fontFamily: 'Montserrat, sans-serif',
+                fontSize: isMobile ? '0.7rem' : '0.8rem',
+                letterSpacing: '0.25em',
+                marginBottom: '1.25rem',
+              }}
+            >
+              NOS SERVICES
+            </p>
+            <h2
+              className="text-white"
+              style={{
+                fontFamily: 'Bebas Neue, sans-serif',
+                fontSize: isMobile ? '2.4rem' : '4rem',
+                lineHeight: 1.05,
+                letterSpacing: '0.02em',
+                margin: 0,
+              }}
+            >
+              Des images pour raconter, faire découvrir et donner envie de partir.
+            </h2>
+          </div>
+
+          <div style={{ marginTop: '2rem', display: 'grid', gap: '1.5rem' }}>
+            <p
+              className="text-white/70"
+              style={{
+                fontFamily: 'Montserrat, sans-serif',
+                fontSize: isMobile ? '0.95rem' : '1.05rem',
+                lineHeight: 1.9,
+                margin: 0,
+              }}
+            >
+              Nous accompagnons les professionnels du tourisme dans la création de contenus visuels sur mesure. Valoriser leurs offres, faire découvrir leur univers et inspirer leurs futurs voyageurs.
+            </p>
+            <p
+              className="text-white/70"
+              style={{
+                fontFamily: 'Montserrat, sans-serif',
+                fontSize: isMobile ? '0.95rem' : '1.05rem',
+                lineHeight: 1.9,
+                margin: 0,
+              }}
+            >
+              De la photographie aux films de présentation, nous imaginons des contenus adaptés à chaque lieu, chaque expérience et chaque projet.
+            </p>
+          </div>
+
+          <div style={{ marginTop: '4rem', marginBottom: '2rem' }}>
+            <h3
+              className="text-white"
+              style={{
+                fontFamily: 'Bebas Neue, sans-serif',
+                fontSize: isMobile ? '2rem' : '3rem',
+                letterSpacing: '0.02em',
+                marginBottom: '2rem',
+              }}
+            >
+              Qui accompagnons-nous ?
+            </h3>
+
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: isMobile ? '1fr' : 'repeat(2, minmax(0, 1fr))',
+                gap: '2rem',
+              }}
+            >
+              {CLIENT_CATEGORIES.map((item) => (
+                <article key={item.title} style={{ display: 'flex', flexDirection: 'column' }}>
+                  <div style={{ overflow: 'hidden', borderRadius: '0.9rem', marginBottom: '0.9rem', backgroundColor: '#1a1a1a' }}>
+                    <img
+                      src={cloudinaryUrl(item.image)}
+                      alt={item.title}
+                      style={{
+                        width: '100%',
+                        height: isMobile ? '260px' : '300px',
+                        objectFit: 'cover',
+                        display: 'block',
+                      }}
+                    />
+                  </div>
+                  <h4
+                    className="text-white"
+                    style={{
+                      fontFamily: 'Montserrat, sans-serif',
+                      fontSize: isMobile ? '1rem' : '1.1rem',
+                      letterSpacing: '0.03em',
+                      fontWeight: 600,
+                      margin: '0 0 0.5rem',
+                    }}
+                  >
+                    {item.title}
+                  </h4>
+                  <p
+                    className="text-white/70"
+                    style={{
+                      fontFamily: 'Montserrat, sans-serif',
+                      fontSize: isMobile ? '0.9rem' : '1rem',
+                      lineHeight: 1.7,
+                      margin: 0,
+                    }}
+                  >
+                    {item.description}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <div style={{ marginTop: '4rem', paddingTop: '2rem', borderTop: '1px solid rgba(255,255,255,0.25)' }}>
+            <h3
+              className="text-white"
+              style={{
+                fontFamily: 'Bebas Neue, sans-serif',
+                fontSize: isMobile ? '2rem' : '3rem',
+                letterSpacing: '0.02em',
+                marginBottom: '1.25rem',
+              }}
+            >
+              Une approche sur mesure
+            </h3>
+            <p
+              className="text-white/70"
+              style={{
+                fontFamily: 'Montserrat, sans-serif',
+                fontSize: isMobile ? '0.95rem' : '1.05rem',
+                lineHeight: 1.9,
+                margin: '0 0 1rem',
+              }}
+            >
+              Chaque projet commence par un échange pour comprendre votre activité, votre univers, vos besoins. Nous définissons ensuite les formats les plus pertinents et réalisons les contenus adaptés et cohérents avec votre identité.
+            </p>
+            <p
+              className="text-white/70"
+              style={{
+                fontFamily: 'Montserrat, sans-serif',
+                fontSize: isMobile ? '0.95rem' : '1.05rem',
+                lineHeight: 1.9,
+                margin: 0,
+              }}
+            >
+              De la préparation du tournage jusqu’à la post-production, nous adaptons notre approche à votre projet.
+            </p>
+          </div>
+
+          <div
+            style={{
+              marginTop: '4rem',
+              paddingTop: '2rem',
+              paddingBottom: '3rem',
+              borderTop: '1px solid rgba(255,255,255,0.25)',
+            }}
+          >
+            <h3
+              className="text-white"
+              style={{
+                fontFamily: 'Bebas Neue, sans-serif',
+                fontSize: isMobile ? '2rem' : '3rem',
+                letterSpacing: '0.02em',
+                marginBottom: '0.8rem',
+              }}
+            >
+              Parlons de votre projet.
+            </h3>
+            <p
+              className="text-white/70"
+              style={{
+                fontFamily: 'Montserrat, sans-serif',
+                fontSize: isMobile ? '0.95rem' : '1.1rem',
+                lineHeight: 1.8,
+                marginBottom: '1.5rem',
+              }}
+            >
+              Un lieu, une expérience ou une destination à faire découvrir ?
+            </p>
+            <button
+              onClick={() => router.push('/contact')}
+              className="text-white hover:text-orange-400 transition-colors duration-200"
+              style={{
+                fontFamily: 'Montserrat, sans-serif',
+                fontSize: isMobile ? '0.8rem' : '0.9rem',
+                background: 'transparent',
+                border: '1px solid rgba(255,255,255,0.5)',
+                color: '#ffffff',
+                padding: '0.8rem 1.2rem',
+                letterSpacing: '0.12em',
+                cursor: 'pointer',
+              }}
+            >
+              Échanger sur votre projet
+            </button>
+          </div>
+        </div>
+      </div>
 
       {/* Sections sticky */}
       <div>

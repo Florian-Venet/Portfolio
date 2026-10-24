@@ -42,7 +42,7 @@ export default function Hero() {
           className="text-white uppercase"
           style={{
             fontFamily: 'Bebas Neue, sans-serif',
-            fontSize: isMobile ? '2rem' : '3.1rem',
+            fontSize: isMobile ? '2rem' : '3.5rem',
             letterSpacing: '0.02em',
             lineHeight: 1.3,
             marginBottom: '1.5rem',
@@ -52,7 +52,7 @@ export default function Hero() {
         </h1>
         <a
           href="#portfolio"
-          className="text-white text-sm tracking-widest transition-colors duration-200 hover:text-orange-400"
+          className="text-white text-base tracking-widest transition-colors duration-200 hover:text-orange-400"
           style={{ fontFamily: 'Montserrat, sans-serif' }}
         >
           [ DECOUVRIR ]

@@ -1,19 +1,17 @@
 'use client'
-import { useState, useEffect } from 'react'
 import { useParams, useRouter } from 'next/navigation'
 import { createPortal } from 'react-dom'
 import { PROJETS } from '../data/projets'
 import Gallery from '../components/Gallery'
+import { cloudinaryUrl } from '../utils/cloudinary'
 import { useIsMobile } from '../hooks/useIsMobile'
 
 export default function Projet() {
   const params = useParams()
-  const id = params?.id
   const router = useRouter()
+  const id = params?.id
   const projet = id ? PROJETS[id] : null
   const isMobile = useIsMobile()
-  const [mounted, setMounted] = useState(false)
-  useEffect(() => setMounted(true), [])
 
   if (!projet) {
     return (
@@ -68,30 +66,44 @@ export default function Projet() {
             {projet.sousTitre}
           </p>
           <div style={{ marginTop: '1rem' }}>
-            {projet.description.split('\n\n').map((para, i) => (
-              <p
-                key={i}
-                className="text-white"
-                style={{ fontFamily: 'Montserrat, sans-serif', fontSize: isMobile ? '0.85rem' : '0.9rem', lineHeight: 1.8, marginBottom: '1.2rem' }}
-              >
-                {para}
-              </p>
-            ))}
+            {projet.description
+              ? projet.description.split('\n\n').map((para, i) => (
+                  <p
+                    key={i}
+                    className="text-white"
+                    style={{ fontFamily: 'Montserrat, sans-serif', fontSize: isMobile ? '0.85rem' : '0.9rem', lineHeight: 1.8, marginBottom: '1.2rem' }}
+                  >
+                    {para}
+                  </p>
+                ))
+              : null}
           </div>
         </div>
 
-        {/* Vidéo — en bas sur mobile, à gauche sur desktop */}
-        <div style={{ flex: isMobile ? 'none' : '1.2', width: isMobile ? '100%' : undefined, aspectRatio: '16/9', order: isMobile ? 2 : 1 }}>
-          <iframe
-            width="100%"
-            height="100%"
-            src={`https://www.youtube.com/embed/${projet.videoYoutube}`}
-            title={projet.titre}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            style={{ display: 'block', border: 'none' }}
-          />
-        </div>
+        {/* Média — en bas sur mobile, à gauche sur desktop */}
+        {projet.mainImage ? (
+          <div style={{ flex: isMobile ? 'none' : '1.2', width: isMobile ? '100%' : undefined, aspectRatio: '16/9', order: isMobile ? 2 : 1, overflow: 'hidden' }}>
+            <img
+              src={cloudinaryUrl(projet.mainImage, 1600)}
+              alt={projet.titre}
+              style={{ display: 'block', width: '100%', height: '100%', objectFit: 'cover' }}
+            />
+          </div>
+        ) : projet.videoYoutube ? (
+          <div style={{ flex: isMobile ? 'none' : '1.2', width: isMobile ? '100%' : undefined, aspectRatio: '16/9', order: isMobile ? 2 : 1 }}>
+            <iframe
+              width="100%"
+              height="100%"
+              src={`https://www.youtube.com/embed/${projet.videoYoutube}`}
+              title={projet.titre}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{ display: 'block', border: 'none' }}
+            />
+          </div>
+        ) : (
+          <div style={{ flex: isMobile ? 'none' : '1.2', width: isMobile ? '100%' : undefined, aspectRatio: '16/9', order: isMobile ? 2 : 1, backgroundColor: 'rgba(255,255,255,0.02)' }} />
+        )}
       </section>
 
       {/* Galerie */}

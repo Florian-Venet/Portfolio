@@ -67,7 +67,7 @@ export default function Contact() {
       <div style={{ position: 'relative', zIndex: 1, width: '100%', maxWidth: '580px' }}>
         <div
           style={{
-            backgroundColor: 'rgba(0, 0, 0, 0.3)',
+            backgroundColor: 'rgba(0, 0, 0, 0.35)',
             marginLeft: isMobile ? 0 : `calc(-1 * ${bgExtra})`,
             marginRight: isMobile ? 0 : `calc(-1 * ${bgExtra})`,
             padding: isMobile ? '2rem 1.5rem' : `2rem calc(3rem + ${bgExtra})`,
@@ -79,7 +79,7 @@ export default function Contact() {
           className="text-white uppercase text-center"
           style={{
             fontFamily: 'Bebas Neue, sans-serif',
-            fontSize: isMobile ? '2.5rem' : '3.1rem',
+            fontSize: isMobile ? '2.5rem' : '3.5rem',
             letterSpacing: '0.02em',
             lineHeight: 1,
             marginBottom: '0.6rem',
@@ -93,7 +93,7 @@ export default function Contact() {
           className="text-white text-center"
           style={{
             fontFamily: 'Montserrat, sans-serif',
-            fontSize: isMobile ? '0.75rem' : '0.85rem',
+            fontSize: isMobile ? '0.75rem' : '1rem',
             letterSpacing: '0.05em',
             marginBottom: isMobile ? '3rem' : '3rem',
             lineHeight: 1.7,
@@ -119,7 +119,7 @@ export default function Contact() {
             {/* Prénom + Nom */}
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.8rem' }}>
               <div>
-                <label className="text-white/90" style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.65rem', letterSpacing: '0.15em', display: 'block', marginBottom: '0.3rem' }}>PRÉNOM *</label>
+                <label className="text-white/90" style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.85rem', letterSpacing: '0.15em', display: 'block', marginBottom: '0.3rem' }}>PRÉNOM *</label>
                 <input
                   type="text"
                   name="prenom"
@@ -141,7 +141,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <label className="text-white/90" style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.65rem', letterSpacing: '0.15em', display: 'block', marginBottom: '0.3rem' }}>NOM *</label>
+                <label className="text-white/90" style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.85rem', letterSpacing: '0.15em', display: 'block', marginBottom: '0.3rem' }}>NOM *</label>
                 <input
                   type="text"
                   name="nom"
@@ -165,7 +165,7 @@ export default function Contact() {
 
             {/* Email */}
             <div>
-              <label className="text-white/90" style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.65rem', letterSpacing: '0.15em', display: 'block', marginBottom: '0.3rem' }}>EMAIL *</label>
+              <label className="text-white/90" style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.85rem', letterSpacing: '0.15em', display: 'block', marginBottom: '0.3rem' }}>EMAIL *</label>
               <input
                 type="email"
                 name="email"
@@ -188,7 +188,7 @@ export default function Contact() {
 
             {/* Message */}
             <div>
-              <label className="text-white/90" style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.65rem', letterSpacing: '0.15em', display: 'block', marginBottom: '0.3rem' }}>MESSAGE *</label>
+              <label className="text-white/90" style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.85rem', letterSpacing: '0.15em', display: 'block', marginBottom: '0.3rem' }}>MESSAGE *</label>
               <textarea
                 name="message"
                 value={formData.message}
@@ -217,7 +217,7 @@ export default function Contact() {
               className="text-white hover:text-orange-400 transition-colors duration-200 tracking-widest"
               style={{
                 fontFamily: 'Montserrat, sans-serif',
-                fontSize: '0.8rem',
+                fontSize: '0.9rem',
                 background: 'none',
                 border: 'none',
                 padding: isMobile ? '0.5rem' : '1rem',
@@ -252,7 +252,7 @@ export default function Contact() {
             className="text-white/80"
             style={{
               fontFamily: 'Montserrat, sans-serif',
-              fontSize: isMobile ? '0.65rem' : '0.8rem',
+              fontSize: isMobile ? '0.65rem' : '0.9rem',
               letterSpacing: '0.1em',
               marginBottom: '0.6rem',
               textAlign: 'left',
