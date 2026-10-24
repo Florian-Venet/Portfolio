@@ -7,7 +7,7 @@ const SECTIONS = [
     label: 'PORTFOLIO',
     cloudinaryId: 'compressed_portfolio_n6vmgu',
     title: 'DÉCOUVREZ NOTRE UNIVERS',
-    cta: 'NOS RÉALISATIONS',
+    cta: 'NOS RÉALISATIONS CLIENTS',
     mobileBackgroundPosition: '15% center',
   },
   {

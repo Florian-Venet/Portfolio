@@ -54,7 +54,7 @@ const GALERIE_MEDIA = [
 ]
 
 const CATEGORIES = [
-  { num: '01', label: 'RÉLISATION CLIENTS',     anchor: 'collaborations' },
+  { num: '01', label: 'RÉLISATIONS CLIENTS',     anchor: 'collaborations' },
   { num: '02', label: "HISTOIRES D'AILLEURS", anchor: 'histoires' },
   { num: '03', label: 'GALERIE',            anchor: 'galerie' },
 ]
