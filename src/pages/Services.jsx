@@ -42,7 +42,7 @@ const CATEGORIES = [
 const CLIENT_CATEGORIES = [
   {
     title: 'HÉBERGEMENTS & LIEUX DE CARACTÈRE',
-    description: 'Maisons d’hôtes, hôtels indépendants, agences immobilières, gîtes et lodges.',
+    description: 'Maisons d’hôtes, hôtels indépendants, gîtes, lodges et agences immobilières.',
     image: 'compressed_DSC02845_gz76oq',
   },
   {
@@ -212,7 +212,7 @@ export default function Services() {
                 margin: 0,
               }}
             >
-              Nous accompagnons les professionnels du tourisme dans la création de contenus visuels sur mesure. Valoriser leurs offres, faire découvrir leur univers et inspirer leurs futurs voyageurs.
+              Nous accompagnons les professionnels du tourisme dans la création de contenus visuels sur mesure. Nous les aidons à valoriser leurs offres, faire découvrir leur univers et inspirer leurs futurs voyageurs.
             </p>
             <p
               className="text-white/70"
@@ -376,7 +376,7 @@ export default function Services() {
       </div>
 
       {/* Sections sticky */}
-      <div>
+      <div style={{ display: 'none' }}>
         {OFFRES.map((offre, index) => (
           <div
             key={offre.id}

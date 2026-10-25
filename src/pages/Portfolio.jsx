@@ -54,7 +54,7 @@ const GALERIE_MEDIA = [
 ]
 
 const CATEGORIES = [
-  { num: '01', label: 'RÉLISATIONS CLIENTS',     anchor: 'collaborations' },
+  { num: '01', label: 'RÉALISATIONS CLIENTS',     anchor: 'collaborations' },
   { num: '02', label: "HISTOIRES D'AILLEURS", anchor: 'histoires' },
   { num: '03', label: 'GALERIE',            anchor: 'galerie' },
 ]
@@ -333,7 +333,7 @@ export default function Portfolio() {
         id="histoires"
         num="02"
         title="HISTOIRES D'AILLEURS"
-        description="Des fragments du monde, racontés en images.Nos plus beaux souvenirs autour du globe, racontés en image."
+        description="Des fragments du monde, racontés en images."
         items={HISTOIRES}
         paddingTop="0rem"
         isMobile={isMobile}
