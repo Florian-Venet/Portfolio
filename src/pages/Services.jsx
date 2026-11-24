@@ -222,7 +222,7 @@ export default function Services() {
         ))}
       </div>
 
-      {/* Section contact */}
+      {/* Section Contact */}
       <div
         style={{
           position: 'sticky',
